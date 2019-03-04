@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--First-->
+        <!--Hjem-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
                 <viewController id="9pv-A4-QxB" customClass="FirstViewController" customModule="Isdisco" customModuleProvider="target" sceneMemberID="viewController">
@@ -41,13 +41,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="PQr-Ze-W5v"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="First" image="first" id="acW-dT-cKf"/>
+                    <tabBarItem key="tabBarItem" title="Hjem" image="first" id="acW-dT-cKf"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="750" y="-320"/>
         </scene>
-        <!--Item-->
+        <!--Third View Controller-->
         <scene sceneID="vkO-gl-hgd">
             <objects>
                 <viewController id="I7s-hS-lU5" customClass="ThirdViewController" customModule="Isdisco" customModuleProvider="target" sceneMemberID="viewController">
@@ -78,14 +78,14 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6jx-Uo-Yeh"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="UHn-sO-zn1"/>
+                    <tabBarItem key="tabBarItem" systemItem="mostViewed" id="UHn-sO-zn1"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="34Y-A0-SAm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1634" y="-321"/>
         </scene>
-        <!--Item-->
+        <!--Fourth View Controller-->
         <scene sceneID="31K-gO-ejE">
             <objects>
                 <viewController id="7zp-uW-NzR" customClass="FourthViewController" customModule="Isdisco" customModuleProvider="target" sceneMemberID="viewController">
@@ -116,14 +116,14 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="L10-dv-p9q"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="f7O-1W-IaK"/>
+                    <tabBarItem key="tabBarItem" systemItem="contacts" id="f7O-1W-IaK"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eIA-aX-q31" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1633" y="359"/>
         </scene>
-        <!--Second-->
+        <!--Second View Controller-->
         <scene sceneID="wg7-f3-ORb">
             <objects>
                 <viewController id="8rJ-Kc-sve" customClass="SecondViewController" customModule="Isdisco" customModuleProvider="target" sceneMemberID="viewController">
@@ -154,7 +154,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="O1u-W8-tvY"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Second" image="second" id="cPa-gy-q4n"/>
+                    <tabBarItem key="tabBarItem" systemItem="search" id="cPa-gy-q4n"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
@@ -183,6 +183,5 @@
     </scenes>
     <resources>
         <image name="first" width="30" height="30"/>
-        <image name="second" width="30" height="30"/>
     </resources>
 </document>
