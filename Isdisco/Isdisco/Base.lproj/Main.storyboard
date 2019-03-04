@@ -41,7 +41,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="PQr-Ze-W5v"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Hjem" image="first" id="acW-dT-cKf"/>
+                    <tabBarItem key="tabBarItem" title="Hjem" image="baseline_home_black_24pt" id="acW-dT-cKf"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
@@ -78,7 +78,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6jx-Uo-Yeh"/>
                     </view>
-                    <tabBarItem key="tabBarItem" systemItem="mostViewed" id="UHn-sO-zn1"/>
+                    <tabBarItem key="tabBarItem" title="" systemItem="mostViewed" id="UHn-sO-zn1"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="34Y-A0-SAm" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -182,6 +182,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="first" width="30" height="30"/>
+        <image name="baseline_home_black_24pt" width="48" height="48"/>
     </resources>
 </document>
