@@ -15,6 +15,7 @@
 		BB4068F5222D4F87005F6562 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB4068F3222D4F87005F6562 /* LaunchScreen.storyboard */; };
 		BB4068FD222D5311005F6562 /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4068FC222D5311005F6562 /* ThirdViewController.swift */; };
 		BB4068FF222D5387005F6562 /* FourthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4068FE222D5387005F6562 /* FourthViewController.swift */; };
+		BB6029A42235B1C5000721A7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB6029A32235B1C5000721A7 /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		BB4068F6222D4F87005F6562 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BB4068FC222D5311005F6562 /* ThirdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
 		BB4068FE222D5387005F6562 /* FourthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourthViewController.swift; sourceTree = "<group>"; };
+		BB6029A32235B1C5000721A7 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 				BB4068FC222D5311005F6562 /* ThirdViewController.swift */,
 				BB4068FE222D5387005F6562 /* FourthViewController.swift */,
 				BB4068EE222D4F85005F6562 /* Main.storyboard */,
+				BB6029A32235B1C5000721A7 /* LoginViewController.swift */,
 				BB4068F1222D4F87005F6562 /* Assets.xcassets */,
 				BB4068F3222D4F87005F6562 /* LaunchScreen.storyboard */,
 				BB4068F6222D4F87005F6562 /* Info.plist */,
@@ -144,6 +147,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB6029A42235B1C5000721A7 /* LoginViewController.swift in Sources */,
 				BB4068ED222D4F85005F6562 /* SecondViewController.swift in Sources */,
 				BB4068E9222D4F85005F6562 /* AppDelegate.swift in Sources */,
 				BB4068FD222D5311005F6562 /* ThirdViewController.swift in Sources */,
