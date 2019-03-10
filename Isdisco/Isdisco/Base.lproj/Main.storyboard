@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -10,23 +10,92 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Login View Controller-->
+        <scene sceneID="abM-2Q-Nwu">
+            <objects>
+                <viewController id="Qay-Pv-qza" customClass="LoginViewController" customModule="Isdisco" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tHw-Rj-ywR">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Rp-9n-aVs">
+                                <rect key="frame" x="56.5" y="429.5" width="301" height="47"/>
+                                <color key="backgroundColor" red="0.25882352941176467" green="0.40392156862745099" blue="0.69803921568627447" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="30"/>
+                                <state key="normal" title=" Log in with Facebook ">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="fbLogin:" destination="Qay-Pv-qza" eventType="touchUpInside" id="Zwc-6i-F97"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LOGO_ISDISCO1" highlightedImage="LOGO_ISDISCO" translatesAutoresizingMaskIntoConstraints="NO" id="lMg-Jt-9aC">
+                                <rect key="frame" x="5" y="71" width="404" height="265"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Denne app giver dig mulighed for at sende dine musikønsker til DJ'en. Bare indsæt et spotify link eller søg direkte i appen." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tXw-jZ-1mP">
+                                <rect key="frame" x="43" y="538" width="328" height="248"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="248" id="3Eb-z0-uYu"/>
+                                    <constraint firstAttribute="width" constant="328" id="881-xf-UjU"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YTX-er-BL6">
+                                <rect key="frame" x="132" y="492" width="150" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title=" Log ind som udvikler ">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="devLogin:" destination="Qay-Pv-qza" eventType="touchUpInside" id="qWR-Gg-sTn"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="3Rp-9n-aVs" firstAttribute="centerY" secondItem="eTZ-Bo-dG1" secondAttribute="centerY" id="2hv-K6-6kc"/>
+                            <constraint firstItem="eTZ-Bo-dG1" firstAttribute="trailing" secondItem="lMg-Jt-9aC" secondAttribute="trailing" constant="5" id="H9s-FQ-pTq"/>
+                            <constraint firstItem="3Rp-9n-aVs" firstAttribute="top" secondItem="lMg-Jt-9aC" secondAttribute="bottom" constant="93.5" id="PEO-Ar-66m"/>
+                            <constraint firstItem="eTZ-Bo-dG1" firstAttribute="trailing" secondItem="tXw-jZ-1mP" secondAttribute="trailing" constant="43" id="Uba-j5-6a1"/>
+                            <constraint firstItem="tXw-jZ-1mP" firstAttribute="centerX" secondItem="eTZ-Bo-dG1" secondAttribute="centerX" id="aeb-7Z-vQf"/>
+                            <constraint firstItem="3Rp-9n-aVs" firstAttribute="centerX" secondItem="eTZ-Bo-dG1" secondAttribute="centerX" id="dOR-gV-8nd"/>
+                            <constraint firstItem="tXw-jZ-1mP" firstAttribute="top" secondItem="3Rp-9n-aVs" secondAttribute="bottom" constant="61.5" id="jCD-aw-6UU"/>
+                            <constraint firstItem="lMg-Jt-9aC" firstAttribute="top" secondItem="eTZ-Bo-dG1" secondAttribute="top" constant="27" id="lrT-gn-Zel"/>
+                            <constraint firstItem="tXw-jZ-1mP" firstAttribute="leading" secondItem="eTZ-Bo-dG1" secondAttribute="leading" constant="43" id="md1-Um-DvH"/>
+                            <constraint firstItem="lMg-Jt-9aC" firstAttribute="centerX" secondItem="eTZ-Bo-dG1" secondAttribute="centerX" id="oWi-21-0IF"/>
+                            <constraint firstItem="lMg-Jt-9aC" firstAttribute="leading" secondItem="eTZ-Bo-dG1" secondAttribute="leading" constant="5" id="tQE-Uw-Aj2"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="eTZ-Bo-dG1"/>
+                    </view>
+                    <connections>
+                        <segue destination="1jU-i0-lXR" kind="unwind" identifier="ExitLogInSignUp" unwindAction="finishedLoggingInSegue:" id="8Ls-bh-Z4l"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ei7-tn-BpM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="1jU-i0-lXR" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="-137.68115942028987" y="-908.03571428571422"/>
+        </scene>
         <!--Hjem-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
                 <viewController id="9pv-A4-QxB" customClass="FirstViewController" customModule="Isdisco" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tsR-hK-woN">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="First View" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="KQZ-1w-vlD">
-                                <rect key="frame" x="112.5" y="312" width="150.5" height="43"/>
+                                <rect key="frame" x="132" y="426.5" width="150" height="43"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="36"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loaded by FirstViewController" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A5M-7J-77L">
-                                <rect key="frame" x="90.5" y="363" width="194.5" height="17"/>
+                                <rect key="frame" x="110" y="477.5" width="194" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -42,6 +111,9 @@
                         <viewLayoutGuide key="safeArea" id="PQr-Ze-W5v"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Hjem" image="baseline_home_black_24pt" id="acW-dT-cKf"/>
+                    <connections>
+                        <segue destination="Qay-Pv-qza" kind="presentation" identifier="LogInSignUp" id="4DM-u1-4t6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
@@ -52,18 +124,18 @@
             <objects>
                 <viewController id="I7s-hS-lU5" customClass="ThirdViewController" customModule="Isdisco" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hnG-rz-O2d">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Third View" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="7xN-wV-FvJ">
-                                <rect key="frame" x="106" y="297.5" width="163" height="43"/>
+                                <rect key="frame" x="125.5" y="407" width="163" height="43"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="36"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loaded by SecondViewController" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f10-wo-cdx">
-                                <rect key="frame" x="80" y="348.5" width="215" height="17"/>
+                                <rect key="frame" x="99.5" y="458" width="215" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -90,18 +162,18 @@
             <objects>
                 <viewController id="7zp-uW-NzR" customClass="FourthViewController" customModule="Isdisco" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mda-De-ev9">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Fourth View" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="3l6-UB-0OC">
-                                <rect key="frame" x="96" y="297.5" width="183.5" height="43"/>
+                                <rect key="frame" x="115" y="407" width="184" height="43"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="36"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loaded by SecondViewController" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TWk-Bg-wJU">
-                                <rect key="frame" x="80" y="348.5" width="215" height="17"/>
+                                <rect key="frame" x="99.5" y="458" width="215" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -128,18 +200,18 @@
             <objects>
                 <viewController id="8rJ-Kc-sve" customClass="SecondViewController" customModule="Isdisco" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="QS5-Rx-YEW">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Second View" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="zEq-FU-wV5">
-                                <rect key="frame" x="87" y="312" width="201.5" height="43"/>
+                                <rect key="frame" x="106" y="426.5" width="202" height="43"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="36"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loaded by SecondViewController" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NDk-cv-Gan">
-                                <rect key="frame" x="80" y="363" width="215" height="17"/>
+                                <rect key="frame" x="99.5" y="477.5" width="215" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -182,6 +254,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="LOGO_ISDISCO" width="1772" height="1772"/>
+        <image name="LOGO_ISDISCO1" width="404" height="404"/>
         <image name="baseline_home_black_24pt" width="48" height="48"/>
     </resources>
 </document>
