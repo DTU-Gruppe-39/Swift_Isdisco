@@ -1,0 +1,33 @@
+
+/* Class = "UILabel"; text = "Fourth View"; ObjectID = "3l6-UB-0OC"; */
+"3l6-UB-0OC.text" = "Fourth View";
+
+/* Class = "UILabel"; text = "Third View"; ObjectID = "7xN-wV-FvJ"; */
+"7xN-wV-FvJ.text" = "Third View";
+
+/* Class = "UILabel"; text = "Loaded by FirstViewController"; ObjectID = "A5M-7J-77L"; */
+"A5M-7J-77L.text" = "Loaded by FirstViewController";
+
+/* Class = "UILabel"; text = "First View"; ObjectID = "KQZ-1w-vlD"; */
+"KQZ-1w-vlD.text" = "First View";
+
+/* Class = "UILabel"; text = "Loaded by SecondViewController"; ObjectID = "NDk-cv-Gan"; */
+"NDk-cv-Gan.text" = "Loaded by SecondViewController";
+
+/* Class = "UILabel"; text = "Loaded by SecondViewController"; ObjectID = "TWk-Bg-wJU"; */
+"TWk-Bg-wJU.text" = "Loaded by SecondViewController";
+
+/* Class = "UITabBarItem"; title = "Feed"; ObjectID = "UHn-sO-zn1"; */
+"UHn-sO-zn1.title" = "Feed";
+
+/* Class = "UITabBarItem"; title = "Hjem"; ObjectID = "acW-dT-cKf"; */
+"acW-dT-cKf.title" = "Hjem";
+
+/* Class = "UILabel"; text = "Loaded by SecondViewController"; ObjectID = "f10-wo-cdx"; */
+"f10-wo-cdx.text" = "Loaded by SecondViewController";
+
+/* Class = "UITabBarItem"; title = "Kontakt"; ObjectID = "f7O-1W-IaK"; */
+"f7O-1W-IaK.title" = "Kontakt";
+
+/* Class = "UILabel"; text = "Second View"; ObjectID = "zEq-FU-wV5"; */
+"zEq-FU-wV5.text" = "Second View";

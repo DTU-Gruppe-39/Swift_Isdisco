@@ -110,7 +110,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="PQr-Ze-W5v"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Hjem" image="baseline_home_black_24pt" id="acW-dT-cKf"/>
+                    <tabBarItem key="tabBarItem" title="Hjem" image="home" id="acW-dT-cKf"/>
                     <connections>
                         <segue destination="Qay-Pv-qza" kind="presentation" identifier="LogInSignUp" id="4DM-u1-4t6"/>
                     </connections>
@@ -119,7 +119,7 @@
             </objects>
             <point key="canvasLocation" x="750" y="-320"/>
         </scene>
-        <!--Third View Controller-->
+        <!--Feed-->
         <scene sceneID="vkO-gl-hgd">
             <objects>
                 <viewController id="I7s-hS-lU5" customClass="ThirdViewController" customModule="Isdisco" customModuleProvider="target" sceneMemberID="viewController">
@@ -150,14 +150,14 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6jx-Uo-Yeh"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" systemItem="mostViewed" id="UHn-sO-zn1"/>
+                    <tabBarItem key="tabBarItem" title="Feed" image="feed" id="UHn-sO-zn1"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="34Y-A0-SAm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1634" y="-321"/>
         </scene>
-        <!--Fourth View Controller-->
+        <!--Kontakt-->
         <scene sceneID="31K-gO-ejE">
             <objects>
                 <viewController id="7zp-uW-NzR" customClass="FourthViewController" customModule="Isdisco" customModuleProvider="target" sceneMemberID="viewController">
@@ -188,7 +188,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="L10-dv-p9q"/>
                     </view>
-                    <tabBarItem key="tabBarItem" systemItem="contacts" id="f7O-1W-IaK"/>
+                    <tabBarItem key="tabBarItem" title="Kontakt" image="contact" id="f7O-1W-IaK"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eIA-aX-q31" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -254,8 +254,12 @@
         </scene>
     </scenes>
     <resources>
+
         <image name="LOGO_ISDISCO" width="1772" height="1772"/>
         <image name="LOGO_ISDISCO1" width="404" height="404"/>
         <image name="baseline_home_black_24pt" width="48" height="48"/>
+        <image name="contact" width="23" height="23"/>
+        <image name="feed" width="23" height="23"/>
+        <image name="home" width="23" height="23"/>
     </resources>
 </document>
