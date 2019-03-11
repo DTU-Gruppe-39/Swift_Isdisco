@@ -29,7 +29,7 @@
                                     <action selector="fbLogin:" destination="Qay-Pv-qza" eventType="touchUpInside" id="Zwc-6i-F97"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LOGO_ISDISCO1" highlightedImage="LOGO_ISDISCO" translatesAutoresizingMaskIntoConstraints="NO" id="lMg-Jt-9aC">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LOGO_ISDISCO1" highlightedImage="LOGO_ISDISCO" translatesAutoresizingMaskIntoConstraints="NO" id="lMg-Jt-9aC">
                                 <rect key="frame" x="5" y="71" width="404" height="265"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Denne app giver dig mulighed for at sende dine musikønsker til DJ'en. Bare indsæt et spotify link eller søg direkte i appen." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tXw-jZ-1mP">
@@ -42,7 +42,7 @@
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YTX-er-BL6">
+                            <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YTX-er-BL6">
                                 <rect key="frame" x="132" y="484" width="150" height="30"/>
                                 <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title=" Log ind som udvikler ">
@@ -62,10 +62,12 @@
                             <constraint firstItem="eTZ-Bo-dG1" firstAttribute="trailing" secondItem="tXw-jZ-1mP" secondAttribute="trailing" constant="43" id="Uba-j5-6a1"/>
                             <constraint firstItem="tXw-jZ-1mP" firstAttribute="centerX" secondItem="eTZ-Bo-dG1" secondAttribute="centerX" id="aeb-7Z-vQf"/>
                             <constraint firstItem="3Rp-9n-aVs" firstAttribute="centerX" secondItem="eTZ-Bo-dG1" secondAttribute="centerX" id="dOR-gV-8nd"/>
+                            <constraint firstItem="tXw-jZ-1mP" firstAttribute="top" secondItem="YTX-er-BL6" secondAttribute="bottom" constant="24" id="fXA-Bg-hUM"/>
                             <constraint firstItem="tXw-jZ-1mP" firstAttribute="top" secondItem="3Rp-9n-aVs" secondAttribute="bottom" constant="61.5" id="jCD-aw-6UU"/>
                             <constraint firstItem="lMg-Jt-9aC" firstAttribute="top" secondItem="eTZ-Bo-dG1" secondAttribute="top" constant="27" id="lrT-gn-Zel"/>
                             <constraint firstItem="tXw-jZ-1mP" firstAttribute="leading" secondItem="eTZ-Bo-dG1" secondAttribute="leading" constant="43" id="md1-Um-DvH"/>
                             <constraint firstItem="lMg-Jt-9aC" firstAttribute="centerX" secondItem="eTZ-Bo-dG1" secondAttribute="centerX" id="oWi-21-0IF"/>
+                            <constraint firstItem="YTX-er-BL6" firstAttribute="top" secondItem="3Rp-9n-aVs" secondAttribute="bottom" constant="7.5" id="tG8-wK-bja"/>
                             <constraint firstItem="lMg-Jt-9aC" firstAttribute="leading" secondItem="eTZ-Bo-dG1" secondAttribute="leading" constant="5" id="tQE-Uw-Aj2"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="eTZ-Bo-dG1"/>
