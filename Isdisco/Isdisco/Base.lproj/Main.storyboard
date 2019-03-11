@@ -42,9 +42,8 @@
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YTX-er-BL6">
-                                <rect key="frame" x="132" y="492" width="150" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YTX-er-BL6">
+                                <rect key="frame" x="132" y="484" width="150" height="30"/>
                                 <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title=" Log ind som udvikler ">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -59,6 +58,7 @@
                             <constraint firstItem="3Rp-9n-aVs" firstAttribute="centerY" secondItem="eTZ-Bo-dG1" secondAttribute="centerY" id="2hv-K6-6kc"/>
                             <constraint firstItem="eTZ-Bo-dG1" firstAttribute="trailing" secondItem="lMg-Jt-9aC" secondAttribute="trailing" constant="5" id="H9s-FQ-pTq"/>
                             <constraint firstItem="3Rp-9n-aVs" firstAttribute="top" secondItem="lMg-Jt-9aC" secondAttribute="bottom" constant="93.5" id="PEO-Ar-66m"/>
+                            <constraint firstItem="YTX-er-BL6" firstAttribute="centerX" secondItem="eTZ-Bo-dG1" secondAttribute="centerX" id="UKb-0N-VcR"/>
                             <constraint firstItem="eTZ-Bo-dG1" firstAttribute="trailing" secondItem="tXw-jZ-1mP" secondAttribute="trailing" constant="43" id="Uba-j5-6a1"/>
                             <constraint firstItem="tXw-jZ-1mP" firstAttribute="centerX" secondItem="eTZ-Bo-dG1" secondAttribute="centerX" id="aeb-7Z-vQf"/>
                             <constraint firstItem="3Rp-9n-aVs" firstAttribute="centerX" secondItem="eTZ-Bo-dG1" secondAttribute="centerX" id="dOR-gV-8nd"/>
@@ -254,10 +254,8 @@
         </scene>
     </scenes>
     <resources>
-
         <image name="LOGO_ISDISCO" width="1772" height="1772"/>
         <image name="LOGO_ISDISCO1" width="404" height="404"/>
-        <image name="baseline_home_black_24pt" width="48" height="48"/>
         <image name="contact" width="23" height="23"/>
         <image name="feed" width="23" height="23"/>
         <image name="home" width="23" height="23"/>
