@@ -21,6 +21,7 @@ class PopUpViewController: UIViewController {
     @IBAction func closePopUp(_ sender: Any) {
        // self.view.removeFromSuperview()
         self.removeAnimate()
+        self.tabBarController?.tabBar.isHidden = false
     }
     
     func showAnimate()
