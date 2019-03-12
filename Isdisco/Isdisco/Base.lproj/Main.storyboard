@@ -164,15 +164,28 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cQ1-9Q-5lA">
+                                <rect key="frame" x="172" y="583" width="31" height="30"/>
+                                <state key="normal" title="Vis"/>
+                                <connections>
+                                    <action selector="showPopUp:" destination="7zp-uW-NzR" eventType="touchUpInside" id="X2y-gd-IkK"/>
+                                </connections>
+                            </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Fourth View" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="3l6-UB-0OC">
                                 <rect key="frame" x="95.666666666666686" y="365" width="184" height="43"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="43" id="073-n0-c0H"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="36"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loaded by SecondViewController" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TWk-Bg-wJU">
                                 <rect key="frame" x="80" y="416" width="215" height="17"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="17" id="8aD-Nf-XS5"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -180,8 +193,11 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="L10-dv-p9q" firstAttribute="bottom" secondItem="cQ1-9Q-5lA" secondAttribute="bottom" constant="116" id="0gS-aW-gPq"/>
                             <constraint firstItem="TWk-Bg-wJU" firstAttribute="centerX" secondItem="3l6-UB-0OC" secondAttribute="centerX" id="ABu-cq-BLb"/>
                             <constraint firstItem="TWk-Bg-wJU" firstAttribute="top" secondItem="3l6-UB-0OC" secondAttribute="bottom" constant="8" symbolic="YES" id="Edl-r3-5U1"/>
+                            <constraint firstItem="cQ1-9Q-5lA" firstAttribute="centerX" secondItem="TWk-Bg-wJU" secondAttribute="centerX" id="SxL-qP-kIP"/>
+                            <constraint firstItem="cQ1-9Q-5lA" firstAttribute="leading" secondItem="L10-dv-p9q" secondAttribute="leading" constant="172" id="ZDR-Ki-8BW"/>
                             <constraint firstItem="3l6-UB-0OC" firstAttribute="centerY" secondItem="L10-dv-p9q" secondAttribute="centerY" id="gr9-yl-7a0"/>
                             <constraint firstItem="3l6-UB-0OC" firstAttribute="centerX" secondItem="L10-dv-p9q" secondAttribute="centerX" id="r9F-Xq-at4"/>
                         </constraints>
@@ -193,6 +209,62 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eIA-aX-q31" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1633" y="359"/>
+        </scene>
+        <!--Pop Up View Controller-->
+        <scene sceneID="aTZ-sN-ShS">
+            <objects>
+                <viewController storyboardIdentifier="sbPopUpID" id="9ri-3L-Xmf" customClass="PopUpViewController" customModule="Isdisco" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="RTb-PT-R8t">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p7e-It-zCw">
+                                <rect key="frame" x="54.666666666666657" y="314" width="266" height="184"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AQQ-eW-mjW">
+                                        <rect key="frame" x="8" y="146" width="57" height="30"/>
+                                        <state key="normal" title="Annuller"/>
+                                        <connections>
+                                            <action selector="closePopUp:" destination="9ri-3L-Xmf" eventType="touchUpInside" id="ifI-Fc-UPA"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mjh-tU-nqw">
+                                        <rect key="frame" x="185" y="146" width="73" height="30"/>
+                                        <state key="normal" title="Ønsk sang"/>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sangt titel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HPJ-4E-g93">
+                                        <rect key="frame" x="94" y="82" width="78" height="20"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="Mjh-tU-nqw" firstAttribute="trailing" secondItem="p7e-It-zCw" secondAttribute="trailingMargin" id="3rt-IC-FBN"/>
+                                    <constraint firstItem="HPJ-4E-g93" firstAttribute="centerY" secondItem="p7e-It-zCw" secondAttribute="centerY" id="8az-zr-5xw"/>
+                                    <constraint firstItem="Mjh-tU-nqw" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="AQQ-eW-mjW" secondAttribute="trailing" constant="8" symbolic="YES" id="Drj-VO-7Rr"/>
+                                    <constraint firstAttribute="height" constant="184" id="LPo-vA-Ywc"/>
+                                    <constraint firstItem="Mjh-tU-nqw" firstAttribute="baseline" secondItem="AQQ-eW-mjW" secondAttribute="baseline" id="Mao-fQ-wB1"/>
+                                    <constraint firstItem="HPJ-4E-g93" firstAttribute="centerX" secondItem="p7e-It-zCw" secondAttribute="centerX" id="MvX-Vu-icF"/>
+                                    <constraint firstItem="HPJ-4E-g93" firstAttribute="top" secondItem="p7e-It-zCw" secondAttribute="top" constant="82" id="N5x-90-AGS"/>
+                                    <constraint firstItem="AQQ-eW-mjW" firstAttribute="leading" secondItem="p7e-It-zCw" secondAttribute="leading" constant="8" id="bxx-Ic-blf"/>
+                                    <constraint firstItem="Mjh-tU-nqw" firstAttribute="bottom" secondItem="p7e-It-zCw" secondAttribute="bottomMargin" id="i3p-mx-p4V"/>
+                                    <constraint firstAttribute="width" constant="266" id="njg-c8-PHu"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="p7e-It-zCw" firstAttribute="centerX" secondItem="RTb-PT-R8t" secondAttribute="centerX" id="Bv8-TA-9VK"/>
+                            <constraint firstItem="p7e-It-zCw" firstAttribute="centerY" secondItem="RTb-PT-R8t" secondAttribute="centerY" id="ede-MW-45c"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ipL-PX-tSt"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sal-AH-ugi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2416.8000000000002" y="351.72413793103448"/>
         </scene>
         <!--Second View Controller-->
         <scene sceneID="wg7-f3-ORb">
