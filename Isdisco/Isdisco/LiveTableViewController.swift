@@ -41,6 +41,10 @@ class LiveTableViewController: UITableViewController {
         return cell
     }
  
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 70.0
+    }
+    
 
     /*
     // Override to support conditional editing of the table view.
