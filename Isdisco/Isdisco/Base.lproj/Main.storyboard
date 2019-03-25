@@ -253,7 +253,7 @@
                                 <rect key="frame" x="172" y="586" width="31" height="30"/>
                                 <state key="normal" title="Vis"/>
                                 <connections>
-                                    <segue destination="4ku-ZL-fQg" kind="presentation" id="RkP-qi-FOX"/>
+                                    <segue destination="4ku-ZL-fQg" kind="presentation" modalPresentationStyle="overCurrentContext" id="RkP-qi-FOX"/>
                                 </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Fourth View" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="o7M-CZ-hzz">
@@ -291,8 +291,8 @@
         <!--Pop Up View Controller-->
         <scene sceneID="1hW-OK-WBC">
             <objects>
-                <viewController modalTransitionStyle="crossDissolve" modalPresentationStyle="currentContext" id="4ku-ZL-fQg" customClass="PopUpViewController" customModule="Isdisco" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" opaque="NO" contentMode="scaleToFill" id="6f7-QO-Jqi">
+                <viewController storyboardIdentifier="sbPopUpID" modalTransitionStyle="crossDissolve" modalPresentationStyle="currentContext" id="4ku-ZL-fQg" customClass="PopUpViewController" customModule="Isdisco" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6f7-QO-Jqi">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -317,7 +317,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="ZU8-gj-axr" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Tns-8W-y5M" secondAttribute="trailing" constant="8" symbolic="YES" id="5Ou-BA-kdI"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="184" id="Bpo-e4-S0E"/>
@@ -334,7 +334,7 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.83046607124990746" green="0.83046607124990746" blue="0.83046607124990746" alpha="0.70205215669014087" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="kUU-Uq-sUE" firstAttribute="centerX" secondItem="6f7-QO-Jqi" secondAttribute="centerX" id="5yZ-vY-NXA"/>
                             <constraint firstItem="kUU-Uq-sUE" firstAttribute="centerY" secondItem="6f7-QO-Jqi" secondAttribute="centerY" id="nRQ-l0-tdf"/>
