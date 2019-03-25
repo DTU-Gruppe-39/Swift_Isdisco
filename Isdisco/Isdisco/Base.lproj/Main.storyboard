@@ -200,6 +200,7 @@
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="outline_thumb_down_black_18pt" highlightedImage="outline_thumb_down_black_18pt" translatesAutoresizingMaskIntoConstraints="NO" id="duz-a5-J9P">
                                             <rect key="frame" x="327" y="19" width="32" height="32"/>
                                             <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <gestureRecognizers/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="32" id="2lg-Sr-wW8"/>
                                                 <constraint firstAttribute="height" constant="32" id="BXO-x0-dvE"/>
@@ -208,6 +209,7 @@
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="outline_thumb_up_black_18pt" highlightedImage="outline_thumb_up_black_18pt" translatesAutoresizingMaskIntoConstraints="NO" id="Jva-Ht-ht8">
                                             <rect key="frame" x="264" y="19" width="32" height="32"/>
                                             <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <gestureRecognizers/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="32" id="aXu-bF-GEE"/>
                                                 <constraint firstAttribute="width" constant="32" id="iIZ-8n-efj"/>
@@ -227,6 +229,16 @@
                                         <constraint firstItem="stY-YN-6tl" firstAttribute="top" secondItem="GzI-k4-gje" secondAttribute="top" id="z5h-f9-bjy"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="artist" destination="RvZ-2e-982" id="88A-AH-fep"/>
+                                    <outlet property="downVote" destination="duz-a5-J9P" id="t5S-do-vhv"/>
+                                    <outlet property="songImage" destination="GzI-k4-gje" id="gFI-32-qfh"/>
+                                    <outlet property="songName" destination="bUp-sS-Mub" id="2md-oA-fTg"/>
+                                    <outlet property="timeAgo" destination="KkE-XK-QFK" id="Nmf-FB-Oke"/>
+                                    <outlet property="upVote" destination="Jva-Ht-ht8" id="Cbl-PU-Hr8"/>
+                                    <outlet property="userName" destination="jAX-fq-gXk" id="Wyz-rh-YKP"/>
+                                    <outlet property="voteCount" destination="tmD-gm-PHk" id="W0X-kU-lht"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <sections/>
