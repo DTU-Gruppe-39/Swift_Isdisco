@@ -7,19 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		20DEA1472237CF7F00BDC582 /* PopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20DEA1462237CF7F00BDC582 /* PopUpViewController.swift */; };
+		20DEA1492237F11E00BDC582 /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20DEA1482237F11E00BDC582 /* ThirdViewController.swift */; };
+		20DEA14B2237F12D00BDC582 /* FourthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20DEA14A2237F12D00BDC582 /* FourthViewController.swift */; };
 		BB4068E9222D4F85005F6562 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4068E8222D4F85005F6562 /* AppDelegate.swift */; };
 		BB4068EB222D4F85005F6562 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4068EA222D4F85005F6562 /* FirstViewController.swift */; };
 		BB4068ED222D4F85005F6562 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4068EC222D4F85005F6562 /* SecondViewController.swift */; };
 		BB4068F0222D4F85005F6562 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB4068EE222D4F85005F6562 /* Main.storyboard */; };
 		BB4068F2222D4F87005F6562 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB4068F1222D4F87005F6562 /* Assets.xcassets */; };
-		BB4068FD222D5311005F6562 /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4068FC222D5311005F6562 /* ThirdViewController.swift */; };
-		BB4068FF222D5387005F6562 /* FourthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4068FE222D5387005F6562 /* FourthViewController.swift */; };
 		BB6029A42235B1C5000721A7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB6029A32235B1C5000721A7 /* LoginViewController.swift */; };
 		BBCE0021223FE51B0010AD3D /* LiveTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCE0020223FE51B0010AD3D /* LiveTableViewController.swift */; };
 		BBDDDFE5223FE99D00645F3E /* LiveTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDDDFE4223FE99D00645F3E /* LiveTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		20DEA1462237CF7F00BDC582 /* PopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpViewController.swift; sourceTree = "<group>"; };
+		20DEA1482237F11E00BDC582 /* ThirdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
+		20DEA14A2237F12D00BDC582 /* FourthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourthViewController.swift; sourceTree = "<group>"; };
 		BB4068E5222D4F85005F6562 /* Isdisco.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Isdisco.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB4068E8222D4F85005F6562 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BB4068EA222D4F85005F6562 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -27,8 +31,6 @@
 		BB4068EF222D4F85005F6562 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BB4068F1222D4F87005F6562 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BB4068F6222D4F87005F6562 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BB4068FC222D5311005F6562 /* ThirdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
-		BB4068FE222D5387005F6562 /* FourthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourthViewController.swift; sourceTree = "<group>"; };
 		BB6029A32235B1C5000721A7 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		BBCE0020223FE51B0010AD3D /* LiveTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveTableViewController.swift; sourceTree = "<group>"; };
 		BBDDDFE4223FE99D00645F3E /* LiveTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveTableViewCell.swift; sourceTree = "<group>"; };
@@ -64,11 +66,12 @@
 		BB4068E7222D4F85005F6562 /* Isdisco */ = {
 			isa = PBXGroup;
 			children = (
+				20DEA1462237CF7F00BDC582 /* PopUpViewController.swift */,
 				BB4068E8222D4F85005F6562 /* AppDelegate.swift */,
 				BB4068EA222D4F85005F6562 /* FirstViewController.swift */,
 				BB4068EC222D4F85005F6562 /* SecondViewController.swift */,
-				BB4068FC222D5311005F6562 /* ThirdViewController.swift */,
-				BB4068FE222D5387005F6562 /* FourthViewController.swift */,
+				20DEA1482237F11E00BDC582 /* ThirdViewController.swift */,
+				20DEA14A2237F12D00BDC582 /* FourthViewController.swift */,
 				BB4068EE222D4F85005F6562 /* Main.storyboard */,
 				BBDDDFE4223FE99D00645F3E /* LiveTableViewCell.swift */,
 				BBCE0020223FE51B0010AD3D /* LiveTableViewController.swift */,
@@ -156,7 +159,6 @@
 				BB4068FD222D5311005F6562 /* ThirdViewController.swift in Sources */,
 				BBDDDFE5223FE99D00645F3E /* LiveTableViewCell.swift in Sources */,
 				BB4068EB222D4F85005F6562 /* FirstViewController.swift in Sources */,
-				BB4068FF222D5387005F6562 /* FourthViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
