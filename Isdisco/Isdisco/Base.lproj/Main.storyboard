@@ -267,8 +267,14 @@
                                 <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Green-Day-American-Idiot-album-covers-billboard-1000x1000" translatesAutoresizingMaskIntoConstraints="NO" id="6uZ-Wk-BC5">
+                                <rect key="frame" x="22" y="158" width="331" height="330"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="330" id="d12-sB-4j4"/>
+                                </constraints>
+                            </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="4y2-JH-Jud">
-                                <rect key="frame" x="94.666666666666671" y="496" width="185.66666666666663" height="60"/>
+                                <rect key="frame" x="94.666666666666671" y="526" width="185.66666666666663" height="60"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="American Idiot" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wDN-mW-t0h">
                                         <rect key="frame" x="0.0" y="0.0" width="185.66666666666666" height="36"/>
@@ -284,24 +290,18 @@
                                     </label>
                                 </subviews>
                             </stackView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Green-Day-American-Idiot-album-covers-billboard-1000x1000" translatesAutoresizingMaskIntoConstraints="NO" id="6uZ-Wk-BC5">
-                                <rect key="frame" x="22" y="158" width="331" height="330"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="330" id="d12-sB-4j4"/>
-                                </constraints>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="4y2-JH-Jud" firstAttribute="centerX" secondItem="6uZ-Wk-BC5" secondAttribute="centerX" id="2cT-Hn-2wG"/>
                             <constraint firstItem="Tkw-cs-4C4" firstAttribute="top" secondItem="wB3-DK-hbL" secondAttribute="top" constant="19" id="9mm-yP-0Am"/>
-                            <constraint firstItem="4y2-JH-Jud" firstAttribute="top" secondItem="6uZ-Wk-BC5" secondAttribute="bottom" constant="8" symbolic="YES" id="A8N-HU-dME"/>
-                            <constraint firstItem="4y2-JH-Jud" firstAttribute="centerX" secondItem="Tkw-cs-4C4" secondAttribute="centerX" id="CDQ-Eb-HHL"/>
                             <constraint firstItem="6uZ-Wk-BC5" firstAttribute="leading" secondItem="wB3-DK-hbL" secondAttribute="leading" constant="22" id="QEM-8W-OfE"/>
                             <constraint firstItem="Tkw-cs-4C4" firstAttribute="leading" secondItem="wB3-DK-hbL" secondAttribute="leading" constant="89" id="cTL-f9-bh4"/>
                             <constraint firstItem="6uZ-Wk-BC5" firstAttribute="centerX" secondItem="GOt-5z-AQw" secondAttribute="centerX" id="g9L-ti-uvI"/>
                             <constraint firstItem="6uZ-Wk-BC5" firstAttribute="top" secondItem="Tkw-cs-4C4" secondAttribute="bottom" constant="62" id="gDE-j8-CZJ"/>
                             <constraint firstItem="6uZ-Wk-BC5" firstAttribute="top" secondItem="GOt-5z-AQw" secondAttribute="top" constant="158" id="l9f-ty-TB8"/>
                             <constraint firstItem="6uZ-Wk-BC5" firstAttribute="centerX" secondItem="Tkw-cs-4C4" secondAttribute="centerX" id="sQc-EM-dpG"/>
+                            <constraint firstItem="4y2-JH-Jud" firstAttribute="top" secondItem="6uZ-Wk-BC5" secondAttribute="bottom" constant="38" id="uTt-Bn-I8h"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="wB3-DK-hbL"/>
                     </view>
@@ -309,7 +309,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nxg-sg-ezH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2365.5999999999999" y="-321.42857142857144"/>
+            <point key="canvasLocation" x="3092" y="-594"/>
         </scene>
         <!--Kontakt-->
         <scene sceneID="eZH-9Y-H8e">
