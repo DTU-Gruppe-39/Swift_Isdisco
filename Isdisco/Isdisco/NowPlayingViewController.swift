@@ -18,7 +18,7 @@ class NowPlayingViewController: UIViewController {
         super.viewDidLoad()
         
         self.songTitle.text = Singleton.shared.tracks[0].title
-        
+
         
         // Do any additional setup after loading the view.
     }

@@ -5,7 +5,7 @@
 //  Created by Thomas Mattsson on 28/03/2019.
 //  Copyright © 2019 Rasmus Gregersen. All rights reserved.
 //
-
+//  Get data from class by calling "Singleton.shared.*" anywhere in the project
 import Foundation
 
 class Singleton {
@@ -48,6 +48,23 @@ class Singleton {
         users.append(User(name: "Stefan", userId: 14))
         
         songRequests.append(SongRequest(user: users[0], track: tracks[0], timeStamp: 1.3, reqId: 0))
+        songRequests.append(SongRequest(user: users[1], track: tracks[1], timeStamp: 2.4, reqId: 1))
+        songRequests.append(SongRequest(user: users[2], track: tracks[2], timeStamp: 2.5, reqId: 2))
+        songRequests.append(SongRequest(user: users[3], track: tracks[3], timeStamp: 2.6, reqId: 3))
+        songRequests.append(SongRequest(user: users[4], track: tracks[4], timeStamp: 2.7, reqId: 4))
+        songRequests.append(SongRequest(user: users[5], track: tracks[5], timeStamp: 2.8, reqId: 5))
+        songRequests.append(SongRequest(user: users[6], track: tracks[6], timeStamp: 2.9, reqId: 6))
+        songRequests.append(SongRequest(user: users[7], track: tracks[7], timeStamp: 3.4, reqId: 7))
+        songRequests.append(SongRequest(user: users[8], track: tracks[8], timeStamp: 5.4, reqId: 8))
+        songRequests.append(SongRequest(user: users[9], track: tracks[0], timeStamp: 1.4, reqId: 9))
+        songRequests.append(SongRequest(user: users[10], track: tracks[1], timeStamp: 5.4, reqId: 10))
+        songRequests.append(SongRequest(user: users[11], track: tracks[2], timeStamp: 2.2, reqId: 11))
+        songRequests.append(SongRequest(user: users[12], track: tracks[3], timeStamp: 2.8, reqId: 12))
+        songRequests.append(SongRequest(user: users[13], track: tracks[4], timeStamp: 2.4, reqId: 13))
+        songRequests.append(SongRequest(user: users[14], track: tracks[5], timeStamp: 6.4, reqId: 14))
+        songRequests.append(SongRequest(user: users[0], track: tracks[6], timeStamp: 2.2, reqId: 15))
+        songRequests.append(SongRequest(user: users[1], track: tracks[7], timeStamp: 7.4, reqId: 16))
+
     }
     
     
