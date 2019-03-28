@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		201729A922491CA1000BAC35 /* PopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201729A822491CA1000BAC35 /* PopUpViewController.swift */; };
+		20FBF61E224CBC8300A6BE2A /* NowPlayingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20FBF61D224CBC8300A6BE2A /* NowPlayingViewController.swift */; };
+		20FBF620224CC10000A6BE2A /* Singleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20FBF61F224CC10000A6BE2A /* Singleton.swift */; };
 		BB4068E9222D4F85005F6562 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4068E8222D4F85005F6562 /* AppDelegate.swift */; };
 		BB4068EB222D4F85005F6562 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4068EA222D4F85005F6562 /* FirstViewController.swift */; };
 		BB4068ED222D4F85005F6562 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4068EC222D4F85005F6562 /* SecondViewController.swift */; };
@@ -22,6 +24,8 @@
 		201729A822491CA1000BAC35 /* PopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpViewController.swift; sourceTree = "<group>"; };
 		20DEA1482237F11E00BDC582 /* ThirdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
 		20DEA14A2237F12D00BDC582 /* FourthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourthViewController.swift; sourceTree = "<group>"; };
+		20FBF61D224CBC8300A6BE2A /* NowPlayingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingViewController.swift; sourceTree = "<group>"; };
+		20FBF61F224CC10000A6BE2A /* Singleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Singleton.swift; sourceTree = "<group>"; };
 		BB4068E5222D4F85005F6562 /* Isdisco.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Isdisco.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB4068E8222D4F85005F6562 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BB4068EA222D4F85005F6562 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -71,6 +75,8 @@
 				20DEA1482237F11E00BDC582 /* ThirdViewController.swift */,
 				20DEA14A2237F12D00BDC582 /* FourthViewController.swift */,
 				BB4068EE222D4F85005F6562 /* Main.storyboard */,
+				20FBF61F224CC10000A6BE2A /* Singleton.swift */,
+				20FBF61D224CBC8300A6BE2A /* NowPlayingViewController.swift */,
 				BBDDDFE4223FE99D00645F3E /* LiveTableViewCell.swift */,
 				BBCE0020223FE51B0010AD3D /* LiveTableViewController.swift */,
 				BB6029A32235B1C5000721A7 /* LoginViewController.swift */,
@@ -150,6 +156,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				20FBF61E224CBC8300A6BE2A /* NowPlayingViewController.swift in Sources */,
+				20FBF620224CC10000A6BE2A /* Singleton.swift in Sources */,
 				BB6029A42235B1C5000721A7 /* LoginViewController.swift in Sources */,
 				BB4068ED222D4F85005F6562 /* SecondViewController.swift in Sources */,
 				201729A922491CA1000BAC35 /* PopUpViewController.swift in Sources */,
