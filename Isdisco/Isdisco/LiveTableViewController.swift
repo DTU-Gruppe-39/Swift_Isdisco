@@ -8,6 +8,7 @@
 
 import UIKit
 
+//class LiveTableViewController: UITableViewController, LiveTableViewCellDelegate {
 class LiveTableViewController: UITableViewController {
 
     override func viewDidLoad() {
@@ -34,13 +35,37 @@ class LiveTableViewController: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "LiveCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "LiveCell", for: indexPath) as! LiveTableViewCell
+        
+        //Look into https://cocoapods.org/pods/MarqueeLabel
+        //It scrolls the text if it is too long to fit
+        cell.songName.text = "This is the row number \(indexPath.row)."
+        cell.voteCount.text = String(Int.random(in: 0 ... 15))
+//        cell.delegate = self
 
         // Configure the cell...
         //cell.imageView?.image =
         return cell
     }
  
+    
+//    func liveTableViewCellDidUpVote(_ sender: LiveTableViewCell) {
+//        guard let tappedIndexPath = tableView.indexPath(for: sender) else { return }
+//        print("You just UpVoted a song", sender, tappedIndexPath)
+////        let cell = tableView.cellForRow(at: tappedIndexPath) as! LiveTableViewCell
+////        let count = cell.voteCount.text
+////        cell.voteCount.text = cell.voteCount.text
+//    }
+//
+//    func liveTableViewCellDidDownVote(_ sender: LiveTableViewCell) {
+//        guard let tappedIndexPath = tableView.indexPath(for: sender) else { return }
+//        print("You just DownVoted a song", sender, tappedIndexPath)
+//
+//    }
+    
+    
+    
+    
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 70.0
     }

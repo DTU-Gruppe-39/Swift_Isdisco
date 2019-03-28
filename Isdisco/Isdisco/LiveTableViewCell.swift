@@ -16,8 +16,10 @@ class LiveTableViewCell: UITableViewCell {
     @IBOutlet weak var songName: UILabel!
     @IBOutlet weak var artist: UILabel!
     @IBOutlet weak var voteCount: UILabel!
-    @IBOutlet weak var upVote: UIImageView!
-    @IBOutlet weak var downVote: UIImageView!
+    @IBOutlet weak var upVoteButtone: UIButton!
+    @IBOutlet weak var downVoteButton: UIButton!
+    
+//    weak var delegate: LiveTableViewCellDelegate?
     
 //    var upVoteReconizer = UITapGestureRecognizer(target: self, action: Selector(("handleUpVote")))
 //    upVoteReconizer.delegate = self
@@ -28,6 +30,16 @@ class LiveTableViewCell: UITableViewCell {
 //    }
     
     
+    @IBAction func upVoteButtone(_ sender: UIButton) {
+//        delegate?.liveTableViewCellDidUpVote(self)
+//        print("You pressed upvote")
+        self.voteCount.text = "3337"
+    }
+
+    @IBAction func downVoteButton(_ sender: UIButton) {
+//        delegate?.liveTableViewCellDidDownVote(self)
+//        print("You pressed downvote")
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -41,3 +53,9 @@ class LiveTableViewCell: UITableViewCell {
     }
 
 }
+
+
+//protocol LiveTableViewCellDelegate : class {
+//    func liveTableViewCellDidUpVote(_ sender: LiveTableViewCell)
+//    func liveTableViewCellDidDownVote(_ sender: LiveTableViewCell)
+//}
