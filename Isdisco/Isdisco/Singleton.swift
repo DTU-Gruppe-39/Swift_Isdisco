@@ -21,15 +21,15 @@ class Singleton {
     private init() {}
     
     func setUpData() {
-        tracks.append(Track(title: "Despacito" , artist: "Luis Fonsi", genre: "Pop", albumArt: "URL"))
-        tracks.append(Track(title: "American Idiot", artist: "Green Day", genre: "Rock", albumArt: "URL"))
-        tracks.append(Track(title: "7 Rings", artist: "Ariana Grande", genre: "Pop", albumArt: "URL"))
-        tracks.append(Track(title: "Sucker", artist: "Jonas Brothers", genre: "Pop", albumArt: "URL"))
-        tracks.append(Track(title: "Sunflower", artist: "Post Malone", genre: "Pop", albumArt: "URL"))
-        tracks.append(Track(title: "Shallow", artist: "Lady Gaga", genre: "Pop", albumArt: "URL"))
-        tracks.append(Track(title: "Sweet but Psycho", artist: "Ava Max", genre: "Pop", albumArt: "URL"))
-        tracks.append(Track(title: "Gangnam Style", artist: "Psy", genre: "K-Pop", albumArt: "URL"))
-        tracks.append(Track(title: "Nede Mette", artist: "Blak", genre: "Pop", albumArt: "URL"))
+        tracks.append(Track(title: "Despacito" , artist: "Luis Fonsi", genre: "Pop", albumArt: "URL", trackId: 0))
+        tracks.append(Track(title: "American Idiot", artist: "Green Day", genre: "Rock", albumArt: "URL", trackId: 1))
+        tracks.append(Track(title: "7 Rings", artist: "Ariana Grande", genre: "Pop", albumArt: "URL", trackId: 2))
+        tracks.append(Track(title: "Sucker", artist: "Jonas Brothers", genre: "Pop", albumArt: "URL", trackId: 3))
+        tracks.append(Track(title: "Sunflower", artist: "Post Malone", genre: "Pop", albumArt: "URL", trackId: 4))
+        tracks.append(Track(title: "Shallow", artist: "Lady Gaga", genre: "Pop", albumArt: "URL", trackId: 5))
+        tracks.append(Track(title: "Sweet but Psycho", artist: "Ava Max", genre: "Pop", albumArt: "URL", trackId: 6))
+        tracks.append(Track(title: "Gangnam Style", artist: "Psy", genre: "K-Pop", albumArt: "URL", trackId: 7))
+        tracks.append(Track(title: "Nede Mette", artist: "Blak", genre: "Pop", albumArt: "URL", trackId: 8))
         
         users.append(User(name: "Jacob", userId: 0))
         users.append(User(name: "Mathias", userId: 1))
@@ -67,23 +67,19 @@ class Singleton {
 
     }
     
-    
-
-    // MARK: -
-    
-    
-    
     class Track {
         let albumArt: String
         let title: String
         let artist: String
         let genre: String
+        let trackId: Int
         
-        init(title: String, artist: String, genre: String, albumArt: String) {
+        init(title: String, artist: String, genre: String, albumArt: String, trackId: Int) {
             self.albumArt = albumArt
             self.title = title
             self.artist = artist
             self.genre = genre
+            self.trackId = trackId
         }
     }
     
