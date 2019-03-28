@@ -19,7 +19,7 @@ class LiveTableViewCell: UITableViewCell {
     @IBOutlet weak var upVoteButtone: UIButton!
     @IBOutlet weak var downVoteButton: UIButton!
     
-//    weak var delegate: LiveTableViewCellDelegate?
+    weak var delegate: LiveTableViewCellDelegate?
     
 //    var upVoteReconizer = UITapGestureRecognizer(target: self, action: Selector(("handleUpVote")))
 //    upVoteReconizer.delegate = self
@@ -31,13 +31,13 @@ class LiveTableViewCell: UITableViewCell {
     
     
     @IBAction func upVoteButtone(_ sender: UIButton) {
-//        delegate?.liveTableViewCellDidUpVote(self)
+        delegate?.liveTableViewCellDidUpVote(self)
 //        print("You pressed upvote")
-        self.voteCount.text = "3337"
+//        self.voteCount.text = "3337"
     }
 
     @IBAction func downVoteButton(_ sender: UIButton) {
-//        delegate?.liveTableViewCellDidDownVote(self)
+        delegate?.liveTableViewCellDidDownVote(self)
 //        print("You pressed downvote")
     }
     
@@ -55,7 +55,7 @@ class LiveTableViewCell: UITableViewCell {
 }
 
 
-//protocol LiveTableViewCellDelegate : class {
-//    func liveTableViewCellDidUpVote(_ sender: LiveTableViewCell)
-//    func liveTableViewCellDidDownVote(_ sender: LiveTableViewCell)
-//}
+protocol LiveTableViewCellDelegate : class {
+    func liveTableViewCellDidUpVote(_ sender: LiveTableViewCell)
+    func liveTableViewCellDidDownVote(_ sender: LiveTableViewCell)
+}

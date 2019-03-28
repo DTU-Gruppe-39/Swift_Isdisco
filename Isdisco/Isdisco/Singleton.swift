@@ -96,16 +96,20 @@ class Singleton {
     class SongRequest {
         let user: User
         let track: Track
-        let timeStamp: Double
+        let timeStamp: Double  //Should probably be milliseconds and then calculated to min/hours as an Int insted of a double
         let reqId: Int
         var votes: Int
+        var voted: Bool
+        var upVoted: Bool
     
         init(user: User, track: Track, timeStamp: Double, reqId: Int) {
             self.user = user
             self.track = track
             self.timeStamp = timeStamp
             self.reqId = reqId
-            self.votes = 1
+            self.votes = Int.random(in: 0 ... 25)
+            self.voted = false
+            self.upVoted = false
         }
     }
 }

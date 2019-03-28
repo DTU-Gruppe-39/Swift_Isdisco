@@ -8,8 +8,8 @@
 
 import UIKit
 
-//class LiveTableViewController: UITableViewController, LiveTableViewCellDelegate {
-class LiveTableViewController: UITableViewController {
+class LiveTableViewController: UITableViewController, LiveTableViewCellDelegate {
+//class LiveTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,13 +24,11 @@ class LiveTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 5
+        return Singleton.shared.songRequests.count
     }
 
     
@@ -39,9 +37,41 @@ class LiveTableViewController: UITableViewController {
         
         //Look into https://cocoapods.org/pods/MarqueeLabel
         //It scrolls the text if it is too long to fit
-        cell.songName.text = "This is the row number \(indexPath.row)."
-        cell.voteCount.text = String(Int.random(in: 0 ... 15))
-//        cell.delegate = self
+//        cell.songName.text = "This is the row number \(indexPath.row)."
+//        cell.voteCount.text = String(Int.random(in: 0 ... 15))
+        
+        
+        let request = Singleton.shared.songRequests[indexPath.row]
+        cell.songName.text = request.track.title
+        cell.artist.text = request.track.artist
+        cell.userName.text = request.user.name
+        cell.timeAgo.text = String(request.timeStamp) + " min ago"
+        cell.voteCount.text = String(request.votes)
+        if request.voted {
+            if request.upVoted {
+                cell.upVoteButtone.isEnabled = false
+                cell.downVoteButton.isEnabled = false
+                cell.downVoteButton.isHidden = true
+                cell.upVoteButtone.isHidden = false
+            } else {
+                cell.downVoteButton.isEnabled = false
+                cell.upVoteButtone.isEnabled = false
+                cell.upVoteButtone.isHidden = true
+                cell.downVoteButton.isHidden = false
+            }
+        } else {
+            cell.downVoteButton.isEnabled = true
+            cell.upVoteButtone.isEnabled = true
+            cell.upVoteButtone.isHidden = false
+            cell.downVoteButton.isHidden = false
+        }
+        
+
+        
+        
+        
+        
+        cell.delegate = self
 
         // Configure the cell...
         //cell.imageView?.image =
@@ -49,19 +79,40 @@ class LiveTableViewController: UITableViewController {
     }
  
     
-//    func liveTableViewCellDidUpVote(_ sender: LiveTableViewCell) {
-//        guard let tappedIndexPath = tableView.indexPath(for: sender) else { return }
-//        print("You just UpVoted a song", sender, tappedIndexPath)
-////        let cell = tableView.cellForRow(at: tappedIndexPath) as! LiveTableViewCell
-////        let count = cell.voteCount.text
-////        cell.voteCount.text = cell.voteCount.text
-//    }
-//
-//    func liveTableViewCellDidDownVote(_ sender: LiveTableViewCell) {
-//        guard let tappedIndexPath = tableView.indexPath(for: sender) else { return }
-//        print("You just DownVoted a song", sender, tappedIndexPath)
-//
-//    }
+    func liveTableViewCellDidUpVote(_ sender: LiveTableViewCell) {
+        guard let tappedIndexPath = tableView.indexPath(for: sender) else { return }
+        print("You just UpVoted a song", sender, tappedIndexPath)
+//        let cell = tableView.cellForRow(at: tappedIndexPath) as! LiveTableViewCell
+//        let count = cell.voteCount.text
+//        cell.voteCount.text = cell.voteCount.text
+        
+        let request = Singleton.shared.songRequests[tappedIndexPath.row]
+        request.voted = true
+        request.upVoted = true
+        
+        let cell = tableView.cellForRow(at: tappedIndexPath) as! LiveTableViewCell
+        cell.upVoteButtone.isEnabled = false
+        cell.downVoteButton.isEnabled = false
+        cell.downVoteButton.isHidden = true
+        request.votes += 1
+        sender.voteCount.text = String(request.votes)
+    }
+
+    func liveTableViewCellDidDownVote(_ sender: LiveTableViewCell) {
+        guard let tappedIndexPath = tableView.indexPath(for: sender) else { return }
+        print("You just DownVoted a song", sender, tappedIndexPath)
+        
+        let request = Singleton.shared.songRequests[tappedIndexPath.row]
+        request.voted = true
+        request.upVoted = false
+        
+        let cell = tableView.cellForRow(at: tappedIndexPath) as! LiveTableViewCell
+        cell.downVoteButton.isEnabled = false
+        cell.upVoteButtone.isEnabled = false
+        cell.upVoteButtone.isHidden = true
+        request.votes -= 1
+        cell.voteCount.text = String(request.votes)
+    }
     
     
     
