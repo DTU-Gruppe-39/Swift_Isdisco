@@ -325,52 +325,80 @@
             </objects>
             <point key="canvasLocation" x="3092" y="-594"/>
         </scene>
-        <!--Kontakt-->
+        <!--Feedback-->
         <scene sceneID="eZH-9Y-H8e">
             <objects>
-                <viewController id="bkf-Um-f0z" customClass="FourthViewController" customModule="Isdisco" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="bkf-Um-f0z" customClass="FeedbackViewController" customModule="Isdisco" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3MX-8l-3cr">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1CD-Bc-PlD">
-                                <rect key="frame" x="172" y="586" width="31" height="30"/>
-                                <state key="normal" title="Vis"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Feedback" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bt3-y8-2E0">
+                                <rect key="frame" x="124" y="78.666666666666671" width="127" height="36"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Min feedback omhandler følgende..." textAlignment="center" lineBreakMode="wordWrap" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vLS-Wz-GSc">
+                                <rect key="frame" x="-11" y="219" width="294" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="Lq2-aC-omx"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Crf-xN-oU0">
+                                <rect key="frame" x="0.0" y="247" width="375" height="85"/>
                                 <connections>
-                                    <segue destination="4ku-ZL-fQg" kind="presentation" modalPresentationStyle="overCurrentContext" id="RkP-qi-FOX"/>
+                                    <outlet property="dataSource" destination="bkf-Um-f0z" id="auh-EQ-hTS"/>
+                                    <outlet property="delegate" destination="bkf-Um-f0z" id="PMB-zI-5jb"/>
+                                </connections>
+                            </pickerView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsVerticalScrollIndicator="NO" keyboardDismissMode="interactive" translatesAutoresizingMaskIntoConstraints="NO" id="ufk-f4-aj7">
+                                <rect key="frame" x="16" y="342" width="343" height="223"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <accessibility key="accessibilityConfiguration" hint="Skriv din feedback"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" enablesReturnKeyAutomatically="YES"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jQu-cb-ATn">
+                                <rect key="frame" x="136" y="618" width="103" height="30"/>
+                                <state key="normal" title="Send feedback"/>
+                                <connections>
+                                    <action selector="sendFeedback:" destination="bkf-Um-f0z" eventType="touchUpInside" id="zxS-Of-s4a"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Fourth View" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="o7M-CZ-hzz">
-                                <rect key="frame" x="95.666666666666686" y="372" width="184" height="43"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loaded by FourthViewController" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="diu-cb-Mj2">
-                                <rect key="frame" x="83" y="423" width="209" height="17"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="hXL-pd-298" firstAttribute="bottom" secondItem="diu-cb-Mj2" secondAttribute="bottom" constant="289" id="2hb-aZ-Ua7"/>
-                            <constraint firstItem="diu-cb-Mj2" firstAttribute="centerX" secondItem="3MX-8l-3cr" secondAttribute="centerX" id="X7Q-WO-KFs"/>
-                            <constraint firstItem="diu-cb-Mj2" firstAttribute="top" secondItem="o7M-CZ-hzz" secondAttribute="bottom" constant="8" symbolic="YES" id="fc0-4l-lMi"/>
-                            <constraint firstItem="1CD-Bc-PlD" firstAttribute="leading" secondItem="hXL-pd-298" secondAttribute="leading" constant="172" id="nuQ-Ht-yhX"/>
-                            <constraint firstItem="1CD-Bc-PlD" firstAttribute="centerX" secondItem="diu-cb-Mj2" secondAttribute="centerX" id="rQ5-SV-2pL"/>
-                            <constraint firstItem="hXL-pd-298" firstAttribute="bottom" secondItem="1CD-Bc-PlD" secondAttribute="bottom" constant="113" id="wX0-Bd-1zG"/>
-                            <constraint firstItem="diu-cb-Mj2" firstAttribute="centerX" secondItem="o7M-CZ-hzz" secondAttribute="centerX" id="z1X-qr-12k"/>
+                            <constraint firstItem="Crf-xN-oU0" firstAttribute="leading" secondItem="3MX-8l-3cr" secondAttribute="leading" id="1hi-8H-h74"/>
+                            <constraint firstItem="jQu-cb-ATn" firstAttribute="top" secondItem="ufk-f4-aj7" secondAttribute="bottom" constant="53" id="2gZ-jT-Rmb"/>
+                            <constraint firstItem="vLS-Wz-GSc" firstAttribute="top" secondItem="3MX-8l-3cr" secondAttribute="top" constant="219" id="3jJ-9S-h5C"/>
+                            <constraint firstItem="jQu-cb-ATn" firstAttribute="centerX" secondItem="ufk-f4-aj7" secondAttribute="centerX" id="4DG-2s-WCf"/>
+                            <constraint firstItem="hXL-pd-298" firstAttribute="trailing" secondItem="vLS-Wz-GSc" secondAttribute="trailing" constant="92" id="9NS-A0-a9H"/>
+                            <constraint firstItem="Crf-xN-oU0" firstAttribute="centerX" secondItem="bt3-y8-2E0" secondAttribute="centerX" id="9Zo-eM-hB8"/>
+                            <constraint firstItem="hXL-pd-298" firstAttribute="bottom" secondItem="Crf-xN-oU0" secondAttribute="bottom" constant="397" id="Cyo-XP-mbh"/>
+                            <constraint firstItem="ufk-f4-aj7" firstAttribute="leading" secondItem="3MX-8l-3cr" secondAttribute="leadingMargin" id="DBQ-T7-MYj"/>
+                            <constraint firstItem="vLS-Wz-GSc" firstAttribute="leading" secondItem="3MX-8l-3cr" secondAttribute="leadingMargin" constant="-27" id="E9M-Zy-jtc"/>
+                            <constraint firstItem="ufk-f4-aj7" firstAttribute="top" secondItem="Crf-xN-oU0" secondAttribute="bottom" constant="10" id="FQd-cZ-2WA"/>
+                            <constraint firstItem="hXL-pd-298" firstAttribute="bottom" secondItem="jQu-cb-ATn" secondAttribute="bottom" constant="81" id="NEn-H6-aOG"/>
+                            <constraint firstItem="bt3-y8-2E0" firstAttribute="centerX" secondItem="hXL-pd-298" secondAttribute="centerX" id="TDb-Fv-ZfG"/>
+                            <constraint firstItem="jQu-cb-ATn" firstAttribute="centerX" secondItem="Crf-xN-oU0" secondAttribute="centerX" id="ckl-aM-DVk"/>
+                            <constraint firstItem="bt3-y8-2E0" firstAttribute="centerY" secondItem="hXL-pd-298" secondAttribute="centerY" multiplier="0.25" id="j6u-FP-zoZ"/>
+                            <constraint firstItem="Crf-xN-oU0" firstAttribute="top" secondItem="vLS-Wz-GSc" secondAttribute="bottom" constant="8" symbolic="YES" id="rzm-h7-6FX"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="hXL-pd-298"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Kontakt" image="contact" id="T9c-he-tft"/>
+                    <tabBarItem key="tabBarItem" title="Feedback" image="contact" id="T9c-he-tft"/>
+                    <connections>
+                        <outlet property="editText" destination="ufk-f4-aj7" id="ldH-eX-jfv"/>
+                        <outlet property="tagsPickerView" destination="Crf-xN-oU0" id="r2u-In-avQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J12-py-l7v" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1600" y="366"/>
+            <point key="canvasLocation" x="1605.5999999999999" y="357.63546798029557"/>
         </scene>
         <!--Pop Up View Controller-->
         <scene sceneID="1hW-OK-WBC">
@@ -428,7 +456,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BZt-K0-NYa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2366" y="365"/>
+            <point key="canvasLocation" x="3092" y="92"/>
         </scene>
         <!--Second View Controller-->
         <scene sceneID="wg7-f3-ORb">
