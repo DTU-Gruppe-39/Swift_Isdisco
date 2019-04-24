@@ -20,6 +20,10 @@ class Singleton {
     
     private init() {}
     
+    func getTracks () -> Array<Track> {
+        return tracks;
+    }
+    
     func setUpData() {
         tracks.append(Track(title: "Despacito" , artist: "Luis Fonsi", genre: "Pop", albumArt: "URL", trackId: 0))
         tracks.append(Track(title: "American Idiot", artist: "Green Day", genre: "Rock", albumArt: "URL", trackId: 1))

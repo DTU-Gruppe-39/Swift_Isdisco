@@ -8,7 +8,27 @@
 
 import UIKit
 
-class FirstViewController: UIViewController {
+class FirstViewController: UIViewController, UITableViewDataSource {
+    
+    var categories = ["Hot tracks", "Favorites", "Recently played"]
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let tableCell = tableView.dequeueReusableCell(withIdentifier: "cell") as! CategoryRow
+        
+        return tableCell
+    }
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return categories.count
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return categories[section]
+    }
+    
 
     var loggedIn = false;
     
