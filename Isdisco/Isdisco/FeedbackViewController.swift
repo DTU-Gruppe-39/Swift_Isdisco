@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class FeedbackViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
    
@@ -62,6 +63,7 @@ class FeedbackViewController: UIViewController, UIPickerViewDataSource, UIPicker
         let myString : String = editText.text
         print(myString)
         showToast(controller: self, message: "Din feedback er sendt", seconds: 1)
+        
     }
     
     func showToast(controller: UIViewController, message : String, seconds: Double){
