@@ -1,27 +1,24 @@
 //
-//  LoginViewController.swift
+//  PopUpViewController.swift
 //  Isdisco
 //
-//  Created by Rasmus Gregersen on 10/03/2019.
+//  Created by Thomas Mattsson on 25/03/2019.
 //  Copyright © 2019 Rasmus Gregersen. All rights reserved.
 //
 
 import UIKit
 
-class LoginViewController: UIViewController {
+class PopUpViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        Singleton.shared.setUpData()
 
         // Do any additional setup after loading the view.
     }
     
-    @IBAction func fbLogin(_ sender: UIButton) {
-    }
     
-    @IBAction func devLogin(_ sender: UIButton) {
-        self.performSegue(withIdentifier: "ExitLogInSignUp", sender: nil)
+    @IBAction func cancelPopUp(_ sender: Any) {
+        dismiss(animated: true)
     }
     
     /*
