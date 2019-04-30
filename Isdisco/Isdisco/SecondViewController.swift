@@ -46,7 +46,7 @@ class SecondViewController: UITableViewController {
         print(indexPath.row)
         trackCell.song_name?.text = searchResults[indexPath.row]["name"].stringValue
         trackCell.artist?.text = searchResults[indexPath.row]["artists"][0]["name"].stringValue
-        if let urlToImage = searchResults[indexPath.row]["album"]["images"][2].string {
+        if let urlToImage = searchResults[indexPath.row]["album"]["images"][2]["url"].string {
             apiRequest.fetchImage(urlToImageToFetch: urlToImage, completionHandler: {
                 image, _ in trackCell.albumImage?.image = image
             })

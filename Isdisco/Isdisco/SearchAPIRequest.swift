@@ -47,11 +47,13 @@ class SearchAPIRequest {
             
             guard let imageData = responseData.data else {
                 completionHandler(nil, .failure)
+                print("error - 3")
                 return
             }
             
             guard let image = UIImage(data: imageData) else {
                 completionHandler(nil, .failure)
+                print("error - 4")
                 return
             }
             
