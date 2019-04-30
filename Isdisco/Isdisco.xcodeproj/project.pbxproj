@@ -29,6 +29,7 @@
 		201729A822491CA1000BAC35 /* PopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpViewController.swift; sourceTree = "<group>"; };
 		209865AF2254DAC70016A3E7 /* FeedbackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackViewController.swift; sourceTree = "<group>"; };
 		209865B12254F4C10016A3E7 /* UITextViewPlaceholder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextViewPlaceholder.swift; sourceTree = "<group>"; };
+		20DBFF6F227840A40086BADB /* Isdisco.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Isdisco.entitlements; sourceTree = "<group>"; };
 		20DEA1482237F11E00BDC582 /* ThirdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
 		20FBF61D224CBC8300A6BE2A /* NowPlayingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingViewController.swift; sourceTree = "<group>"; };
 		20FBF61F224CC10000A6BE2A /* Singleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Singleton.swift; sourceTree = "<group>"; };
@@ -75,7 +76,6 @@
 				B6F27E65F6F6B409236A2A03 /* Pods-Isdisco.debug.xcconfig */,
 				3E441B2DAB6E03669A9A9FE6 /* Pods-Isdisco.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -100,6 +100,7 @@
 		BB4068E7222D4F85005F6562 /* Isdisco */ = {
 			isa = PBXGroup;
 			children = (
+				20DBFF6F227840A40086BADB /* Isdisco.entitlements */,
 				201729A822491CA1000BAC35 /* PopUpViewController.swift */,
 				BB4068E8222D4F85005F6562 /* AppDelegate.swift */,
 				BB4068EA222D4F85005F6562 /* FirstViewController.swift */,
@@ -155,6 +156,11 @@
 				TargetAttributes = {
 					BB4068E4222D4F85005F6562 = {
 						CreatedOnToolsVersion = 10.1;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -391,6 +397,7 @@
 			baseConfigurationReference = B6F27E65F6F6B409236A2A03 /* Pods-Isdisco.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Isdisco/Isdisco.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = G6TSQJ6DQ5;
 				INFOPLIST_FILE = Isdisco/Info.plist;
@@ -410,6 +417,7 @@
 			baseConfigurationReference = 3E441B2DAB6E03669A9A9FE6 /* Pods-Isdisco.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Isdisco/Isdisco.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = G6TSQJ6DQ5;
 				INFOPLIST_FILE = Isdisco/Info.plist;

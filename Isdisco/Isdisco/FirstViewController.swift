@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import UserNotifications
 
 class FirstViewController: UIViewController, UITableViewDataSource {
     
@@ -35,6 +36,18 @@ class FirstViewController: UIViewController, UITableViewDataSource {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+       /*
+        let content = UNMutableNotificationContent()
+        content.title = "Title"
+        content.body = "Body"
+        content.sound = UNNotificationSound.default
+        
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
+        
+        let request = UNNotificationRequest(identifier: "testIdentifier", content: content, trigger: trigger)
+        
+        UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
+        */
     }
     
     override func viewDidAppear(_ animated: Bool) {

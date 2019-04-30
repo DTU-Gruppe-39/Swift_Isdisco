@@ -62,6 +62,7 @@ class FeedbackViewController: UIViewController, UIPickerViewDataSource, UIPicker
     @IBAction func sendFeedback(_ sender: UIButton) {
         let myString : String = editText.text
         print(myString)
+        //TODO: Loading while feedback is being sent. Then show toast.
         showToast(controller: self, message: "Din feedback er sendt", seconds: 1)
         
     }
@@ -76,6 +77,32 @@ class FeedbackViewController: UIViewController, UIPickerViewDataSource, UIPicker
         
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + seconds) {
             alert.dismiss(animated: true)
+        }
+    }
+    
+    func sendFeedback(){
+        //TODO: Send feedback to server
+        let parameters: [String: Any] = [
+            "IdQuiz" : 102,
+            "IdUser" : "iosclient",
+            "User" : "iosclient",
+            "List": [
+                [
+                    "IdQuestion" : 5,
+                    "IdProposition": 2,
+                    "Time" : 32
+                ],
+                [
+                    "IdQuestion" : 4,
+                    "IdProposition": 3,
+                    "Time" : 9
+                ]
+            ]
+        ]
+        
+        Alamofire.request("http://myserver.com", method: .post, parameters: parameters, encoding: JSONEncoding.default)
+            .responseJSON { response in
+                print(response)
         }
     }
     
