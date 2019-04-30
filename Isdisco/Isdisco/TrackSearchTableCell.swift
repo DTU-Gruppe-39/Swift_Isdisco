@@ -10,9 +10,9 @@ import UIKit
 
 class TrackSearchTableCell: UITableViewCell {
 
-    @IBOutlet var albumImage: UIImageView!
-    @IBOutlet var song_name: UILabel!
-    @IBOutlet var artist: UILabel!
+    @IBOutlet weak var albumImage: UIImageView!
+    @IBOutlet weak var song_name: UILabel!
+    @IBOutlet weak var artist: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()
