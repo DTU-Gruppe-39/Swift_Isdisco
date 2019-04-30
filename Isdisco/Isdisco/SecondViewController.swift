@@ -23,7 +23,7 @@ class SecondViewController: UITableViewController {
         // Do any additional setup after loading the view, typically from a nib.
         tableView.tableFooterView = UIView()
         searchController.searchBar.delegate = self
-        searchController.searchBar.placeholder = "Search Spotify Song"
+        searchController.searchBar.placeholder = "Søg Spotify Sang"
         searchController.dimsBackgroundDuringPresentation = false
         searchController.hidesNavigationBarDuringPresentation = false
         tableView.tableHeaderView = searchController.searchBar
@@ -33,21 +33,22 @@ class SecondViewController: UITableViewController {
     
     private func tableViewBackgroundViewSetup () {
         let label = UILabel (frame: .zero)
-        label.text = "No results..."
+        label.text = "Ingen resultater..."
         label.textColor = .darkGray
         label.numberOfLines = 0
+        label.font.withSize(20)
+        label.textAlignment = NSTextAlignment.center
         tableView.backgroundView = label
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         let trackCell = tableView.dequeueReusableCell(withIdentifier: "trackCell") as! TrackSearchTableCell
-        
-        trackCell.song_name.text = searchResults[indexPath.row][""].stringValue
-        trackCell.artist.text = searchResults[indexPath.row][""].stringValue
-        if let urlToImage = searchResults[indexPath.row]["thumnail"]["source"].string {
+        print(indexPath.row)
+        trackCell.song_name?.text = searchResults[indexPath.row]["name"].stringValue
+        trackCell.artist?.text = searchResults[indexPath.row]["artists"][0]["name"].stringValue
+        if let urlToImage = searchResults[indexPath.row]["album"]["images"][2].string {
             apiRequest.fetchImage(urlToImageToFetch: urlToImage, completionHandler: {
-                image, _ in trackCell.albumImage.image = image
+                image, _ in trackCell.albumImage?.image = image
             })
         }
         
@@ -65,7 +66,7 @@ class SecondViewController: UITableViewController {
         }*/
         /*valuesToPass = [song_name, artist]
         performSegue(withIdentifier: "searchSegueIdentifer", sender: self)*/
-        print("Values clicked: "+song_name+artist)
+        print("Values clicked: \(song_name)")
     }
     
     /*func prepare(for segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -100,7 +101,7 @@ extension SecondViewController : UISearchBarDelegate {
         
         if Date().timeIntervalSince(previousSearch) > 0.05 {
             previousSearch = Date()
-            
+            updateResults(for: textToSearch)
         }
     }
     func updateResults (for searchText: String) {

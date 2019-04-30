@@ -19,21 +19,25 @@ class SearchAPIRequest {
     var searchResults = [JSON]()
     
     func search(textToSearch: String, completionHandler: @escaping ([JSON]?, NetworkError) -> ()) {
-        let urlToSearch = "http://isdisco-web-api.azurewebsites.net/api/spotify-track/search?songname=\(textToSearch)"
+        let urlToSearch = "https://isdisco-web-api.azurewebsites.net/api/spotify-track/search?songname=\(textToSearch)"
         
         Alamofire.request(urlToSearch).responseJSON { response in
             guard let data = response.data else {
                 completionHandler(nil, .failure)
+                print("error - 1")
                 return
             }
             
             let json = try? JSON(data: data)
-            let results = json?["query"]["pages"].arrayValue
+            let results = json?["tracks"]["items"].arrayValue
             guard let empty = results?.isEmpty, !empty else {
                 completionHandler(nil, .failure)
+                print("error - 2")
                 return
             }
-            
+            print(results?.count)
+            print(results?[0])
+            print(results?[0]["name"].stringValue)
             completionHandler(results, .success)
         }
     }
