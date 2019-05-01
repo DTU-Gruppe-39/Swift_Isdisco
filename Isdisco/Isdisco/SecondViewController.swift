@@ -44,9 +44,9 @@ class SecondViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let trackCell = tableView.dequeueReusableCell(withIdentifier: "trackCell") as! TrackSearchTableCell
         print(indexPath.row)
-        trackCell.song_name?.text = searchResults[indexPath.row]["name"].stringValue
-        trackCell.artist?.text = searchResults[indexPath.row]["artists"][0]["name"].stringValue
-        if let urlToImage = searchResults[indexPath.row]["album"]["images"][2]["url"].string {
+        trackCell.song_name?.text = searchResults[indexPath.row]["SongName"].stringValue
+        trackCell.artist?.text = searchResults[indexPath.row]["ArtistName"].stringValue
+        if let urlToImage = searchResults[indexPath.row]["Image_small_url"].string {
             apiRequest.fetchImage(urlToImageToFetch: urlToImage, completionHandler: {
                 image, _ in trackCell.albumImage?.image = image
             })
