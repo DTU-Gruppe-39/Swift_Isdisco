@@ -7,20 +7,67 @@
 //
 
 import UIKit
+import Alamofire
+import SwiftyJSON
 
 class CategoryRow : UITableViewCell{
+    let apiRequest = SearchAPIRequest()
+    private var topListResults = [JSON]()
+    private var newSongsResults = [JSON]()
+    private var latestSongsResults = [JSON]()
+    
+    func getTopList () {
+        apiRequest.search(textToSearch: "Jo", completionHandler: {
+            [weak self] results, error in if case .failure = error {
+                return
+            }
+            
+            guard let results = results, !results.isEmpty else {
+                return
+            }
+            self?.topListResults = results
+        })
+    }
+    
+    func getNewSongs () {
+        apiRequest.search(textToSearch: "Kl", completionHandler: {
+            [weak self] results, error in if case .failure = error {
+                return
+            }
+            
+            guard let results = results, !results.isEmpty else {
+                return
+            }
+            self?.newSongsResults = results
+        })
+    }
+    
+    func getLatestSongs () {
+        apiRequest.search(textToSearch: "He", completionHandler: {
+            [weak self] results, error in if case .failure = error {
+                return
+            }
+            
+            guard let results = results, !results.isEmpty else {
+                return
+            }
+            self?.latestSongsResults = results
+        })
+    }
     
 }
 
 extension CategoryRow : UICollectionViewDataSource {
+    //For test purposes
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 12
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "trackCell", for: indexPath)
-        return cell
+        let trackCell = collectionView.dequeueReusableCell(withReuseIdentifier: "trackCell", for: indexPath)
+        
+        return trackCell
     }
-
 }
 
 extension CategoryRow : UICollectionViewDelegateFlowLayout {

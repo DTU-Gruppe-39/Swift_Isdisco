@@ -32,7 +32,7 @@ class SearchAPIRequest {
             }
             
             let json = try? JSON(data: data)
-            let results = json?["tracks"].arrayValue
+            let results = json?["Tracks"].arrayValue
             guard let empty = results?.isEmpty, !empty else {
                 completionHandler(nil, .failure)
                 print("error - 2")

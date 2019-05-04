@@ -24,6 +24,7 @@
 		F7770BB2226FAC0E0068702C /* CategoryRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7770BB1226FAC0E0068702C /* CategoryRow.swift */; };
 		F7770BB4226FBF1C0068702C /* TrackSearchTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7770BB3226FBF1C0068702C /* TrackSearchTableCell.swift */; };
 		F7C2446F2277996800AA60F6 /* SearchAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C2446E2277996800AA60F6 /* SearchAPIRequest.swift */; };
+		F7D038CE22788AF100E3407A /* FrontPageRowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D038CD22788AF100E3407A /* FrontPageRowCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		F7770BB1226FAC0E0068702C /* CategoryRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryRow.swift; sourceTree = "<group>"; };
 		F7770BB3226FBF1C0068702C /* TrackSearchTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackSearchTableCell.swift; sourceTree = "<group>"; };
 		F7C2446E2277996800AA60F6 /* SearchAPIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAPIRequest.swift; sourceTree = "<group>"; };
+		F7D038CD22788AF100E3407A /* FrontPageRowCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrontPageRowCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +123,7 @@
 				BB4068F6222D4F87005F6562 /* Info.plist */,
 				F7770BB1226FAC0E0068702C /* CategoryRow.swift */,
 				F7C2446E2277996800AA60F6 /* SearchAPIRequest.swift */,
+				F7D038CD22788AF100E3407A /* FrontPageRowCell.swift */,
 			);
 			path = Isdisco;
 			sourceTree = "<group>";
@@ -260,6 +263,7 @@
 				BB4068ED222D4F85005F6562 /* SecondViewController.swift in Sources */,
 				201729A922491CA1000BAC35 /* PopUpViewController.swift in Sources */,
 				BBCE0021223FE51B0010AD3D /* LiveTableViewController.swift in Sources */,
+				F7D038CE22788AF100E3407A /* FrontPageRowCell.swift in Sources */,
 				BB4068E9222D4F85005F6562 /* AppDelegate.swift in Sources */,
 				BBDDDFE5223FE99D00645F3E /* LiveTableViewCell.swift in Sources */,
 				BB4068EB222D4F85005F6562 /* FirstViewController.swift in Sources */,

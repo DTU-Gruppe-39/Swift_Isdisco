@@ -11,7 +11,7 @@ import UserNotifications
 
 class FirstViewController: UIViewController, UITableViewDataSource {
     
-    var categories = ["Hot tracks", "Favorites", "Recently played"]
+    var categories = ["Isdisco top list", "Top 50 Danmark", "Senest afspillet"]
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
