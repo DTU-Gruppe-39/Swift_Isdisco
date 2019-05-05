@@ -31,7 +31,8 @@ class SecondViewController: UITableViewController {
         tableViewBackgroundViewSetup()
     }
     
-    private func tableViewBackgroundViewSetup () {
+    private func tableViewBackgroundViewSetup ()
+    {
         let label = UILabel (frame: .zero)
         label.text = "Ingen resultater..."
         label.textColor = .darkGray
@@ -64,17 +65,23 @@ class SecondViewController: UITableViewController {
                 image, _ in trackCell.albumImage = image
             })
         }*/
-        /*valuesToPass = [song_name, artist]
-        performSegue(withIdentifier: "searchSegueIdentifer", sender: self)*/
-        print("Values clicked: \(song_name)")
+        /*performSegue(withIdentifier: "searchSegueIdentifer", sender: self)
+        */print("Values clicked: \(song_name)")
     }
     
-    /*func prepare(for segue: UIStoryboardSegue, sender: AnyObject?) {
-        if (segue.identifier == "searchSegueIdentifer") {
-            var segueViewController = segue.destination as
-            segueViewController
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "trackSegue" {
+            guard let row = tableView.indexPathForSelectedRow?.row else {
+                return
+            }
+            let segueViewController = segue.destination as? SegueForSearchResultViewController
+            
+            segueViewController?.song_name_text = searchResults[row]["SongName"].stringValue
+            segueViewController?.artist_text = searchResults[row]["ArtistName"].stringValue
+            segueViewController?.albumImage_url = searchResults[row]["Image_large_url"].stringValue
+            segueViewController?.spotify_url_text = searchResults[row]["WebplayerLink"].stringValue
         }
-    }*/
+    }
     
     private var searchResults = [JSON]() {
         didSet {
@@ -99,7 +106,7 @@ extension SecondViewController : UISearchBarDelegate {
                 return
             }
         
-        if Date().timeIntervalSince(previousSearch) > 0.05 {
+        if Date().timeIntervalSince(previousSearch) > 0.5 {
             previousSearch = Date()
             updateResults(for: textToSearch)
         }

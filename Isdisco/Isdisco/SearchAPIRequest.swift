@@ -19,7 +19,7 @@ class SearchAPIRequest {
     var searchResults = [JSON]()
     
     func search(textToSearch: String, completionHandler: @escaping ([JSON]?, NetworkError) -> ()) {
-        let urlToSearch = "https://isdisco-web-api.azurewebsites.net/api/spotify-track/search"
+        let urlToSearch = "https://isdisco.azurewebsites.net/api/spotify-track/search"
         let parameters = [
             "songname": textToSearch
         ]

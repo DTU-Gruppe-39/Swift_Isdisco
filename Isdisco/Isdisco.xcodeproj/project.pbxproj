@@ -25,6 +25,7 @@
 		F7770BB4226FBF1C0068702C /* TrackSearchTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7770BB3226FBF1C0068702C /* TrackSearchTableCell.swift */; };
 		F7C2446F2277996800AA60F6 /* SearchAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C2446E2277996800AA60F6 /* SearchAPIRequest.swift */; };
 		F7D038CE22788AF100E3407A /* FrontPageRowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D038CD22788AF100E3407A /* FrontPageRowCell.swift */; };
+		F7DCDB09227E0178000AAFBB /* SegueForSearchResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DCDB08227E0178000AAFBB /* SegueForSearchResultViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,7 @@
 		F7770BB3226FBF1C0068702C /* TrackSearchTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackSearchTableCell.swift; sourceTree = "<group>"; };
 		F7C2446E2277996800AA60F6 /* SearchAPIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAPIRequest.swift; sourceTree = "<group>"; };
 		F7D038CD22788AF100E3407A /* FrontPageRowCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrontPageRowCell.swift; sourceTree = "<group>"; };
+		F7DCDB08227E0178000AAFBB /* SegueForSearchResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegueForSearchResultViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +126,7 @@
 				F7770BB1226FAC0E0068702C /* CategoryRow.swift */,
 				F7C2446E2277996800AA60F6 /* SearchAPIRequest.swift */,
 				F7D038CD22788AF100E3407A /* FrontPageRowCell.swift */,
+				F7DCDB08227E0178000AAFBB /* SegueForSearchResultViewController.swift */,
 			);
 			path = Isdisco;
 			sourceTree = "<group>";
@@ -261,6 +264,7 @@
 				BB6029A42235B1C5000721A7 /* LoginViewController.swift in Sources */,
 				209865B02254DAC70016A3E7 /* FeedbackViewController.swift in Sources */,
 				BB4068ED222D4F85005F6562 /* SecondViewController.swift in Sources */,
+				F7DCDB09227E0178000AAFBB /* SegueForSearchResultViewController.swift in Sources */,
 				201729A922491CA1000BAC35 /* PopUpViewController.swift in Sources */,
 				BBCE0021223FE51B0010AD3D /* LiveTableViewController.swift in Sources */,
 				F7D038CE22788AF100E3407A /* FrontPageRowCell.swift in Sources */,
