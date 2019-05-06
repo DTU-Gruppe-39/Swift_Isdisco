@@ -625,10 +625,10 @@
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f07-ls-VnO">
-                                <rect key="frame" x="8" y="56" width="36" height="36"/>
+                                <rect key="frame" x="2" y="50" width="42" height="42"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="36" id="fDG-Bo-D8v"/>
-                                    <constraint firstAttribute="height" constant="36" id="ouA-LN-757"/>
+                                    <constraint firstAttribute="width" constant="42" id="fDG-Bo-D8v"/>
+                                    <constraint firstAttribute="height" constant="42" id="ouA-LN-757"/>
                                 </constraints>
                                 <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <state key="normal" image="baseline_close_black_36pt"/>
@@ -646,7 +646,7 @@
                             <constraint firstItem="b5n-Km-FuN" firstAttribute="leading" secondItem="z5D-D4-CRX" secondAttribute="trailing" constant="31" id="Cfh-gM-H7E"/>
                             <constraint firstItem="IWg-u4-gRf" firstAttribute="top" secondItem="8Ab-Ul-XQU" secondAttribute="bottom" constant="7.6699999999999999" id="Dh8-qc-WDt"/>
                             <constraint firstItem="Hpu-fS-gnG" firstAttribute="trailing" secondItem="4yk-af-JtM" secondAttribute="trailing" constant="16" id="MC6-ln-Pxv"/>
-                            <constraint firstItem="f07-ls-VnO" firstAttribute="top" secondItem="Hpu-fS-gnG" secondAttribute="top" constant="12" id="Ovz-Q3-Qpc"/>
+                            <constraint firstItem="f07-ls-VnO" firstAttribute="top" secondItem="Hpu-fS-gnG" secondAttribute="top" constant="6" id="Ovz-Q3-Qpc"/>
                             <constraint firstItem="4yk-af-JtM" firstAttribute="leading" secondItem="IWg-u4-gRf" secondAttribute="leading" id="R0L-YI-aGe"/>
                             <constraint firstItem="Hpu-fS-gnG" firstAttribute="trailing" secondItem="IWg-u4-gRf" secondAttribute="trailing" constant="16" id="UsJ-7F-CZR"/>
                             <constraint firstItem="4yk-af-JtM" firstAttribute="leading" secondItem="8Ab-Ul-XQU" secondAttribute="leading" id="Z43-I9-MeG"/>
@@ -656,7 +656,7 @@
                             <constraint firstItem="Hpu-fS-gnG" firstAttribute="bottom" secondItem="z5D-D4-CRX" secondAttribute="bottom" constant="17" id="gl3-Lc-EEt"/>
                             <constraint firstItem="Hpu-fS-gnG" firstAttribute="trailing" secondItem="b5n-Km-FuN" secondAttribute="trailing" constant="16" id="kPG-sF-u4j"/>
                             <constraint firstItem="4yk-af-JtM" firstAttribute="top" secondItem="Hpu-fS-gnG" secondAttribute="top" constant="94" id="nEM-sr-h3M"/>
-                            <constraint firstItem="f07-ls-VnO" firstAttribute="leading" secondItem="Hpu-fS-gnG" secondAttribute="leading" constant="8" id="p1H-ka-CCI"/>
+                            <constraint firstItem="f07-ls-VnO" firstAttribute="leading" secondItem="Hpu-fS-gnG" secondAttribute="leading" constant="2" id="p1H-ka-CCI"/>
                             <constraint firstItem="z5D-D4-CRX" firstAttribute="leading" secondItem="Hpu-fS-gnG" secondAttribute="leading" constant="16" id="rub-Ow-BAL"/>
                             <constraint firstItem="8Ab-Ul-XQU" firstAttribute="leading" secondItem="Hpu-fS-gnG" secondAttribute="leading" constant="16" id="wNs-9H-YBl"/>
                             <constraint firstItem="Hpu-fS-gnG" firstAttribute="bottom" secondItem="b5n-Km-FuN" secondAttribute="bottom" constant="17" id="xgQ-2g-HYy"/>
