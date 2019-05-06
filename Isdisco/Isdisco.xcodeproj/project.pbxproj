@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		201729A922491CA1000BAC35 /* PopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201729A822491CA1000BAC35 /* PopUpViewController.swift */; };
+		201B162A2280B7A0003A9D80 /* Feedback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201B16292280B7A0003A9D80 /* Feedback.swift */; };
 		209865B02254DAC70016A3E7 /* FeedbackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209865AF2254DAC70016A3E7 /* FeedbackViewController.swift */; };
 		209865B22254F4C10016A3E7 /* UITextViewPlaceholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209865B12254F4C10016A3E7 /* UITextViewPlaceholder.swift */; };
 		20FBF61E224CBC8300A6BE2A /* NowPlayingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20FBF61D224CBC8300A6BE2A /* NowPlayingViewController.swift */; };
@@ -30,6 +31,7 @@
 
 /* Begin PBXFileReference section */
 		201729A822491CA1000BAC35 /* PopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpViewController.swift; sourceTree = "<group>"; };
+		201B16292280B7A0003A9D80 /* Feedback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feedback.swift; sourceTree = "<group>"; };
 		209865AF2254DAC70016A3E7 /* FeedbackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackViewController.swift; sourceTree = "<group>"; };
 		209865B12254F4C10016A3E7 /* UITextViewPlaceholder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextViewPlaceholder.swift; sourceTree = "<group>"; };
 		20DBFF6F227840A40086BADB /* Isdisco.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Isdisco.entitlements; sourceTree = "<group>"; };
@@ -127,6 +129,7 @@
 				F7C2446E2277996800AA60F6 /* SearchAPIRequest.swift */,
 				F7D038CD22788AF100E3407A /* FrontPageRowCell.swift */,
 				F7DCDB08227E0178000AAFBB /* SegueForSearchResultViewController.swift */,
+				201B16292280B7A0003A9D80 /* Feedback.swift */,
 			);
 			path = Isdisco;
 			sourceTree = "<group>";
@@ -262,6 +265,7 @@
 				F7C2446F2277996800AA60F6 /* SearchAPIRequest.swift in Sources */,
 				20FBF620224CC10000A6BE2A /* Singleton.swift in Sources */,
 				BB6029A42235B1C5000721A7 /* LoginViewController.swift in Sources */,
+				201B162A2280B7A0003A9D80 /* Feedback.swift in Sources */,
 				209865B02254DAC70016A3E7 /* FeedbackViewController.swift in Sources */,
 				BB4068ED222D4F85005F6562 /* SecondViewController.swift in Sources */,
 				F7DCDB09227E0178000AAFBB /* SegueForSearchResultViewController.swift in Sources */,

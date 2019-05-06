@@ -63,6 +63,7 @@ class FeedbackViewController: UIViewController, UIPickerViewDataSource, UIPicker
         let myString : String = editText.text
         print(myString)
         //TODO: Loading while feedback is being sent. Then show toast.
+        
         showToast(controller: self, message: "Din feedback er sendt", seconds: 1)
         editText.text = nil
         tagsPickerView.selectRow(0, inComponent: 0, animated: true)
@@ -84,7 +85,8 @@ class FeedbackViewController: UIViewController, UIPickerViewDataSource, UIPicker
         }
     }
     
-    func sendFeedback(){
+    func sendFeedbackToServer(user: Singleton.User, tag: String, message: String){
         //TODO: Add method to post JSON version of feedback.
+        
     }
 }
