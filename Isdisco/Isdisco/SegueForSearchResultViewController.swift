@@ -41,15 +41,15 @@ class SegueForSearchResultViewController: UIViewController {
     @IBAction func requestTrack(_ unwindSegue: UIStoryboardSegue) {
         let musicrequest: [String: Any] = ["track":
                 [
-                    ["id":"i"],
-                    ["songName","i"],
-                    ["artistName":"i"],
-                    ["image_small_url":"i"],
-                    ["image_medium_url","i"],
-                    ["image_large_url","i"],
-                    ["webplayerLink":"i"]
-                    ],
-              "userid":1]
+                    "id":"i",
+                    "songName":song_name_text,
+                    "artistName":"i",
+                    "image_small_url":"i",
+                    "image_medium_url":"i",
+                    "image_large_url":"i",
+                    "webplayerLink":"i"
+                ],
+           "userid":1]
         
         Alamofire.request("https://isdisco.azurewebsites.net/api/musicrequest", method: .post, parameters: musicrequest, encoding: JSONEncoding.default).responseJSON { response in
             switch response.result {

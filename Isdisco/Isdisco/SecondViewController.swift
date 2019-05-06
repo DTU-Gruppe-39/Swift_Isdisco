@@ -2,7 +2,7 @@
 //  SecondViewController.swift
 //  Isdisco
 //
-//  Created by Rasmus Gregersen on 04/03/2019.
+//  Created by Magnus Stjernborg Kochh on 04/05/2019.
 //  Copyright © 2019 Rasmus Gregersen. All rights reserved.
 //
 
@@ -58,15 +58,7 @@ class SecondViewController: UITableViewController {
     var valuesToPass:[String]!
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let song_name = searchResults[indexPath.row][""].stringValue
-        let artist = searchResults[indexPath.row][""].stringValue
-        /*if let urlToImage = searchResults[indexPath.row]["thumnail"]["source"].string {
-            apiRequest.fetchImage(urlToImageToFetch: urlToImage, completionHandler: {
-                image, _ in trackCell.albumImage = image
-            })
-        }*/
-        /*performSegue(withIdentifier: "searchSegueIdentifer", sender: self)
-        */print("Values clicked: \(song_name)")
+        //Handled in storyboard with segue.
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
