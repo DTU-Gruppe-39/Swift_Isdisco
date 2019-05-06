@@ -87,4 +87,7 @@ class SegueForSearchResultViewController: UIViewController {
         }
     }
 
+    @IBAction func close(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
 }

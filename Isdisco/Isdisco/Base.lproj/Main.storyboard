@@ -566,7 +566,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Song name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" highlighted="YES" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Ab-Ul-XQU">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Song name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="20" highlighted="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8Ab-Ul-XQU">
                                 <rect key="frame" x="16" y="535" width="343" height="37.333333333333371"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="37.329999999999998" id="Dbv-FJ-9aT"/>
@@ -617,34 +617,50 @@
                                     <action selector="OpenInSpotify:" destination="WXT-D0-U0M" eventType="touchUpInside" id="w8z-5d-0Aj"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Green-Day-American-Idiot-album-covers-billboard-1000x1000" translatesAutoresizingMaskIntoConstraints="NO" id="4yk-af-JtM">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4yk-af-JtM">
                                 <rect key="frame" x="16" y="138" width="343" height="345"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="345" id="dLK-0h-Joa"/>
                                     <constraint firstAttribute="width" constant="343" id="yRk-Em-Wm5"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f07-ls-VnO">
+                                <rect key="frame" x="8" y="56" width="36" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="36" id="fDG-Bo-D8v"/>
+                                    <constraint firstAttribute="height" constant="36" id="ouA-LN-757"/>
+                                </constraints>
+                                <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <state key="normal" image="baseline_close_black_36pt"/>
+                                <connections>
+                                    <action selector="close:" destination="WXT-D0-U0M" eventType="touchUpInside" id="vZG-VC-ubz"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="4yk-af-JtM" firstAttribute="top" secondItem="f07-ls-VnO" secondAttribute="bottom" constant="46" id="05f-zw-CWL"/>
                             <constraint firstItem="b5n-Km-FuN" firstAttribute="top" secondItem="IWg-u4-gRf" secondAttribute="bottom" constant="105" id="0kf-RI-c4f"/>
                             <constraint firstItem="4yk-af-JtM" firstAttribute="leading" secondItem="Hpu-fS-gnG" secondAttribute="leading" constant="16" id="4M2-dZ-Cta"/>
                             <constraint firstItem="b5n-Km-FuN" firstAttribute="top" secondItem="IWg-u4-gRf" secondAttribute="bottom" constant="105" id="Aox-tw-JfX"/>
                             <constraint firstItem="b5n-Km-FuN" firstAttribute="leading" secondItem="z5D-D4-CRX" secondAttribute="trailing" constant="31" id="Cfh-gM-H7E"/>
                             <constraint firstItem="IWg-u4-gRf" firstAttribute="top" secondItem="8Ab-Ul-XQU" secondAttribute="bottom" constant="7.6699999999999999" id="Dh8-qc-WDt"/>
                             <constraint firstItem="Hpu-fS-gnG" firstAttribute="trailing" secondItem="4yk-af-JtM" secondAttribute="trailing" constant="16" id="MC6-ln-Pxv"/>
-                            <constraint firstItem="IWg-u4-gRf" firstAttribute="leading" secondItem="Hpu-fS-gnG" secondAttribute="leading" constant="16" id="R0L-YI-aGe"/>
+                            <constraint firstItem="f07-ls-VnO" firstAttribute="top" secondItem="Hpu-fS-gnG" secondAttribute="top" constant="12" id="Ovz-Q3-Qpc"/>
+                            <constraint firstItem="4yk-af-JtM" firstAttribute="leading" secondItem="IWg-u4-gRf" secondAttribute="leading" id="R0L-YI-aGe"/>
                             <constraint firstItem="Hpu-fS-gnG" firstAttribute="trailing" secondItem="IWg-u4-gRf" secondAttribute="trailing" constant="16" id="UsJ-7F-CZR"/>
-                            <constraint firstItem="Hpu-fS-gnG" firstAttribute="trailing" secondItem="8Ab-Ul-XQU" secondAttribute="trailing" constant="16" id="Z43-I9-MeG"/>
+                            <constraint firstItem="4yk-af-JtM" firstAttribute="leading" secondItem="8Ab-Ul-XQU" secondAttribute="leading" id="Z43-I9-MeG"/>
                             <constraint firstItem="z5D-D4-CRX" firstAttribute="top" secondItem="IWg-u4-gRf" secondAttribute="bottom" constant="105" id="apO-7H-LPp"/>
                             <constraint firstItem="IWg-u4-gRf" firstAttribute="top" secondItem="8Ab-Ul-XQU" secondAttribute="bottom" constant="7.6699999999999999" id="dB3-LP-oKy"/>
                             <constraint firstItem="8Ab-Ul-XQU" firstAttribute="top" secondItem="4yk-af-JtM" secondAttribute="bottom" constant="52" id="fUy-wI-PEc"/>
                             <constraint firstItem="Hpu-fS-gnG" firstAttribute="bottom" secondItem="z5D-D4-CRX" secondAttribute="bottom" constant="17" id="gl3-Lc-EEt"/>
                             <constraint firstItem="Hpu-fS-gnG" firstAttribute="trailing" secondItem="b5n-Km-FuN" secondAttribute="trailing" constant="16" id="kPG-sF-u4j"/>
                             <constraint firstItem="4yk-af-JtM" firstAttribute="top" secondItem="Hpu-fS-gnG" secondAttribute="top" constant="94" id="nEM-sr-h3M"/>
+                            <constraint firstItem="f07-ls-VnO" firstAttribute="leading" secondItem="Hpu-fS-gnG" secondAttribute="leading" constant="8" id="p1H-ka-CCI"/>
                             <constraint firstItem="z5D-D4-CRX" firstAttribute="leading" secondItem="Hpu-fS-gnG" secondAttribute="leading" constant="16" id="rub-Ow-BAL"/>
                             <constraint firstItem="8Ab-Ul-XQU" firstAttribute="leading" secondItem="Hpu-fS-gnG" secondAttribute="leading" constant="16" id="wNs-9H-YBl"/>
                             <constraint firstItem="Hpu-fS-gnG" firstAttribute="bottom" secondItem="b5n-Km-FuN" secondAttribute="bottom" constant="17" id="xgQ-2g-HYy"/>
+                            <constraint firstItem="Hpu-fS-gnG" firstAttribute="trailing" secondItem="f07-ls-VnO" secondAttribute="trailing" constant="331" id="z7I-OL-Fwd"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Hpu-fS-gnG"/>
                     </view>
@@ -788,6 +804,7 @@
         <image name="Green-Day-American-Idiot-album-covers-billboard-1000x1000" width="900" height="900"/>
         <image name="LOGO_ISDISCO" width="1772" height="1772"/>
         <image name="LOGO_ISDISCO1" width="404" height="404"/>
+        <image name="baseline_close_black_36pt" width="36" height="36"/>
         <image name="contact" width="23" height="23"/>
         <image name="feed" width="23" height="23"/>
         <image name="first" width="30" height="30"/>
