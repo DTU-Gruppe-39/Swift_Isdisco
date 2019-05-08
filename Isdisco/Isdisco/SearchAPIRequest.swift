@@ -27,7 +27,7 @@ class SearchAPIRequest {
         Alamofire.request(urlToSearch, method: .get, parameters: parameters, encoding: URLEncoding.default).responseJSON { response in
             guard let data = response.data else {
                 completionHandler(nil, .failure)
-                print("error - 1")
+                print("error - request error")
                 return
             }
             
@@ -35,12 +35,9 @@ class SearchAPIRequest {
             let results = json?["Tracks"].arrayValue
             guard let empty = results?.isEmpty, !empty else {
                 completionHandler(nil, .failure)
-                print("error - 2")
+                print("error - no results")
                 return
             }
-            print(results?.count)
-            print(results?[0])
-            print(results?[0]["name"].stringValue)
             completionHandler(results, .success)
         }
     }

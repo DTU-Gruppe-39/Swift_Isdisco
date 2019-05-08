@@ -7,19 +7,38 @@
 //
 
 import Foundation
+import SwiftyJSON
 
-/*class Track {
+class Track {
     let id: Int
     let songName: String
     let artistName: String
     let image_small_url: String
-    let image_medium_url:
+    let image_medium_url: String
+    let image_large_url: String
+    let webplayerLink: String
     
-    init(title: String, artist: String, genre: String, albumArt: String, trackId: Int) {
-        self.albumArt = albumArt
-        self.title = title
-        self.artist = artist
-        self.genre = genre
-        self.trackId = trackId
+    init(id: Int, songName: String, artistName: String, image_small_url: String, image_medium_url: String, image_large_url: String, webplayerLink: String) {
+        self.id = id
+        self.songName = songName
+        self.artistName = artistName
+        self.image_small_url = image_small_url
+        self.image_medium_url = image_medium_url
+        self.image_large_url = image_large_url
+        self.webplayerLink = webplayerLink
     }
-}*/
+    
+    static func jsonToObject (json: JSON) -> Track {
+        return Track(id: json["id"].intValue, songName: json["songName"].stringValue, artistName: json["artistName"].stringValue, image_small_url: json["image_small_url"].stringValue, image_medium_url: json["image_medium_url"].stringValue, image_large_url: json["image_large_url"].stringValue, webplayerLink: json["webplayerLink"].stringValue)
+    }
+    
+    static func objectToJson (object: Track) -> [String: Any] {
+        return ["id":object.id,
+                "songName":object.songName,
+                "artistName":object.artistName,
+                "image_small_url":object.image_small_url,
+                "image_medium_url":object.image_medium_url,
+                "image_large_url":object.image_large_url,
+                "webplayerLink":object.webplayerLink]
+    }
+}

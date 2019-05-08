@@ -24,6 +24,7 @@
 		F71AE67822805260003A5189 /* Track.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71AE67722805260003A5189 /* Track.swift */; };
 		F71AE67A228052A0003A5189 /* Musicrequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71AE679228052A0003A5189 /* Musicrequest.swift */; };
 		F71AE67C228052AF003A5189 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71AE67B228052AF003A5189 /* User.swift */; };
+		F71AE67E22808A57003A5189 /* LoginDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71AE67D22808A57003A5189 /* LoginDetails.swift */; };
 		F7770BB2226FAC0E0068702C /* CategoryRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7770BB1226FAC0E0068702C /* CategoryRow.swift */; };
 		F7770BB4226FBF1C0068702C /* TrackSearchTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7770BB3226FBF1C0068702C /* TrackSearchTableCell.swift */; };
 		F7C2446F2277996800AA60F6 /* SearchAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C2446E2277996800AA60F6 /* SearchAPIRequest.swift */; };
@@ -55,6 +56,7 @@
 		F71AE67722805260003A5189 /* Track.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Track.swift; sourceTree = "<group>"; };
 		F71AE679228052A0003A5189 /* Musicrequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Musicrequest.swift; sourceTree = "<group>"; };
 		F71AE67B228052AF003A5189 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		F71AE67D22808A57003A5189 /* LoginDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginDetails.swift; sourceTree = "<group>"; };
 		F7770BB1226FAC0E0068702C /* CategoryRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryRow.swift; sourceTree = "<group>"; };
 		F7770BB3226FBF1C0068702C /* TrackSearchTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackSearchTableCell.swift; sourceTree = "<group>"; };
 		F7C2446E2277996800AA60F6 /* SearchAPIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAPIRequest.swift; sourceTree = "<group>"; };
@@ -144,6 +146,7 @@
 				F71AE67722805260003A5189 /* Track.swift */,
 				F71AE679228052A0003A5189 /* Musicrequest.swift */,
 				F71AE67B228052AF003A5189 /* User.swift */,
+				F71AE67D22808A57003A5189 /* LoginDetails.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -290,6 +293,7 @@
 				F71AE67822805260003A5189 /* Track.swift in Sources */,
 				BBDDDFE5223FE99D00645F3E /* LiveTableViewCell.swift in Sources */,
 				BB4068EB222D4F85005F6562 /* FirstViewController.swift in Sources */,
+				F71AE67E22808A57003A5189 /* LoginDetails.swift in Sources */,
 				F7770BB2226FAC0E0068702C /* CategoryRow.swift in Sources */,
 				209865B22254F4C10016A3E7 /* UITextViewPlaceholder.swift in Sources */,
 				F71AE67C228052AF003A5189 /* User.swift in Sources */,

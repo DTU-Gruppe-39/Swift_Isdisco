@@ -9,11 +9,19 @@
 import Foundation
 
 class User {
-    let name: String
-    let userId: Int
+    let id: Int
+    let fullname: String
+    let vip: Bool
+    let loginDetails: LoginDetails
+    let appToken: String
+    let facebookToken: String
     
-    init(name: String, userId: Int) {
-        self.name = name
-        self.userId = userId
+    init(id: Int, fullname: String, vip: Bool, loginDetails: LoginDetails, appToken: String, facebookToken: String) {
+        self.id = id
+        self.fullname = fullname
+        self.vip = vip
+        self.loginDetails = loginDetails
+        self.appToken = appToken
+        self.facebookToken = facebookToken
     }
 }
