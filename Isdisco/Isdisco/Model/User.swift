@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import SwiftyJSON
 
 class User {
     let id: Int
@@ -23,5 +24,16 @@ class User {
         self.loginDetails = loginDetails
         self.appToken = appToken
         self.facebookToken = facebookToken
+    }
+    
+    func toJSON() -> JSON {
+        return [
+            "id": id as Int,
+            "fullname": fullname as String,
+            "vip": vip as Bool,
+            "loginDetails": loginDetails as LoginDetails,
+            "appToken": appToken as String,
+            "facebookToken": facebookToken as String
+        ]
     }
 }

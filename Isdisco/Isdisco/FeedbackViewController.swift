@@ -8,6 +8,7 @@
 
 import UIKit
 import Alamofire
+import SwiftyJSON
 
 class FeedbackViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
    
@@ -17,7 +18,9 @@ class FeedbackViewController: UIViewController, UIPickerViewDataSource, UIPicker
     
     //Array of what appears in the pickerView.
     let tags = ["Generelt", "Lyd/lys", "Personale", "Andet"]
-
+    let URL = "https://isdisco.azurewebsites.net/api/feedback/uploadfeedback"
+    
+    let feedbackUser = User.init(id: 1, fullname: "Thomas Mattsson", vip: false, loginDetails: LoginDetails.init(username: "Thomas", password: "123"), appToken: "", facebookToken: "")
 
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
@@ -62,6 +65,7 @@ class FeedbackViewController: UIViewController, UIPickerViewDataSource, UIPicker
     @IBAction func sendFeedback(_ sender: UIButton) {
         let myString : String = editText.text
         print(myString)
+        sendFeedbackHTTP()
         //TODO: Loading while feedback is being sent. Then show toast.
         showToast(controller: self, message: "Din feedback er sendt", seconds: 1)
         
@@ -80,7 +84,19 @@ class FeedbackViewController: UIViewController, UIPickerViewDataSource, UIPicker
         }
     }
     
-    func sendFeedback(){
+    func sendFeedbackHTTP(){
         //TODO: Add method to post JSON version of feedback.
+        
+        
+        
+        let feedback = Feedback.init(user: feedbackUser, tag: "Generelt", message: "Ultra nice event")
+        let checker = JSONSerialization.isValidJSONObject(feedback)
+        print("Can be JSON: " + checker.description)
+
+        Alamofire.request(URL,
+                          method:.post,
+                          parameters: feedback.toJSON().dictionaryObject,
+                          encoding:JSONEncoding.default
+                          )
     }
 }
