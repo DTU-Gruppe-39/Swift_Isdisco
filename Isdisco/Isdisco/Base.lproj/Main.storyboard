@@ -657,7 +657,6 @@
                             <constraint firstItem="4yk-af-JtM" firstAttribute="top" secondItem="Hpu-fS-gnG" secondAttribute="top" constant="94" id="nEM-sr-h3M"/>
                             <constraint firstItem="f07-ls-VnO" firstAttribute="leading" secondItem="Hpu-fS-gnG" secondAttribute="leading" constant="2" id="p1H-ka-CCI"/>
                             <constraint firstItem="z5D-D4-CRX" firstAttribute="leading" secondItem="Hpu-fS-gnG" secondAttribute="leading" constant="16" id="rub-Ow-BAL"/>
-                            <constraint firstItem="8Ab-Ul-XQU" firstAttribute="leading" secondItem="Hpu-fS-gnG" secondAttribute="leading" constant="16" id="wNs-9H-YBl"/>
                             <constraint firstItem="Hpu-fS-gnG" firstAttribute="bottom" secondItem="b5n-Km-FuN" secondAttribute="bottom" constant="17" id="xgQ-2g-HYy"/>
                             <constraint firstItem="Hpu-fS-gnG" firstAttribute="trailing" secondItem="f07-ls-VnO" secondAttribute="trailing" constant="331" id="z7I-OL-Fwd"/>
                         </constraints>
