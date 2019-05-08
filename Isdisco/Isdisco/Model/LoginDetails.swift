@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import SwiftyJSON
 
 class LoginDetails {
     let username: String
@@ -16,4 +17,5 @@ class LoginDetails {
         self.username = username
         self.password = password
     }
+
 }
