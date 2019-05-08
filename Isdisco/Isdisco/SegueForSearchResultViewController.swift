@@ -21,12 +21,13 @@ class SegueForSearchResultViewController: UIViewController {
     var track:Track!
     
     let apiRequest = SearchAPIRequest()
+    let fetchImage = FetchImageAPI()
     
     override func viewWillAppear(_ animated: Bool) {
         song_name.text = track.songName
         artist.text = track.artistName
         
-        apiRequest.fetchImage(urlToImageToFetch: track.image_large_url, completionHandler: {
+        fetchImage.fetchImage(urlToImageToFetch: track.image_large_url, completionHandler: {
             image, _ in self.albumImage?.image = image
         })
     }

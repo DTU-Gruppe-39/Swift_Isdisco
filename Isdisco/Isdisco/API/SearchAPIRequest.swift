@@ -10,14 +10,7 @@ import Foundation
 import SwiftyJSON
 import Alamofire
 
-enum  NetworkError: Error {
-    case success
-    case failure
-}
-
 class SearchAPIRequest {
-    var searchResults = [JSON]()
-    
     func search(textToSearch: String, completionHandler: @escaping ([JSON]?, NetworkError) -> ()) {
         let urlToSearch = "https://isdisco.azurewebsites.net/api/spotify-track/search"
         let parameters = [
@@ -39,25 +32,6 @@ class SearchAPIRequest {
                 return
             }
             completionHandler(results, .success)
-        }
-    }
-    
-    func fetchImage(urlToImageToFetch: String, completionHandler: @escaping (UIImage?, NetworkError) -> ()) {
-        Alamofire.request(urlToImageToFetch).responseData { responseData in
-            
-            guard let imageData = responseData.data else {
-                completionHandler(nil, .failure)
-                print("error - 3")
-                return
-            }
-            
-            guard let image = UIImage(data: imageData) else {
-                completionHandler(nil, .failure)
-                print("error - 4")
-                return
-            }
-            
-            completionHandler(image, .success)
         }
     }
 }

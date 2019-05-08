@@ -10,10 +10,11 @@ import UIKit
 import SwiftyJSON
 import Alamofire
 
-class SecondViewController: UITableViewController, UITabBarDelegate {
+class SecondViewController: UITableViewController {
     
     let searchController = UISearchController(searchResultsController: nil)
     let apiRequest = SearchAPIRequest()
+    let fetchImage = FetchImageAPI()
     var isSearchActive : Bool = false
     var filtered:[Singleton.Track] = []
     var previousSearch = Date()
@@ -48,7 +49,7 @@ class SecondViewController: UITableViewController, UITabBarDelegate {
         print(indexPath.row)
         trackCell.song_name?.text = searchResults[indexPath.row].songName
         trackCell.artist?.text = searchResults[indexPath.row].artistName
-        apiRequest.fetchImage(urlToImageToFetch: searchResults[indexPath.row].image_small_url, completionHandler: {
+        fetchImage.fetchImage(urlToImageToFetch: searchResults[indexPath.row].image_small_url, completionHandler: {
             image, _ in trackCell.albumImage?.image = image
         })
     
@@ -111,7 +112,6 @@ extension SecondViewController : UISearchBarDelegate {
             }
             
             for result in results {
-                var testObject = Track.jsonToObject(json: result)
                 self?.searchResults.append(Track.jsonToObject(json: result))
             }
         })
