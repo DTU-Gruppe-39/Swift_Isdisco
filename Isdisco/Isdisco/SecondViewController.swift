@@ -2,7 +2,7 @@
 //  SecondViewController.swift
 //  Isdisco
 //
-//  Created by Rasmus Gregersen on 04/03/2019.
+//  Created by Magnus Stjernborg Kochh on 04/05/2019.
 //  Copyright © 2019 Rasmus Gregersen. All rights reserved.
 //
 
@@ -10,7 +10,7 @@ import UIKit
 import SwiftyJSON
 import Alamofire
 
-class SecondViewController: UITableViewController {
+class SecondViewController: UITableViewController, UITabBarDelegate {
     
     let searchController = UISearchController(searchResultsController: nil)
     let apiRequest = SearchAPIRequest()
@@ -29,6 +29,7 @@ class SecondViewController: UITableViewController {
         tableView.tableHeaderView = searchController.searchBar
         definesPresentationContext = true
         tableViewBackgroundViewSetup()
+        let viewController = self.tabBarController?.viewControllers?[1] as? SecondViewController
     }
     
     private func tableViewBackgroundViewSetup ()
@@ -45,28 +46,18 @@ class SecondViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let trackCell = tableView.dequeueReusableCell(withIdentifier: "trackCell") as! TrackSearchTableCell
         print(indexPath.row)
-        trackCell.song_name?.text = searchResults[indexPath.row]["SongName"].stringValue
-        trackCell.artist?.text = searchResults[indexPath.row]["ArtistName"].stringValue
-        if let urlToImage = searchResults[indexPath.row]["Image_small_url"].string {
-            apiRequest.fetchImage(urlToImageToFetch: urlToImage, completionHandler: {
-                image, _ in trackCell.albumImage?.image = image
-            })
-        }
-        
+        trackCell.song_name?.text = searchResults[indexPath.row].songName
+        trackCell.artist?.text = searchResults[indexPath.row].artistName
+        apiRequest.fetchImage(urlToImageToFetch: searchResults[indexPath.row].image_small_url, completionHandler: {
+            image, _ in trackCell.albumImage?.image = image
+        })
+    
         return trackCell
     }
     var valuesToPass:[String]!
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let song_name = searchResults[indexPath.row][""].stringValue
-        let artist = searchResults[indexPath.row][""].stringValue
-        /*if let urlToImage = searchResults[indexPath.row]["thumnail"]["source"].string {
-            apiRequest.fetchImage(urlToImageToFetch: urlToImage, completionHandler: {
-                image, _ in trackCell.albumImage = image
-            })
-        }*/
-        /*performSegue(withIdentifier: "searchSegueIdentifer", sender: self)
-        */print("Values clicked: \(song_name)")
+        //Handled in storyboard with segue.
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -76,14 +67,11 @@ class SecondViewController: UITableViewController {
             }
             let segueViewController = segue.destination as? SegueForSearchResultViewController
             
-            segueViewController?.song_name_text = searchResults[row]["SongName"].stringValue
-            segueViewController?.artist_text = searchResults[row]["ArtistName"].stringValue
-            segueViewController?.albumImage_url = searchResults[row]["Image_large_url"].stringValue
-            segueViewController?.spotify_url_text = searchResults[row]["WebplayerLink"].stringValue
+            segueViewController?.track = searchResults[row]
         }
     }
     
-    private var searchResults = [JSON]() {
+    private var searchResults = [Track]() {
         didSet {
             tableView.reloadData()
         }
@@ -121,7 +109,12 @@ extension SecondViewController : UISearchBarDelegate {
             guard let results = results, !results.isEmpty else {
                 return
             }
-            self?.searchResults = results
+            
+            for result in results {
+                var testObject = Track.jsonToObject(json: result)
+                self?.searchResults.append(Track.jsonToObject(json: result))
+                print("Rasmus: \(testObject.id) + \(result["id"].intValue)")
+            }
         })
     }
     
