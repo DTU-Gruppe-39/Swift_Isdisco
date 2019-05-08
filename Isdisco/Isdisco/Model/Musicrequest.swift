@@ -26,8 +26,8 @@ class Musicrequest {
         self.upvotes = upvotes
     }
     
-    /*static func jsonToObject (json: JSON) -> Musicrequest {
-        var upvotesArray: [Int]
+    static func jsonToObject (json: JSON) -> Musicrequest {
+        var upvotesArray = [Int]()
         for upvote in json["upvotes"].arrayValue {
             upvotesArray.append(upvote.intValue)
         }
@@ -37,15 +37,7 @@ class Musicrequest {
 
     static func objectToJson (object: Musicrequest) -> [String: Any] {
         return ["track":
-                    [
-                        "id":object.track.id,
-                        "songName":object.track.songName,
-                        "artistName":object.track.artistName,
-                        "image_small_url":object.track.image_small_url,
-                        "image_medium_url":object.track.image_medium_url,
-                        "image_large_url":object.track.image_large_url,
-                        "webplayerLink":object.track.webplayerLink
-                    ],
+                    Track.objectToJson(object: object.track),
                 "userid":1]
-    }*/
+    }
 }
