@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		200F5E4E2282F09D00475863 /* Feedback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200F5E4D2282F09D00475863 /* Feedback.swift */; };
 		201729A922491CA1000BAC35 /* PopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201729A822491CA1000BAC35 /* PopUpViewController.swift */; };
 		209865B02254DAC70016A3E7 /* FeedbackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209865AF2254DAC70016A3E7 /* FeedbackViewController.swift */; };
 		209865B22254F4C10016A3E7 /* UITextViewPlaceholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209865B12254F4C10016A3E7 /* UITextViewPlaceholder.swift */; };
@@ -33,6 +34,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		200F5E4D2282F09D00475863 /* Feedback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feedback.swift; sourceTree = "<group>"; };
 		201729A822491CA1000BAC35 /* PopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpViewController.swift; sourceTree = "<group>"; };
 		209865AF2254DAC70016A3E7 /* FeedbackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackViewController.swift; sourceTree = "<group>"; };
 		209865B12254F4C10016A3E7 /* UITextViewPlaceholder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextViewPlaceholder.swift; sourceTree = "<group>"; };
@@ -147,6 +149,7 @@
 				F71AE679228052A0003A5189 /* Musicrequest.swift */,
 				F71AE67B228052AF003A5189 /* User.swift */,
 				F71AE67D22808A57003A5189 /* LoginDetails.swift */,
+				200F5E4D2282F09D00475863 /* Feedback.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -282,6 +285,7 @@
 				F7C2446F2277996800AA60F6 /* SearchAPIRequest.swift in Sources */,
 				20FBF620224CC10000A6BE2A /* Singleton.swift in Sources */,
 				BB6029A42235B1C5000721A7 /* LoginViewController.swift in Sources */,
+				200F5E4E2282F09D00475863 /* Feedback.swift in Sources */,
 				209865B02254DAC70016A3E7 /* FeedbackViewController.swift in Sources */,
 				BB4068ED222D4F85005F6562 /* SecondViewController.swift in Sources */,
 				F7DCDB09227E0178000AAFBB /* SegueForSearchResultViewController.swift in Sources */,
