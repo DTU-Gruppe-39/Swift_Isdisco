@@ -16,18 +16,15 @@ class SegueForSearchResultViewController: UIViewController {
     @IBOutlet weak var song_name: UILabel!
     @IBOutlet weak var artist: UILabel!
     
-    var albumImage_url:String = ""
-    var song_name_text:String = ""
-    var artist_text:String = ""
-    var spotify_url_text:String = ""
+    var track:Track!
     
     let apiRequest = SearchAPIRequest()
     
     override func viewWillAppear(_ animated: Bool) {
-        song_name.text = song_name_text
-        artist.text = artist_text
+        song_name.text = track.songName
+        artist.text = track.artistName
         
-        apiRequest.fetchImage(urlToImageToFetch: albumImage_url, completionHandler: {
+        apiRequest.fetchImage(urlToImageToFetch: track.image_large_url, completionHandler: {
             image, _ in self.albumImage?.image = image
         })
     }
@@ -39,19 +36,9 @@ class SegueForSearchResultViewController: UIViewController {
 
     
     @IBAction func requestTrack(_ unwindSegue: UIStoryboardSegue) {
-        let musicrequest: [String: Any] = ["track":
-                [
-                    "id":"i",
-                    "songName":song_name_text,
-                    "artistName":"i",
-                    "image_small_url":"i",
-                    "image_medium_url":"i",
-                    "image_large_url":"i",
-                    "webplayerLink":"i"
-                ],
-           "userid":1]
+        var musicrequest = Musicrequest.init(track: self.track, userId: 1)
         
-        Alamofire.request("https://isdisco.azurewebsites.net/api/musicrequest", method: .post, parameters: musicrequest, encoding: JSONEncoding.default).responseJSON { response in
+        Alamofire.request("https://isdisco.azurewebsites.net/api/musicrequest", method: .post, parameters: Musicrequest.objectToJson(object: musicrequest), encoding: JSONEncoding.default).responseJSON { response in
             switch response.result {
                 case .success:
                     print("Ønske er sendt: \(response.request) , \(response.response) , \(response.result)")
@@ -64,8 +51,8 @@ class SegueForSearchResultViewController: UIViewController {
     }
     
     @IBAction func OpenInSpotify(_ sender: Any) {
-        print("Spotify: \(spotify_url_text)")
-        let url = URL(string: spotify_url_text)
+        print("Spotify: \(track.webplayerLink)")
+        let url = URL(string: track.webplayerLink)
         if #available(iOS 10.0, *) {
             UIApplication.shared.open((url)!)
         } else {

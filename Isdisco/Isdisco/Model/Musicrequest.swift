@@ -18,12 +18,22 @@ class Musicrequest {
     let downvotes: Int
     
     init(id: Int, track: Track,userId: Int, timestamp: String, downvotes: Int,upvotes: [Int]) {
-        self.id = id;
+        self.id = id
+        self.track = track
+        self.userId = userId
+        self.timestamp = timestamp
+        self.downvotes = downvotes
+        self.upvotes = upvotes
+    }
+    
+    //In use when sending musicrequest to server
+    init(track: Track, userId: Int) {
+        self.id = 0;
         self.track = track;
         self.userId = userId;
-        self.timestamp = timestamp
-        self.downvotes = downvotes;
-        self.upvotes = upvotes
+        self.timestamp = ""
+        self.downvotes = 0
+        self.upvotes = [Int]()
     }
     
     static func jsonToObject (json: JSON) -> Musicrequest {
