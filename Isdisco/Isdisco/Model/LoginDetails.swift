@@ -19,7 +19,7 @@ class LoginDetails {
     }
 
     static func objectToJson (object: LoginDetails) -> [String: Any] {
-        return ["username":object.username,
-                "password":object.password]
+        return ["username": object.username,
+                "password": object.password]
     }
 }

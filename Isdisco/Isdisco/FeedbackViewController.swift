@@ -19,6 +19,7 @@ class FeedbackViewController: UIViewController, UIPickerViewDataSource, UIPicker
     //Array of what appears in the pickerView.
     let tags = ["Generelt", "Lyd/lys", "Personale", "Andet"]
     let URL = "https://isdisco.azurewebsites.net/api/feedback/uploadfeedback"
+    
 
     let feedbackUser = User.init(id: 1, fullname: "Thomas Mattsson", vip: false, loginDetails: LoginDetails.init(username: "Thomas", password: "123"), appToken: "", facebookToken: "")
 
@@ -64,15 +65,23 @@ class FeedbackViewController: UIViewController, UIPickerViewDataSource, UIPicker
 
     @IBAction func sendFeedback(_ sender: UIButton) {
         let myString : String = editText.text
+        let selectedRow = tagsPickerView.selectedRow(inComponent: 0)
+        let myTag : String = tags[selectedRow]
+        
         print(myString)
-        sendFeedbackHTTP()
+        if (myString != "") {
+            sendFeedbackHTTP(tag: myTag, message: myString)
+            showToast(controller: self, message: "Din feedback er sendt", seconds: 1)
+            editText.text = nil
+            tagsPickerView.selectRow(0, inComponent: 0, animated: true)
+            //editText.placeholder = "Skriv din feedback..."
+            editText.textViewDidChange(editText)
+        } else {
+            showToast(controller: self, message: "Fejl!: Indtast venligst noget feedback", seconds: 1)
+        }
         //TODO: Loading while feedback is being sent. Then show toast.
 
-        showToast(controller: self, message: "Din feedback er sendt", seconds: 1)
-        editText.text = nil
-        tagsPickerView.selectRow(0, inComponent: 0, animated: true)
-        //editText.placeholder = "Skriv din feedback..."
-        editText.textViewDidChange(editText)
+        
 
     }
 
@@ -89,12 +98,10 @@ class FeedbackViewController: UIViewController, UIPickerViewDataSource, UIPicker
         }
     }
 
-    func sendFeedbackHTTP(){
+    func sendFeedbackHTTP(tag : String, message : String){
         //TODO: Add method to post JSON version of feedback.
-
-
-
-        let feedback = Feedback.init(user: feedbackUser, tag: "Generelt", message: "Ultra nice event")
+        
+        let feedback = Feedback.init(user: feedbackUser, tag: tag, message: message)
         print(Feedback.objectToJson(object: feedback))
 
         let parameters = Feedback.objectToJson(object: feedback)
@@ -104,6 +111,7 @@ class FeedbackViewController: UIViewController, UIPickerViewDataSource, UIPicker
                           parameters: parameters,
                           encoding:JSONEncoding.default
                           )
+         
 
     }
 }
