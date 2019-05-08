@@ -33,8 +33,14 @@ class SegueForSearchResultViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        requestTrackButton.layer.cornerRadius = 4
-        OpenInSpotifyButton.layer.cornerRadius = 4
+        requestTrackButton.layer.cornerRadius = 8
+        OpenInSpotifyButton.layer.cornerRadius = 8
+        
+        requestTrackButton.layer.borderWidth = 1.5
+        OpenInSpotifyButton.layer.borderWidth = 1.5
+        
+        requestTrackButton.layer.borderColor = UIColor(red: 0/255.0, green: 122/255.0, blue: 255/255.0, alpha: 1.0).cgColor
+        OpenInSpotifyButton.layer.borderColor = UIColor(red: 30/255.0, green: 215/255.0, blue: 96/255.0, alpha: 1.0).cgColor
         // Do any additional setup after loading the view.
     }
 
