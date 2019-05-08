@@ -90,13 +90,15 @@ class FeedbackViewController: UIViewController, UIPickerViewDataSource, UIPicker
         
         
         let feedback = Feedback.init(user: feedbackUser, tag: "Generelt", message: "Ultra nice event")
-        let checker = JSONSerialization.isValidJSONObject(feedback)
-        print("Can be JSON: " + checker.description)
+        print(Feedback.objectToJson(object: feedback))
+        
+        let parameters = Feedback.objectToJson(object: feedback)
 
         Alamofire.request(URL,
                           method:.post,
-                          parameters: feedback.toJSON().dictionaryObject,
+                          parameters: parameters,
                           encoding:JSONEncoding.default
                           )
+ 
     }
 }
