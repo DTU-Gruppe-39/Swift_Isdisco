@@ -15,6 +15,8 @@ class SegueForSearchResultViewController: UIViewController {
     @IBOutlet weak var albumImage: UIImageView!
     @IBOutlet weak var song_name: UILabel!
     @IBOutlet weak var artist: UILabel!
+    @IBOutlet weak var OpenInSpotifyButton: UIButton!
+    @IBOutlet weak var requestTrackButton: UIButton!
     
     var albumImage_url:String = ""
     var song_name_text:String = ""
@@ -34,6 +36,8 @@ class SegueForSearchResultViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        requestTrackButton.layer.cornerRadius = 4
+        OpenInSpotifyButton.layer.cornerRadius = 4
         // Do any additional setup after loading the view.
     }
 

@@ -671,8 +671,10 @@
                         <viewLayoutGuide key="safeArea" id="Hpu-fS-gnG"/>
                     </view>
                     <connections>
+                        <outlet property="OpenInSpotifyButton" destination="z5D-D4-CRX" id="bjL-in-r9x"/>
                         <outlet property="albumImage" destination="4yk-af-JtM" id="R4T-QW-yON"/>
                         <outlet property="artist" destination="IWg-u4-gRf" id="kxV-Hu-uiy"/>
+                        <outlet property="requestTrackButton" destination="b5n-Km-FuN" id="ebJ-Kc-Fv7"/>
                         <outlet property="song_name" destination="8Ab-Ul-XQU" id="CQO-ez-jO9"/>
                     </connections>
                 </viewController>
