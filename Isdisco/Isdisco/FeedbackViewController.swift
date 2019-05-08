@@ -20,7 +20,7 @@ class FeedbackViewController: UIViewController, UIPickerViewDataSource, UIPicker
     let tags = ["Generelt", "Lyd/lys", "Personale", "Andet"]
     let URL = "https://isdisco.azurewebsites.net/api/feedback/uploadfeedback"
     
-
+    //TODO change to "current user"
     let feedbackUser = User.init(id: 1, fullname: "Thomas Mattsson", vip: false, loginDetails: LoginDetails.init(username: "Thomas", password: "123"), appToken: "", facebookToken: "")
 
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -42,7 +42,7 @@ class FeedbackViewController: UIViewController, UIPickerViewDataSource, UIPicker
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        //Make the "Done button" appear atop the keyboard
+        //Make the "Færdig" appear atop the keyboard
         let toolbar = UIToolbar()
         toolbar.sizeToFit()
         let doneButton = UIBarButtonItem(title: "Færdig", style: .done, target: self, action: #selector(self.doneAction))
@@ -54,8 +54,6 @@ class FeedbackViewController: UIViewController, UIPickerViewDataSource, UIPicker
 
         editText.inputAccessoryView = toolbar
         editText.placeholder = "Skriv din feedback..."
-
-
     }
 
     //Defines what happens when "Færdig" is pressed
@@ -80,9 +78,6 @@ class FeedbackViewController: UIViewController, UIPickerViewDataSource, UIPicker
             showToast(controller: self, message: "Fejl!: Indtast venligst noget feedback", seconds: 1)
         }
         //TODO: Loading while feedback is being sent. Then show toast.
-
-        
-
     }
 
     func showToast(controller: UIViewController, message : String, seconds: Double){
@@ -111,7 +106,5 @@ class FeedbackViewController: UIViewController, UIPickerViewDataSource, UIPicker
                           parameters: parameters,
                           encoding:JSONEncoding.default
                           )
-         
-
     }
 }

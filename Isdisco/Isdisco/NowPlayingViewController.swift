@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Alamofire
+import SwiftyJSON
 
 class NowPlayingViewController: UIViewController {
 
@@ -16,9 +18,17 @@ class NowPlayingViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let url = "https://isdisco.azurewebsites.net/api/spotify-track/currently-playing"
+        Alamofire.request(url, method: .get, parameters:nil, encoding: JSONEncoding.default).responseJSON { response in
+            print(response)
+            
+            if let json = response.result.value as? [String:Any] {
+                print(json["songName"])
+            }
+        }
         
         self.songTitle.text = Singleton.shared.tracks[0].title
-
+        
         
         // Do any additional setup after loading the view.
     }
