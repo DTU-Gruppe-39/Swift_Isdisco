@@ -113,7 +113,6 @@ extension SecondViewController : UISearchBarDelegate {
             for result in results {
                 var testObject = Track.jsonToObject(json: result)
                 self?.searchResults.append(Track.jsonToObject(json: result))
-                print("Rasmus: \(testObject.id) + \(result["id"].intValue)")
             }
         })
     }

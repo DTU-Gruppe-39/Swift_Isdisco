@@ -40,16 +40,21 @@ class SegueForSearchResultViewController: UIViewController {
 
     
     @IBAction func requestTrack(_ unwindSegue: UIStoryboardSegue) {
+        weak var secondViewController = self.presentingViewController
         var musicrequest = Musicrequest.init(track: self.track, userId: 1)
         
         Alamofire.request("https://isdisco.azurewebsites.net/api/musicrequest", method: .post, parameters: Musicrequest.objectToJson(object: musicrequest), encoding: JSONEncoding.default).responseJSON { response in
+            //Fix failure and success
             switch response.result {
                 case .success:
-                    print("Ønske er sendt: \(response.request) , \(response.response) , \(response.result)")
-                    self.dismiss(animated: true, completion: nil)
-                case .failure(let _):
-                    print("Fejl i sending af ønske , \(response.request) , \(response.response) , \(response.result)")
-                    self.dismiss(animated: true, completion: nil)
+                    self.dismiss(animated: true) {
+                        self.showToast(controller: secondViewController!, message: "Musik forespørgelse er sendt", seconds: 1)
+
+                    }
+                case .failure( _):
+                    self.dismiss(animated: true) {
+                        self.showToast(controller: secondViewController!, message: "Musik forespørgelse er sendt", seconds: 1)
+                }
             }
         }
     }
@@ -63,7 +68,6 @@ class SegueForSearchResultViewController: UIViewController {
             UIApplication.shared.openURL((url)!)
         }
     }
-    
     
     func showToast(controller: UIViewController, message : String, seconds: Double){
         let alert = UIAlertController(title: nil, message: message, preferredStyle: .alert)

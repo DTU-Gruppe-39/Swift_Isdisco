@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		200F5E4E2282F09D00475863 /* Feedback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200F5E4D2282F09D00475863 /* Feedback.swift */; };
 		201729A922491CA1000BAC35 /* PopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201729A822491CA1000BAC35 /* PopUpViewController.swift */; };
-		201B162A2280B7A0003A9D80 /* Feedback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201B16292280B7A0003A9D80 /* Feedback.swift */; };
 		209865B02254DAC70016A3E7 /* FeedbackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209865AF2254DAC70016A3E7 /* FeedbackViewController.swift */; };
 		209865B22254F4C10016A3E7 /* UITextViewPlaceholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209865B12254F4C10016A3E7 /* UITextViewPlaceholder.swift */; };
 		20FBF61E224CBC8300A6BE2A /* NowPlayingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20FBF61D224CBC8300A6BE2A /* NowPlayingViewController.swift */; };
@@ -138,7 +137,6 @@
 				BB4068F1222D4F87005F6562 /* Assets.xcassets */,
 				BB4068F6222D4F87005F6562 /* Info.plist */,
 				F7770BB1226FAC0E0068702C /* CategoryRow.swift */,
-				F7C2446E2277996800AA60F6 /* SearchAPIRequest.swift */,
 				F7D038CD22788AF100E3407A /* FrontPageRowCell.swift */,
 				F7DCDB08227E0178000AAFBB /* SegueForSearchResultViewController.swift */,
 				201B16292280B7A0003A9D80 /* Feedback.swift */,
@@ -161,6 +159,7 @@
 		F71AE67F2282F391003A5189 /* API */ = {
 			isa = PBXGroup;
 			children = (
+				F7C2446E2277996800AA60F6 /* SearchAPIRequest.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";

@@ -10,7 +10,7 @@ import Foundation
 import SwiftyJSON
 
 class Track {
-    let id: Int
+    let id: String
     let songName: String
     let artistName: String
     let image_small_url: String
@@ -18,7 +18,7 @@ class Track {
     let image_large_url: String
     let webplayerLink: String
     
-    init(id: Int, songName: String, artistName: String, image_small_url: String, image_medium_url: String, image_large_url: String, webplayerLink: String) {
+    init(id: String, songName: String, artistName: String, image_small_url: String, image_medium_url: String, image_large_url: String, webplayerLink: String) {
         self.id = id
         self.songName = songName
         self.artistName = artistName
@@ -29,7 +29,7 @@ class Track {
     }
     
     static func jsonToObject (json: JSON) -> Track {
-        return Track(id: json["id"].intValue, songName: json["songName"].stringValue, artistName: json["artistName"].stringValue, image_small_url: json["image_small_url"].stringValue, image_medium_url: json["image_medium_url"].stringValue, image_large_url: json["image_large_url"].stringValue, webplayerLink: json["webplayerLink"].stringValue)
+        return Track(id: json["id"].stringValue, songName: json["songName"].stringValue, artistName: json["artistName"].stringValue, image_small_url: json["image_small_url"].stringValue, image_medium_url: json["image_medium_url"].stringValue, image_large_url: json["image_large_url"].stringValue, webplayerLink: json["webplayerLink"].stringValue)
     }
     
     static func objectToJson (object: Track) -> [String: Any] {
