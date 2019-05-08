@@ -71,6 +71,7 @@ class Singleton {
 
     }
     
+
     class Track {
         let albumArt: String
         let title: String
@@ -116,4 +117,5 @@ class Singleton {
             self.upVoted = false
         }
     }
+ 
 }
