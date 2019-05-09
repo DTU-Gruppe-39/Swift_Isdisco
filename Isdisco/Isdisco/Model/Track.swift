@@ -9,7 +9,7 @@
 import Foundation
 import SwiftyJSON
 
-class Track {
+class Track : Decodable {
     let id: String
     let songName: String
     let artistName: String
