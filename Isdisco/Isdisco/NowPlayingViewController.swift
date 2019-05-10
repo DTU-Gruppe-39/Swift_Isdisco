@@ -52,6 +52,7 @@ class NowPlayingViewController: UIViewController {
     @objc func refreshOptions(sender: UIRefreshControl) {
         pullSongAsync() { error in
             if error != nil {
+                sender.endRefreshing()
                 print("Oops! Something went wrong...")
             } else {
                 print("It has finished")
@@ -99,7 +100,7 @@ class NowPlayingViewController: UIViewController {
                 
             } catch let err{
                 print(err)
-                
+                completion(err)
                 self.songTitle.text = "Ingen sange spiller nu"
                 self.artistName.text = ""
                 self.albumArt.image = UIImage(named: "LOGO_ISDISCO")
