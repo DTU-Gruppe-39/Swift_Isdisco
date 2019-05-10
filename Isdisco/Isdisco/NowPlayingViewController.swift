@@ -10,41 +10,61 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 
-struct CurrentlyPlaying :Decodable {
+struct CurrentlyPlaying: Decodable {
     let track : Track
     let duration : Int
     let progress : Int
 }
 
-class NowPlayingViewController: UIViewController {
 
+class NowPlayingViewController: UIViewController {
+    
     @IBOutlet weak var albumArt: UIImageView!
     @IBOutlet weak var songTitle: UILabel!
     @IBOutlet weak var artistName: UILabel!
     
+    let apiRequest = SearchAPIRequest()
+    let apiUrl = "https://isdisco.azurewebsites.net/api/spotify-track/currently-playing"
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let ApiUrl = "https://isdisco.azurewebsites.net/api/spotify-track/currently-playing"
-        
-        guard let url = URL(string: ApiUrl) else { return }
-        
-        URLSession.shared.dataTask(with: url) { (data, response, err) in
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        //Performing an Alamofire request to get the data from the URL
+        Alamofire.request(self.apiUrl).responseJSON { response in
+            //now here we have the response data that we need to parse
+            let json = response.data
             
-            guard let data = data else { return }
-            
-            do {
-                let currentlyPlaying = try
-                    JSONDecoder().decode(CurrentlyPlaying.self, from: data)
+            do{
+                //created the json decoder
+                let decoder = JSONDecoder()
+                
+                //Parsing the currently playing object from "json".
+                let currentlyPlaying = try decoder.decode(CurrentlyPlaying.self, from: json!)
+                
                 print(currentlyPlaying.track.songName)
-            } catch let jsonErr {
-                print("Error", jsonErr)
+                
+                let songTitle = currentlyPlaying.track.songName
+                let artistName = currentlyPlaying.track.artistName
+                let imageUrl = currentlyPlaying.track.image_large_url
+                
+                self.apiRequest.fetchImage(urlToImageToFetch: imageUrl, completionHandler: {
+                    image, _ in self.albumArt?.image = image
+                })
+                
+                self.songTitle.text = songTitle
+                self.artistName.text = artistName
+                
+            } catch let err{
+                print(err)
+                
+                self.songTitle.text = "Ingen sange spiller nu"
+                self.artistName.text = ""
+                self.albumArt.image = UIImage(named: "LOGO_ISDISCO")
             }
         }
     }
-        
-        //self.songTitle.text = Singleton.shared.tracks[0].title
-        
-        
-        // Do any additional setup after loading the view.
 }
