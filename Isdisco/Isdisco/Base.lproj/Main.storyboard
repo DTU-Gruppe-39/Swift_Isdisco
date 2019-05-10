@@ -441,6 +441,7 @@
                     <connections>
                         <outlet property="albumArt" destination="6uZ-Wk-BC5" id="hla-7v-68M"/>
                         <outlet property="artistName" destination="ftE-cm-H6W" id="Cbe-2e-biU"/>
+                        <outlet property="openInSpotifyButton" destination="dto-EZ-BIc" id="3OM-f6-W2u"/>
                         <outlet property="scrollView" destination="TtY-9M-VPy" id="FBR-uv-iMO"/>
                         <outlet property="songTitle" destination="wDN-mW-t0h" id="XrI-cc-EMs"/>
                     </connections>

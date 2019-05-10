@@ -23,8 +23,9 @@ class NowPlayingViewController: UIViewController {
     @IBOutlet weak var songTitle: UILabel!
     @IBOutlet weak var artistName: UILabel!
     @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var openInSpotifyButton: UIButton!
     
-    
+    //Open the currently playing song in Spotify
     @IBAction func openInSpotify(_ sender: Any) {
         UIApplication.shared.open(URL(string: spotifyLink)!, options: [:], completionHandler: nil)
     }
@@ -37,6 +38,7 @@ class NowPlayingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //Pull to refresh adapted from StackOverflow
         if #available(iOS 10.0, *) {
             let refreshControl = UIRefreshControl()
             let title = "Træk for at genindlæse"
@@ -48,7 +50,7 @@ class NowPlayingViewController: UIViewController {
         }
     }
     
-    
+    //ObjC function to trigger refresh adapted from StackOberflow
     @objc func refreshOptions(sender: UIRefreshControl) {
         pullSongAsync() { error in
             if error != nil {
@@ -71,6 +73,9 @@ class NowPlayingViewController: UIViewController {
     }
     
     func pullSongAsync(completion: @escaping (Error?) -> Void) {
+        
+        self.openInSpotifyButton.isHidden = true
+
         //Performing an Alamofire request to get the data from the URL
         Alamofire.request(self.apiUrl).responseJSON { response in
             //now here we have the response data that we need to parse
@@ -83,6 +88,7 @@ class NowPlayingViewController: UIViewController {
                 //Parsing the currently playing object from "json".
                 let currentlyPlaying = try decoder.decode(CurrentlyPlaying.self, from: json!)
                 
+                //Test print
                 print(currentlyPlaying.track.songName)
                 
                 let songTitle = currentlyPlaying.track.songName
@@ -90,20 +96,28 @@ class NowPlayingViewController: UIViewController {
                 let imageUrl = currentlyPlaying.track.image_large_url
                 self.spotifyLink = currentlyPlaying.track.webplayerLink
                 
+                //Setting the picture
                 self.apiRequest.fetchImage(urlToImageToFetch: imageUrl, completionHandler: {
                     image, _ in self.albumArt?.image = image
                 })
                 
+                //Setting the labels
                 self.songTitle.text = songTitle
                 self.artistName.text = artistName
+                self.openInSpotifyButton.isHidden = false
+                
+                //Nil indicates "no error"
                 completion(nil) // Or completion(SomeError.veryBadError)
                 
             } catch let err{
                 print(err)
                 completion(err)
+                
+                //Default values
                 self.songTitle.text = "Ingen sange spiller nu"
                 self.artistName.text = ""
                 self.albumArt.image = UIImage(named: "LOGO_ISDISCO")
+                self.openInSpotifyButton.isHidden = true
             }
         }
     }
