@@ -10,29 +10,66 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 
+//Struct for parsing JSON
 struct CurrentlyPlaying: Decodable {
     let track : Track
     let duration : Int
     let progress : Int
 }
 
-
 class NowPlayingViewController: UIViewController {
     
     @IBOutlet weak var albumArt: UIImageView!
     @IBOutlet weak var songTitle: UILabel!
     @IBOutlet weak var artistName: UILabel!
+    @IBOutlet weak var scrollView: UIScrollView!
+    
+    
+    @IBAction func openInSpotify(_ sender: Any) {
+        UIApplication.shared.open(URL(string: spotifyLink)!, options: [:], completionHandler: nil)
+    }
+    
     
     let apiRequest = SearchAPIRequest()
     let apiUrl = "https://isdisco.azurewebsites.net/api/spotify-track/currently-playing"
-
+    var spotifyLink: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        if #available(iOS 10.0, *) {
+            let refreshControl = UIRefreshControl()
+            let title = "Træk for at genindlæse"
+            refreshControl.attributedTitle = NSAttributedString(string: title)
+            refreshControl.addTarget(self,
+                                     action: #selector(refreshOptions(sender:)),
+                                     for: .valueChanged)
+            scrollView.refreshControl = refreshControl
+        }
+    }
+    
+    
+    @objc func refreshOptions(sender: UIRefreshControl) {
+        pullSongAsync() { error in
+            if error != nil {
+                print("Oops! Something went wrong...")
+            } else {
+                print("It has finished")
+                sender.endRefreshing()
+            }    }
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        pullSongAsync() { error in
+            if error != nil {
+                print("Oops! Something went wrong...")
+            } else {
+                print("It has finished")
+            }    }
+    }
+    
+    func pullSongAsync(completion: @escaping (Error?) -> Void) {
         //Performing an Alamofire request to get the data from the URL
         Alamofire.request(self.apiUrl).responseJSON { response in
             //now here we have the response data that we need to parse
@@ -50,6 +87,7 @@ class NowPlayingViewController: UIViewController {
                 let songTitle = currentlyPlaying.track.songName
                 let artistName = currentlyPlaying.track.artistName
                 let imageUrl = currentlyPlaying.track.image_large_url
+                self.spotifyLink = currentlyPlaying.track.webplayerLink
                 
                 self.apiRequest.fetchImage(urlToImageToFetch: imageUrl, completionHandler: {
                     image, _ in self.albumArt?.image = image
@@ -57,6 +95,7 @@ class NowPlayingViewController: UIViewController {
                 
                 self.songTitle.text = songTitle
                 self.artistName.text = artistName
+                completion(nil) // Or completion(SomeError.veryBadError)
                 
             } catch let err{
                 print(err)

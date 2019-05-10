@@ -370,47 +370,70 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Spiller nu" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tkw-cs-4C4">
-                                <rect key="frame" x="89" y="63" width="197" height="33"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                                <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LOGO_ISDISCO" translatesAutoresizingMaskIntoConstraints="NO" id="6uZ-Wk-BC5">
-                                <rect key="frame" x="22" y="158" width="331" height="330"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="330" id="d12-sB-4j4"/>
-                                </constraints>
-                            </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="4y2-JH-Jud">
-                                <rect key="frame" x="140.33333333333334" y="526" width="94.666666666666657" height="60"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TtY-9M-VPy">
+                                <rect key="frame" x="2" y="43" width="371" height="686"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="IsDisco" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wDN-mW-t0h">
-                                        <rect key="frame" x="0.0" y="0.0" width="94.666666666666671" height="36"/>
-                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
-                                        <nil key="textColor"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LOGO_ISDISCO" translatesAutoresizingMaskIntoConstraints="NO" id="6uZ-Wk-BC5">
+                                        <rect key="frame" x="20" y="115" width="331" height="330"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="330" id="d12-sB-4j4"/>
+                                        </constraints>
+                                    </imageView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="4y2-JH-Jud">
+                                        <rect key="frame" x="137.66666666666666" y="483" width="96" height="60"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="IsDisco" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wDN-mW-t0h">
+                                                <rect key="frame" x="0.0" y="0.0" width="96" height="36"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Spiller nu" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ftE-cm-H6W">
+                                                <rect key="frame" x="0.0" y="36" width="96" height="24"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Spiller nu" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tkw-cs-4C4">
+                                        <rect key="frame" x="87" y="32.666666666666671" width="197" height="20.333333333333329"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                        <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Spiller nu" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ftE-cm-H6W">
-                                        <rect key="frame" x="0.0" y="36" width="94.666666666666671" height="24"/>
-                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dto-EZ-BIc">
+                                        <rect key="frame" x="137.66666666666666" y="581" width="96" height="30"/>
+                                        <color key="tintColor" red="0.11372549019607843" green="0.72549019607843135" blue="0.32941176470588235" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="Åben i Spotify"/>
+                                        <connections>
+                                            <action selector="openInSpotify:" destination="boO-hL-DVq" eventType="touchUpInside" id="UDc-TJ-0gm"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
-                            </stackView>
+                                <constraints>
+                                    <constraint firstItem="4y2-JH-Jud" firstAttribute="top" secondItem="6uZ-Wk-BC5" secondAttribute="bottom" constant="38" id="2yB-5z-p1F"/>
+                                    <constraint firstItem="dto-EZ-BIc" firstAttribute="trailing" secondItem="4y2-JH-Jud" secondAttribute="trailing" id="9Gg-Qh-3ZZ"/>
+                                    <constraint firstAttribute="trailing" secondItem="6uZ-Wk-BC5" secondAttribute="trailing" constant="20.000000000000455" id="AI7-yx-CtI"/>
+                                    <constraint firstItem="6uZ-Wk-BC5" firstAttribute="centerX" secondItem="Tkw-cs-4C4" secondAttribute="centerX" id="JwC-Xk-Msc"/>
+                                    <constraint firstItem="6uZ-Wk-BC5" firstAttribute="top" secondItem="Tkw-cs-4C4" secondAttribute="bottom" constant="62" id="QJy-0W-SbB"/>
+                                    <constraint firstItem="Tkw-cs-4C4" firstAttribute="leading" secondItem="TtY-9M-VPy" secondAttribute="leading" constant="87" id="UGS-xC-Kbl"/>
+                                    <constraint firstItem="6uZ-Wk-BC5" firstAttribute="centerX" secondItem="TtY-9M-VPy" secondAttribute="centerX" id="ZGY-hV-az9"/>
+                                    <constraint firstItem="6uZ-Wk-BC5" firstAttribute="top" secondItem="TtY-9M-VPy" secondAttribute="top" constant="115" id="aPA-nV-bwv"/>
+                                    <constraint firstAttribute="bottom" secondItem="4y2-JH-Jud" secondAttribute="bottom" constant="143" id="anm-rB-Jam"/>
+                                    <constraint firstItem="6uZ-Wk-BC5" firstAttribute="leading" secondItem="TtY-9M-VPy" secondAttribute="leading" constant="20" id="i89-3o-HhI"/>
+                                    <constraint firstItem="4y2-JH-Jud" firstAttribute="centerX" secondItem="6uZ-Wk-BC5" secondAttribute="centerX" id="t2J-Uf-eMg"/>
+                                    <constraint firstItem="dto-EZ-BIc" firstAttribute="centerX" secondItem="4y2-JH-Jud" secondAttribute="centerX" id="uYo-eT-rME"/>
+                                    <constraint firstItem="dto-EZ-BIc" firstAttribute="top" secondItem="4y2-JH-Jud" secondAttribute="bottom" constant="38" id="z5g-Cg-ZwX"/>
+                                </constraints>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="4y2-JH-Jud" firstAttribute="centerX" secondItem="6uZ-Wk-BC5" secondAttribute="centerX" id="2cT-Hn-2wG"/>
-                            <constraint firstItem="Tkw-cs-4C4" firstAttribute="top" secondItem="wB3-DK-hbL" secondAttribute="top" constant="19" id="9mm-yP-0Am"/>
-                            <constraint firstItem="6uZ-Wk-BC5" firstAttribute="leading" secondItem="wB3-DK-hbL" secondAttribute="leading" constant="22" id="QEM-8W-OfE"/>
-                            <constraint firstItem="Tkw-cs-4C4" firstAttribute="leading" secondItem="wB3-DK-hbL" secondAttribute="leading" constant="89" id="cTL-f9-bh4"/>
-                            <constraint firstItem="6uZ-Wk-BC5" firstAttribute="centerX" secondItem="GOt-5z-AQw" secondAttribute="centerX" id="g9L-ti-uvI"/>
-                            <constraint firstItem="6uZ-Wk-BC5" firstAttribute="top" secondItem="Tkw-cs-4C4" secondAttribute="bottom" constant="62" id="gDE-j8-CZJ"/>
-                            <constraint firstItem="6uZ-Wk-BC5" firstAttribute="top" secondItem="GOt-5z-AQw" secondAttribute="top" constant="158" id="l9f-ty-TB8"/>
-                            <constraint firstItem="6uZ-Wk-BC5" firstAttribute="centerX" secondItem="Tkw-cs-4C4" secondAttribute="centerX" id="sQc-EM-dpG"/>
-                            <constraint firstItem="4y2-JH-Jud" firstAttribute="top" secondItem="6uZ-Wk-BC5" secondAttribute="bottom" constant="38" id="uTt-Bn-I8h"/>
+                            <constraint firstItem="TtY-9M-VPy" firstAttribute="leading" secondItem="wB3-DK-hbL" secondAttribute="leading" constant="2" id="NNl-fY-IEo"/>
+                            <constraint firstItem="wB3-DK-hbL" firstAttribute="bottom" secondItem="TtY-9M-VPy" secondAttribute="bottom" id="RiR-MC-Ys7"/>
+                            <constraint firstItem="TtY-9M-VPy" firstAttribute="top" secondItem="GOt-5z-AQw" secondAttribute="topMargin" constant="-1" id="YFV-Ma-yRy"/>
+                            <constraint firstItem="TtY-9M-VPy" firstAttribute="centerX" secondItem="GOt-5z-AQw" secondAttribute="centerX" id="wuM-1R-J5E"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="wB3-DK-hbL"/>
                     </view>
@@ -418,12 +441,13 @@
                     <connections>
                         <outlet property="albumArt" destination="6uZ-Wk-BC5" id="hla-7v-68M"/>
                         <outlet property="artistName" destination="ftE-cm-H6W" id="Cbe-2e-biU"/>
+                        <outlet property="scrollView" destination="TtY-9M-VPy" id="FBR-uv-iMO"/>
                         <outlet property="songTitle" destination="wDN-mW-t0h" id="XrI-cc-EMs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nxg-sg-ezH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3092" y="-594"/>
+            <point key="canvasLocation" x="3092" y="-594.0886699507389"/>
         </scene>
         <!--Feedback-->
         <scene sceneID="eZH-9Y-H8e">
