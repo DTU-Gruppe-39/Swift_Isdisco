@@ -20,8 +20,7 @@ class FeedbackViewController: UIViewController, UIPickerViewDataSource, UIPicker
     let tags = ["Generelt", "Lyd/lys", "Personale", "Andet"]
     let URL = "https://isdisco.azurewebsites.net/api/feedback/uploadfeedback"
     
-    //TODO change to "current user"
-    let feedbackUser = User.init(id: Singleton.shared.currentUserId, fullname: Singleton.shared.users[Singleton.shared.currentUserId].name, vip: false, loginDetails: LoginDetails.init(username: "", password: ""), appToken: "", facebookToken: "")
+  
 
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
@@ -41,7 +40,8 @@ class FeedbackViewController: UIViewController, UIPickerViewDataSource, UIPicker
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        
         //Make the "Færdig" appear atop the keyboard
         let toolbar = UIToolbar()
         toolbar.sizeToFit()
@@ -95,6 +95,9 @@ class FeedbackViewController: UIViewController, UIPickerViewDataSource, UIPicker
 
     func sendFeedbackHTTP(tag : String, message : String){
         //TODO: Add method to post JSON version of feedback.
+        //TODO change to "current user"
+        
+        let feedbackUser = User.init(id: Singleton.shared.currentUserId, fullname:"", vip: false, loginDetails: LoginDetails.init(username: "", password: ""), appToken: "", facebookToken: "")
         
         let feedback = Feedback.init(user: feedbackUser, tag: tag, message: message)
         print(Feedback.objectToJson(object: feedback))
