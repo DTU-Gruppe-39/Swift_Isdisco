@@ -19,6 +19,7 @@
 		BB4068F0222D4F85005F6562 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB4068EE222D4F85005F6562 /* Main.storyboard */; };
 		BB4068F2222D4F87005F6562 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB4068F1222D4F87005F6562 /* Assets.xcassets */; };
 		BB6029A42235B1C5000721A7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB6029A32235B1C5000721A7 /* LoginViewController.swift */; };
+		BB68A4952286BBB3006D4F03 /* LiveNavBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB68A4942286BBB3006D4F03 /* LiveNavBarController.swift */; };
 		BBCE0021223FE51B0010AD3D /* LiveTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCE0020223FE51B0010AD3D /* LiveTableViewController.swift */; };
 		BBDDDFE5223FE99D00645F3E /* LiveTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDDDFE4223FE99D00645F3E /* LiveTableViewCell.swift */; };
 		EA30C7A8EF5FCB8CC3536466 /* Pods_Isdisco.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F6D7D726EAF48220F2AC22F /* Pods_Isdisco.framework */; };
@@ -54,6 +55,7 @@
 		BB4068F1222D4F87005F6562 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BB4068F6222D4F87005F6562 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BB6029A32235B1C5000721A7 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		BB68A4942286BBB3006D4F03 /* LiveNavBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveNavBarController.swift; sourceTree = "<group>"; };
 		BBCE0020223FE51B0010AD3D /* LiveTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveTableViewController.swift; sourceTree = "<group>"; };
 		BBDDDFE4223FE99D00645F3E /* LiveTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveTableViewCell.swift; sourceTree = "<group>"; };
 		F71AE67722805260003A5189 /* Track.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Track.swift; sourceTree = "<group>"; };
@@ -127,6 +129,7 @@
 				20DEA1482237F11E00BDC582 /* ThirdViewController.swift */,
 				209865AF2254DAC70016A3E7 /* FeedbackViewController.swift */,
 				BB4068EE222D4F85005F6562 /* Main.storyboard */,
+				BB68A4942286BBB3006D4F03 /* LiveNavBarController.swift */,
 				F7770BB3226FBF1C0068702C /* TrackSearchTableCell.swift */,
 				209865B12254F4C10016A3E7 /* UITextViewPlaceholder.swift */,
 				20FBF61F224CC10000A6BE2A /* Singleton.swift */,
@@ -311,6 +314,7 @@
 				F7770BB2226FAC0E0068702C /* CategoryRow.swift in Sources */,
 				209865B22254F4C10016A3E7 /* UITextViewPlaceholder.swift in Sources */,
 				F71AE67C228052AF003A5189 /* User.swift in Sources */,
+				BB68A4952286BBB3006D4F03 /* LiveNavBarController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
