@@ -30,10 +30,10 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LOGO_ISDISCO1" highlightedImage="LOGO_ISDISCO" translatesAutoresizingMaskIntoConstraints="NO" id="lMg-Jt-9aC">
-                                <rect key="frame" x="5" y="71" width="365" height="16"/>
+                                <rect key="frame" x="5" y="71" width="365" height="223"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" layoutMarginsFollowReadableWidth="YES" text="Denne app giver dig mulighed for at sende dine musikønsker til DJ'en. Bare indsæt et spotify link eller søg direkte i appen." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tXw-jZ-1mP">
-                                <rect key="frame" x="16" y="703" width="343" height="248"/>
+                                <rect key="frame" x="16" y="496" width="343" height="248"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="248" id="rPp-ci-2wb"/>
                                 </constraints>
@@ -42,7 +42,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YTX-er-BL6">
-                                <rect key="frame" x="112.66666666666669" y="649" width="150" height="30"/>
+                                <rect key="frame" x="112.66666666666669" y="442" width="150" height="30"/>
                                 <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title=" Log ind som udvikler ">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -137,7 +137,7 @@
                                                                 <autoresizingMask key="autoresizingMask"/>
                                                                 <subviews>
                                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LOGO_ISDISCO" translatesAutoresizingMaskIntoConstraints="NO" id="x1N-1U-4vL">
-                                                                        <rect key="frame" x="0.0" y="-1" width="128" height="90"/>
+                                                                        <rect key="frame" x="0.0" y="-1" width="128.00000000000045" height="90.000000000000455"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="width" constant="128" id="1es-FS-i42"/>
                                                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="90" id="NP6-TP-tpN"/>
@@ -180,6 +180,7 @@
                                                             <connections>
                                                                 <outlet property="albumImage" destination="x1N-1U-4vL" id="FGg-wC-d9q"/>
                                                                 <outlet property="song_name" destination="GVI-Xl-3OD" id="hFq-6b-xY1"/>
+                                                                <segue destination="WXT-D0-U0M" kind="show" identifier="trackSegue" id="jg8-Yq-KSA"/>
                                                             </connections>
                                                         </collectionViewCell>
                                                     </cells>
@@ -232,7 +233,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="749.60000000000002" y="-320.68965517241378"/>
+            <point key="canvasLocation" x="1225" y="-118"/>
         </scene>
         <!--Live Table View Controller-->
         <scene sceneID="nQo-Qm-snI">
@@ -251,7 +252,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LOGO_ISDISCO" translatesAutoresizingMaskIntoConstraints="NO" id="GzI-k4-gje">
-                                            <rect key="frame" x="16" y="10" width="50" height="50"/>
+                                            <rect key="frame" x="16" y="10" width="50.000000000000455" height="50.000000000000455"/>
                                             <accessibility key="accessibilityConfiguration" identifier="SongPicture"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="50" id="qdr-6N-nh4"/>
@@ -567,7 +568,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J12-py-l7v" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1605.5999999999999" y="357.63546798029557"/>
+            <point key="canvasLocation" x="-460" y="886"/>
         </scene>
         <!--Pop Up View Controller-->
         <scene sceneID="1hW-OK-WBC">
@@ -736,7 +737,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LrO-6j-jcv" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="kWk-zS-CFh" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1605.5999999999999" y="1043.3497536945813"/>
+            <point key="canvasLocation" x="1689" y="573"/>
         </scene>
         <!--Second View Controller-->
         <scene sceneID="gfL-Ct-CeD">
@@ -824,7 +825,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e9g-x8-VlQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="750" y="1043"/>
+            <point key="canvasLocation" x="833" y="573"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -896,4 +897,7 @@
         <image name="outline_thumb_down_black_48pt" width="48" height="48"/>
         <image name="outline_thumb_up_black_48pt" width="48" height="48"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="jg8-Yq-KSA"/>
+    </inferredMetricsTieBreakers>
 </document>
