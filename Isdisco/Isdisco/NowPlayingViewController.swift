@@ -31,7 +31,7 @@ class NowPlayingViewController: UIViewController {
         UIApplication.shared.open(URL(string: spotifyLink)!, options: [:], completionHandler: nil)
     }
     
-    let apiRequest = SearchAPIRequest()
+    let fetchImageAPI = FetchImageAPI()
     let apiUrl = "https://isdisco.azurewebsites.net/api/spotify-track/app-currently-playing"
     var spotifyLink: String = ""
     
@@ -97,7 +97,7 @@ class NowPlayingViewController: UIViewController {
                 self.spotifyLink = currentlyPlaying.track.webplayerLink
                 
                 //Setting the picture
-                self.apiRequest.fetchImage(urlToImageToFetch: imageUrl, completionHandler: {
+                self.fetchImageAPI.fetchImage(urlToImageToFetch: imageUrl, completionHandler: {
                     image, _ in self.albumArt?.image = image
                 })
                 
