@@ -8,6 +8,7 @@
 
 import UIKit
 import Alamofire
+import MarqueeLabel
 import SwiftyJSON
 
 //Struct for parsing JSON
@@ -20,8 +21,8 @@ struct CurrentlyPlaying: Decodable {
 class NowPlayingViewController: UIViewController {
     
     @IBOutlet weak var albumArt: UIImageView!
-    @IBOutlet weak var songTitle: UILabel!
-    @IBOutlet weak var artistName: UILabel!
+    @IBOutlet weak var songTitle: MarqueeLabel!
+    @IBOutlet weak var artistName: MarqueeLabel!
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var openInSpotifyButton: UIButton!
     
@@ -47,6 +48,7 @@ class NowPlayingViewController: UIViewController {
                                      for: .valueChanged)
             scrollView.refreshControl = refreshControl
         }
+        
     }
     
     //ObjC function to trigger refresh adapted from StackOberflow
@@ -104,6 +106,7 @@ class NowPlayingViewController: UIViewController {
                 self.songTitle.text = songTitle
                 self.artistName.text = artistName
                 self.openInSpotifyButton.isHidden = false
+                
                 
                 //Nil indicates "no error"
                 completion(nil) // Or completion(SomeError.veryBadError)

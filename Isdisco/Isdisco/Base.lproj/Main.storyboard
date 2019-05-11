@@ -379,23 +379,6 @@
                                             <constraint firstAttribute="height" constant="330" id="d12-sB-4j4"/>
                                         </constraints>
                                     </imageView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="4y2-JH-Jud">
-                                        <rect key="frame" x="137.66666666666666" y="448" width="96" height="60"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="IsDisco" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wDN-mW-t0h">
-                                                <rect key="frame" x="0.0" y="0.0" width="96" height="36"/>
-                                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Spiller nu" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ftE-cm-H6W">
-                                                <rect key="frame" x="0.0" y="36" width="96" height="24"/>
-                                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                    </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Spiller nu" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tkw-cs-4C4">
                                         <rect key="frame" x="87" y="30" width="197" height="20"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
@@ -404,29 +387,66 @@
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dto-EZ-BIc">
                                         <rect key="frame" x="137.66666666666666" y="538" width="96" height="33"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="33" id="Pwm-4y-1pc"/>
+                                        </constraints>
                                         <color key="tintColor" red="0.11372549019607843" green="0.72549019607843135" blue="0.32941176470588235" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
                                         <state key="normal" title="Åben i Spotify"/>
                                         <connections>
                                             <action selector="openInSpotify:" destination="boO-hL-DVq" eventType="touchUpInside" id="UDc-TJ-0gm"/>
                                         </connections>
                                     </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Spiller nu" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ftE-cm-H6W" customClass="MarqueeLabel" customModule="MarqueeLabel">
+                                        <rect key="frame" x="8" y="506" width="355" height="24"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="IsDisco" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wDN-mW-t0h" customClass="MarqueeLabel" customModule="MarqueeLabel">
+                                        <rect key="frame" x="8" y="467" width="355" height="36"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="scrollDuration">
+                                                <real key="value" value="6"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="scrollRate">
+                                                <real key="value" value="16"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="fadeLength">
+                                                <real key="value" value="8"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="leadingBuffer">
+                                                <real key="value" value="0.0"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="trailingBuffer">
+                                                <real key="value" value="0.0"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="animationDelay">
+                                                <real key="value" value="4"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </label>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="4y2-JH-Jud" firstAttribute="top" secondItem="6uZ-Wk-BC5" secondAttribute="bottom" constant="38" id="2yB-5z-p1F"/>
+                                    <constraint firstAttribute="bottom" secondItem="wDN-mW-t0h" secondAttribute="bottom" constant="183" id="4vf-YE-zDI"/>
                                     <constraint firstItem="6uZ-Wk-BC5" firstAttribute="top" secondItem="TtY-9M-VPy" secondAttribute="top" constant="80" id="6SE-UN-C0R"/>
-                                    <constraint firstItem="dto-EZ-BIc" firstAttribute="trailing" secondItem="4y2-JH-Jud" secondAttribute="trailing" id="9Gg-Qh-3ZZ"/>
+                                    <constraint firstItem="dto-EZ-BIc" firstAttribute="centerX" secondItem="wDN-mW-t0h" secondAttribute="centerX" id="926-6F-jad"/>
                                     <constraint firstAttribute="trailing" secondItem="6uZ-Wk-BC5" secondAttribute="trailing" constant="20.000000000000455" id="AI7-yx-CtI"/>
+                                    <constraint firstItem="dto-EZ-BIc" firstAttribute="centerX" secondItem="ftE-cm-H6W" secondAttribute="centerX" id="DkS-XY-ffT"/>
                                     <constraint firstItem="6uZ-Wk-BC5" firstAttribute="centerX" secondItem="Tkw-cs-4C4" secondAttribute="centerX" id="JwC-Xk-Msc"/>
+                                    <constraint firstItem="ftE-cm-H6W" firstAttribute="top" secondItem="wDN-mW-t0h" secondAttribute="bottom" constant="3" id="N1y-QS-T66"/>
+                                    <constraint firstItem="wDN-mW-t0h" firstAttribute="leading" secondItem="ftE-cm-H6W" secondAttribute="leading" id="Rkc-BF-o6h"/>
                                     <constraint firstItem="Tkw-cs-4C4" firstAttribute="leading" secondItem="TtY-9M-VPy" secondAttribute="leading" constant="87" id="UGS-xC-Kbl"/>
-                                    <constraint firstAttribute="bottom" relation="lessThanOrEqual" secondItem="dto-EZ-BIc" secondAttribute="bottom" constant="80" id="VSi-Kx-CvZ"/>
                                     <constraint firstItem="6uZ-Wk-BC5" firstAttribute="centerX" secondItem="TtY-9M-VPy" secondAttribute="centerX" id="ZGY-hV-az9"/>
-                                    <constraint firstAttribute="bottom" secondItem="4y2-JH-Jud" secondAttribute="bottom" constant="143" id="anm-rB-Jam"/>
+                                    <constraint firstItem="wDN-mW-t0h" firstAttribute="leading" secondItem="TtY-9M-VPy" secondAttribute="leadingMargin" id="eLD-s7-dgg"/>
+                                    <constraint firstItem="dto-EZ-BIc" firstAttribute="top" secondItem="TtY-9M-VPy" secondAttribute="top" constant="538" id="hy4-6W-xln"/>
                                     <constraint firstItem="6uZ-Wk-BC5" firstAttribute="top" secondItem="Tkw-cs-4C4" secondAttribute="bottom" constant="30" id="i70-X1-Aym"/>
                                     <constraint firstItem="6uZ-Wk-BC5" firstAttribute="leading" secondItem="TtY-9M-VPy" secondAttribute="leading" constant="20" id="i89-3o-HhI"/>
+                                    <constraint firstItem="dto-EZ-BIc" firstAttribute="centerX" secondItem="6uZ-Wk-BC5" secondAttribute="centerX" id="k9l-Bj-U18"/>
                                     <constraint firstItem="Tkw-cs-4C4" firstAttribute="top" secondItem="TtY-9M-VPy" secondAttribute="top" constant="30" id="lwP-lG-VHM"/>
-                                    <constraint firstItem="4y2-JH-Jud" firstAttribute="centerX" secondItem="6uZ-Wk-BC5" secondAttribute="centerX" id="t2J-Uf-eMg"/>
-                                    <constraint firstItem="dto-EZ-BIc" firstAttribute="centerX" secondItem="4y2-JH-Jud" secondAttribute="centerX" id="uYo-eT-rME"/>
-                                    <constraint firstItem="dto-EZ-BIc" firstAttribute="top" secondItem="4y2-JH-Jud" secondAttribute="bottom" constant="30" id="z5g-Cg-ZwX"/>
+                                    <constraint firstItem="dto-EZ-BIc" firstAttribute="top" secondItem="ftE-cm-H6W" secondAttribute="bottom" constant="8" symbolic="YES" id="mu0-FJ-lOT"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
