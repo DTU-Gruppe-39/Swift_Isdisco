@@ -17,6 +17,7 @@ class Singleton {
     var tracks = [Track]()
     var users = [User]()
     var songRequests = [SongRequest]()
+    var currentUserId = Int();
     
     private init() {}
     
