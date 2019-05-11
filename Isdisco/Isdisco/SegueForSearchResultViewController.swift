@@ -48,7 +48,7 @@ class SegueForSearchResultViewController: UIViewController {
     
     @IBAction func requestTrack(_ unwindSegue: UIStoryboardSegue) {
         weak var secondViewController = self.presentingViewController
-        var musicrequest = Musicrequest.init(track: self.track, userId: 1)
+        var musicrequest = Musicrequest.init(track: self.track, userId: Singleton.shared.currentUserId)
         
         Alamofire.request("https://isdisco.azurewebsites.net/api/musicrequest", method: .post, parameters: Musicrequest.objectToJson(object: musicrequest), encoding: JSONEncoding.default).responseJSON { response in
             //Fix failure and success
