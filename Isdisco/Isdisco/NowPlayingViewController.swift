@@ -38,7 +38,6 @@ class NowPlayingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //Pull to refresh adapted from StackOverflow
         if #available(iOS 10.0, *) {
             let refreshControl = UIRefreshControl()
             let title = "Træk for at genindlæse"

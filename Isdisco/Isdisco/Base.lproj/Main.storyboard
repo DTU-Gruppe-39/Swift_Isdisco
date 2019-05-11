@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Rp-9n-aVs">
-                                <rect key="frame" x="37" y="180.66666666666663" width="301" height="461"/>
+                                <rect key="frame" x="37" y="387.66666666666669" width="301" height="47"/>
                                 <color key="backgroundColor" red="0.25882352941176467" green="0.40392156862745099" blue="0.69803921568627447" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="30"/>
                                 <state key="normal" title=" Log in with Facebook ">
@@ -30,10 +30,10 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LOGO_ISDISCO1" highlightedImage="LOGO_ISDISCO" translatesAutoresizingMaskIntoConstraints="NO" id="lMg-Jt-9aC">
-                                <rect key="frame" x="5" y="71" width="365" height="16"/>
+                                <rect key="frame" x="5" y="71" width="365" height="223"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" layoutMarginsFollowReadableWidth="YES" text="Denne app giver dig mulighed for at sende dine musikønsker til DJ'en. Bare indsæt et spotify link eller søg direkte i appen." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tXw-jZ-1mP">
-                                <rect key="frame" x="16" y="703" width="343" height="248"/>
+                                <rect key="frame" x="16" y="496" width="343" height="248"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="248" id="rPp-ci-2wb"/>
                                 </constraints>
@@ -42,7 +42,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YTX-er-BL6">
-                                <rect key="frame" x="112.66666666666669" y="649" width="150" height="30"/>
+                                <rect key="frame" x="112.66666666666669" y="442" width="150" height="30"/>
                                 <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title=" Log ind som udvikler ">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -121,7 +121,7 @@
                                                                 <autoresizingMask key="autoresizingMask"/>
                                                                 <subviews>
                                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LOGO_ISDISCO" translatesAutoresizingMaskIntoConstraints="NO" id="x1N-1U-4vL">
-                                                                        <rect key="frame" x="0.0" y="-1" width="128" height="90"/>
+                                                                        <rect key="frame" x="0.0" y="-1" width="128.00000000000045" height="90.000000000000455"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="width" constant="128" id="1es-FS-i42"/>
                                                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="90" id="NP6-TP-tpN"/>
@@ -235,7 +235,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LOGO_ISDISCO" translatesAutoresizingMaskIntoConstraints="NO" id="GzI-k4-gje">
-                                            <rect key="frame" x="16" y="10" width="50" height="50"/>
+                                            <rect key="frame" x="16" y="10" width="50.000000000000455" height="50.000000000000455"/>
                                             <accessibility key="accessibilityConfiguration" identifier="SongPicture"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="50" id="qdr-6N-nh4"/>
@@ -374,13 +374,13 @@
                                 <rect key="frame" x="2" y="43" width="371" height="686"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LOGO_ISDISCO" translatesAutoresizingMaskIntoConstraints="NO" id="6uZ-Wk-BC5">
-                                        <rect key="frame" x="20" y="115" width="331" height="330"/>
+                                        <rect key="frame" x="20" y="80" width="331.00000000000045" height="330.00000000000045"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="330" id="d12-sB-4j4"/>
                                         </constraints>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="4y2-JH-Jud">
-                                        <rect key="frame" x="137.66666666666666" y="483" width="96" height="60"/>
+                                        <rect key="frame" x="137.66666666666666" y="448" width="96" height="60"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="IsDisco" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wDN-mW-t0h">
                                                 <rect key="frame" x="0.0" y="0.0" width="96" height="36"/>
@@ -397,13 +397,13 @@
                                         </subviews>
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Spiller nu" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tkw-cs-4C4">
-                                        <rect key="frame" x="87" y="32.666666666666671" width="197" height="20.333333333333329"/>
+                                        <rect key="frame" x="87" y="30" width="197" height="20"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                         <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dto-EZ-BIc">
-                                        <rect key="frame" x="137.66666666666666" y="581" width="96" height="30"/>
+                                        <rect key="frame" x="137.66666666666666" y="538" width="96" height="33"/>
                                         <color key="tintColor" red="0.11372549019607843" green="0.72549019607843135" blue="0.32941176470588235" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
                                         <state key="normal" title="Åben i Spotify"/>
                                         <connections>
@@ -413,18 +413,20 @@
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="4y2-JH-Jud" firstAttribute="top" secondItem="6uZ-Wk-BC5" secondAttribute="bottom" constant="38" id="2yB-5z-p1F"/>
+                                    <constraint firstItem="6uZ-Wk-BC5" firstAttribute="top" secondItem="TtY-9M-VPy" secondAttribute="top" constant="80" id="6SE-UN-C0R"/>
                                     <constraint firstItem="dto-EZ-BIc" firstAttribute="trailing" secondItem="4y2-JH-Jud" secondAttribute="trailing" id="9Gg-Qh-3ZZ"/>
                                     <constraint firstAttribute="trailing" secondItem="6uZ-Wk-BC5" secondAttribute="trailing" constant="20.000000000000455" id="AI7-yx-CtI"/>
                                     <constraint firstItem="6uZ-Wk-BC5" firstAttribute="centerX" secondItem="Tkw-cs-4C4" secondAttribute="centerX" id="JwC-Xk-Msc"/>
-                                    <constraint firstItem="6uZ-Wk-BC5" firstAttribute="top" secondItem="Tkw-cs-4C4" secondAttribute="bottom" constant="62" id="QJy-0W-SbB"/>
                                     <constraint firstItem="Tkw-cs-4C4" firstAttribute="leading" secondItem="TtY-9M-VPy" secondAttribute="leading" constant="87" id="UGS-xC-Kbl"/>
+                                    <constraint firstAttribute="bottom" relation="lessThanOrEqual" secondItem="dto-EZ-BIc" secondAttribute="bottom" constant="80" id="VSi-Kx-CvZ"/>
                                     <constraint firstItem="6uZ-Wk-BC5" firstAttribute="centerX" secondItem="TtY-9M-VPy" secondAttribute="centerX" id="ZGY-hV-az9"/>
-                                    <constraint firstItem="6uZ-Wk-BC5" firstAttribute="top" secondItem="TtY-9M-VPy" secondAttribute="top" constant="115" id="aPA-nV-bwv"/>
                                     <constraint firstAttribute="bottom" secondItem="4y2-JH-Jud" secondAttribute="bottom" constant="143" id="anm-rB-Jam"/>
+                                    <constraint firstItem="6uZ-Wk-BC5" firstAttribute="top" secondItem="Tkw-cs-4C4" secondAttribute="bottom" constant="30" id="i70-X1-Aym"/>
                                     <constraint firstItem="6uZ-Wk-BC5" firstAttribute="leading" secondItem="TtY-9M-VPy" secondAttribute="leading" constant="20" id="i89-3o-HhI"/>
+                                    <constraint firstItem="Tkw-cs-4C4" firstAttribute="top" secondItem="TtY-9M-VPy" secondAttribute="top" constant="30" id="lwP-lG-VHM"/>
                                     <constraint firstItem="4y2-JH-Jud" firstAttribute="centerX" secondItem="6uZ-Wk-BC5" secondAttribute="centerX" id="t2J-Uf-eMg"/>
                                     <constraint firstItem="dto-EZ-BIc" firstAttribute="centerX" secondItem="4y2-JH-Jud" secondAttribute="centerX" id="uYo-eT-rME"/>
-                                    <constraint firstItem="dto-EZ-BIc" firstAttribute="top" secondItem="4y2-JH-Jud" secondAttribute="bottom" constant="38" id="z5g-Cg-ZwX"/>
+                                    <constraint firstItem="dto-EZ-BIc" firstAttribute="top" secondItem="4y2-JH-Jud" secondAttribute="bottom" constant="30" id="z5g-Cg-ZwX"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
