@@ -160,20 +160,17 @@ class LiveTableViewController: UITableViewController, LiveTableViewCellDelegate 
     
 
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-//        let view = UIView.init(frame: CGRect.init(x: 0, y: 0, width: tableView.frame.width, height: 50))
-        let label = UILabel()
-//        view.backgroundColor = UIColor.white.withAlphaComponent(0.98)
-//        label.frame = CGRect.init(x: tableView.frame.width/3, y: 50, width: view.frame.width-10, height: view.frame.height-10)
+        let view = UIView(frame: CGRect.zero)
+        let label = UILabel(frame: CGRect(x: 0, y: 15, width: tableView.frame.width, height: 50))
+        view.backgroundColor = UIColor.white
         label.text = "Musik Ønsker"
-        label.font.withSize(48)
         label.textColor = UIColor.black
-        label.textAlignment = .center
-
-//        view.addSubview(label)
+        label.font = UIFont.systemFont(ofSize: 24)
+        label.textAlignment = NSTextAlignment.center
         
-
+        view.addSubview(label)
         
-        return label
+        return view
     }
     
     /*
