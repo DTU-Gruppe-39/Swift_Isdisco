@@ -21,7 +21,7 @@ class FeedbackViewController: UIViewController, UIPickerViewDataSource, UIPicker
     let URL = "https://isdisco.azurewebsites.net/api/feedback/uploadfeedback"
     
     //TODO change to "current user"
-    let feedbackUser = User.init(id: 1, fullname: "Thomas Mattsson", vip: false, loginDetails: LoginDetails.init(username: "Thomas", password: "123"), appToken: "", facebookToken: "")
+    let feedbackUser = User.init(id: Singleton.shared.currentUserId, fullname: Singleton.shared.users[Singleton.shared.currentUserId].name, vip: false, loginDetails: LoginDetails.init(username: "", password: ""), appToken: "", facebookToken: "")
 
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1

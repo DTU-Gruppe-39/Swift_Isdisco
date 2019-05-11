@@ -31,7 +31,6 @@ class NowPlayingViewController: UIViewController {
         UIApplication.shared.open(URL(string: spotifyLink)!, options: [:], completionHandler: nil)
     }
     
-    
     let apiRequest = SearchAPIRequest()
     let apiUrl = "https://isdisco.azurewebsites.net/api/spotify-track/app-currently-playing"
     var spotifyLink: String = ""
@@ -106,7 +105,6 @@ class NowPlayingViewController: UIViewController {
                 self.songTitle.text = songTitle
                 self.artistName.text = artistName
                 self.openInSpotifyButton.isHidden = false
-                
                 
                 //Nil indicates "no error"
                 completion(nil) // Or completion(SomeError.veryBadError)
