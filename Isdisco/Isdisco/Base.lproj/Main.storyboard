@@ -218,7 +218,7 @@
             </objects>
             <point key="canvasLocation" x="749.60000000000002" y="-320.68965517241378"/>
         </scene>
-        <!--Feed-->
+        <!--Live Table View Controller-->
         <scene sceneID="nQo-Qm-snI">
             <objects>
                 <tableViewController id="lPk-79-TZr" customClass="LiveTableViewController" customModule="Isdisco" customModuleProvider="target" sceneMemberID="viewController">
@@ -356,11 +356,11 @@
                             <outlet property="delegate" destination="lPk-79-TZr" id="WUY-mV-FxQ"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Feed" image="feed" id="R5J-Pm-HsP"/>
+                    <navigationItem key="navigationItem" id="dfX-Hy-s4j"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WWb-tL-Oil" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1632.8" y="-321.42857142857144"/>
+            <point key="canvasLocation" x="2575.1999999999998" y="-321.42857142857144"/>
         </scene>
         <!--Spiller nu-->
         <scene sceneID="gb4-Wg-Kux">
@@ -470,7 +470,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nxg-sg-ezH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3092" y="-594.0886699507389"/>
+            <point key="canvasLocation" x="4034.4000000000001" y="-594.0886699507389"/>
         </scene>
         <!--Feedback-->
         <scene sceneID="eZH-9Y-H8e">
@@ -609,7 +609,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BZt-K0-NYa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3092" y="92"/>
+            <point key="canvasLocation" x="4034.4000000000001" y="91.625615763546804"/>
         </scene>
         <!--Segue For Search Result View Controller-->
         <scene sceneID="GFd-Xk-8Gl">
@@ -823,7 +823,7 @@
                         <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
                         <segue destination="CVX-CF-dqK" kind="relationship" relationship="viewControllers" id="JAh-Tc-8UW"/>
                         <segue destination="boO-hL-DVq" kind="relationship" relationship="viewControllers" id="nBR-7x-VN8"/>
-                        <segue destination="lPk-79-TZr" kind="relationship" relationship="viewControllers" id="Xv3-BQ-aEC"/>
+                        <segue destination="WZY-Rc-ztz" kind="relationship" relationship="viewControllers" id="Xv3-BQ-aEC"/>
                         <segue destination="bkf-Um-f0z" kind="relationship" relationship="viewControllers" id="Pq7-nD-zz9"/>
                     </connections>
                 </tabBarController>
@@ -845,6 +845,28 @@
                 </label>
             </objects>
             <point key="canvasLocation" x="-231" y="92"/>
+        </scene>
+        <!--Feed-->
+        <scene sceneID="7Zm-iP-75d">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="WZY-Rc-ztz" customClass="LiveNavBarController" customModule="Isdisco" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Feed" image="feed" id="R5J-Pm-HsP"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="71m-99-tqy">
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="eMP-DI-0Yg">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
+                    <connections>
+                        <segue destination="lPk-79-TZr" kind="relationship" relationship="rootViewController" id="NTH-uq-fuM"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gjj-13-WLe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1632.8" y="-321.42857142857144"/>
         </scene>
     </scenes>
     <resources>

@@ -13,8 +13,6 @@ class LiveTableViewController: UITableViewController, LiveTableViewCellDelegate 
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tableView.sectionHeaderHeight = 70
-//        self.tableView.tableHeaderView?.backgroundColor = UIColor.white.withAlphaComponent(0.98)
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -158,20 +156,6 @@ class LiveTableViewController: UITableViewController, LiveTableViewCellDelegate 
         return 70.0
     }
     
-
-    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let view = UIView(frame: CGRect.zero)
-        let label = UILabel(frame: CGRect(x: 0, y: 15, width: tableView.frame.width, height: 50))
-        view.backgroundColor = UIColor.white
-        label.text = "Musik Ønsker"
-        label.textColor = UIColor.black
-        label.font = UIFont.systemFont(ofSize: 24)
-        label.textAlignment = NSTextAlignment.center
-        
-        view.addSubview(label)
-        
-        return view
-    }
     
     /*
     // Override to support conditional editing of the table view.
