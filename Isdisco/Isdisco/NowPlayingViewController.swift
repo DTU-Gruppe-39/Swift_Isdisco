@@ -33,7 +33,7 @@ class NowPlayingViewController: UIViewController {
     
     
     let apiRequest = SearchAPIRequest()
-    let apiUrl = "https://isdisco.azurewebsites.net/api/spotify-track/currently-playing"
+    let apiUrl = "https://isdisco.azurewebsites.net/api/spotify-track/app-currently-playing"
     var spotifyLink: String = ""
     
     override func viewDidLoad() {
