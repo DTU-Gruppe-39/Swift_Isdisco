@@ -49,18 +49,19 @@ class SegueForSearchResultViewController: UIViewController {
     @IBAction func requestTrack(_ unwindSegue: UIStoryboardSegue) {
         weak var secondViewController = self.presentingViewController
         var musicrequest = Musicrequest.init(track: self.track, userId: Singleton.shared.currentUserId)
+        print("\n Musicrequest userId:\(musicrequest.userId), reqId:\(musicrequest.id) \n")
         
         Alamofire.request("https://isdisco.azurewebsites.net/api/musicrequest", method: .post, parameters: Musicrequest.objectToJson(object: musicrequest), encoding: JSONEncoding.default).responseJSON { response in
             //Fix failure and success
             switch response.result {
                 case .success:
                     self.dismiss(animated: true) {
-                        self.showToast(controller: secondViewController!, message: "Musik forespørgelse er sendt", seconds: 1)
+                        self.showToast(controller: secondViewController!, message: "Musik forespørgelse er sendt: \(Singleton.shared.currentUserId)", seconds: 1)
 
                     }
                 case .failure( _):
                     self.dismiss(animated: true) {
-                        self.showToast(controller: secondViewController!, message: "Musik forespørgelse er sendt", seconds: 1)
+                        self.showToast(controller: secondViewController!, message: "FAILED: Musik forespørgelse er sendt", seconds: 3)
                 }
             }
         }
