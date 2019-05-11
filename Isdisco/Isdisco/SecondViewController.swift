@@ -49,7 +49,7 @@ class SecondViewController: UITableViewController {
         print(indexPath.row)
         trackCell.song_name?.text = searchResults[indexPath.row].songName
         trackCell.artist?.text = searchResults[indexPath.row].artistName
-        fetchImage.fetchImage(urlToImageToFetch: searchResults[indexPath.row].image_small_url, completionHandler: {
+        fetchImage.fetchImage(urlToImageToFetch: searchResults[indexPath.row].image_medium_url, completionHandler: {
             image, _ in trackCell.albumImage?.image = image
         })
     

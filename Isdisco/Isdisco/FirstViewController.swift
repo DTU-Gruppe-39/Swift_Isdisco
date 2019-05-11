@@ -11,7 +11,7 @@ import UserNotifications
 
 class FirstViewController: UIViewController, UITableViewDataSource {
     
-    var categories = ["Isdisco top list", "Top 50 Danmark", "Senest afspillet"]
+    var categories = ["Vores udvalg"]
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
@@ -22,6 +22,7 @@ class FirstViewController: UIViewController, UITableViewDataSource {
         
         return tableCell
     }
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return categories.count
     }
@@ -29,7 +30,6 @@ class FirstViewController: UIViewController, UITableViewDataSource {
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return categories[section]
     }
-    
 
     var loggedIn = false;
     
@@ -62,6 +62,12 @@ class FirstViewController: UIViewController, UITableViewDataSource {
     @IBAction func finishedLoggingIn(segue: UIStoryboardSegue) {
         loggedIn = true
         print("logged in and ready to go!")
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "trackSegue") {
+            
+        }
     }
 
 
