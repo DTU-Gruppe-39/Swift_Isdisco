@@ -23,7 +23,7 @@ class SecondViewController: UITableViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         tableView.tableFooterView = UIView()
-        navigationItem.title = "Search"
+        navigationItem.title = "Søg"
         searchController.searchBar.delegate = self
         searchController.searchBar.placeholder = "Søg Spotify Sang"
         searchController.dimsBackgroundDuringPresentation = false

@@ -16,10 +16,10 @@ struct MusicRequest: Decodable{
     let timestamp: String
     let upvotes: [Int]?
     let downvotes: [Int]?
-    private let upvoteUsers: [User]?
-    private let downvoteUsers: [User]?
+    let upvoteUsers: [User]?
+    let downvoteUsers: [User]?
     
-    private struct User: Decodable {
+    struct User: Decodable {
         let id: Int
         let fullname: String
         let vip: Bool
@@ -28,7 +28,7 @@ struct MusicRequest: Decodable{
         let facebookToken: String?
     }
     
-    private struct LoginDetails: Decodable {
+    struct LoginDetails: Decodable {
         let username: String
         let password: String
     }
@@ -38,8 +38,9 @@ struct MusicRequest: Decodable{
 class MusicReqeustAPIRequest {
     let apiUrl = "https://isdisco.azurewebsites.net/api/musicrequest"
     
-    func FetchMusicRequests(completion: @escaping (Error?) -> Void) {
-        var musicRequests = [MusicRequest]()
+    var musicRequests = [MusicRequest]()
+
+    func FetchMusicRequests(completion: @escaping ([MusicRequest]) -> Void) {
         //Performing an Alamofire request to get the data from the URL
         Alamofire.request(self.apiUrl).responseJSON { response in
             //now here we have the response data that we need to parse
@@ -50,12 +51,11 @@ class MusicReqeustAPIRequest {
                 let decoder = JSONDecoder()
                 
                 //Parsing the currently playing object from "json".
-                musicRequests = try decoder.decode([MusicRequest].self, from: json!)
-                print(musicRequests[3].track.songName)
-                completion(nil)
+                self.musicRequests = try decoder.decode([MusicRequest].self, from: json!)
+                print(self.musicRequests[3].track.songName)
+                completion(self.musicRequests)
             } catch let err {
                 print(err)
-                completion(err)
             }
         }
     }

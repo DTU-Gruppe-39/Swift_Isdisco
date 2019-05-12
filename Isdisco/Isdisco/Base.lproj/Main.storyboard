@@ -130,7 +130,7 @@
                                                                 <autoresizingMask key="autoresizingMask"/>
                                                                 <subviews>
                                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LOGO_ISDISCO" translatesAutoresizingMaskIntoConstraints="NO" id="x1N-1U-4vL">
-                                                                        <rect key="frame" x="0.0" y="1" width="128.00000000000045" height="90.000000000000455"/>
+                                                                        <rect key="frame" x="0.0" y="1" width="128" height="90"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="width" constant="128" id="1es-FS-i42"/>
                                                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="90" id="NP6-TP-tpN"/>
@@ -238,7 +238,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LOGO_ISDISCO" translatesAutoresizingMaskIntoConstraints="NO" id="GzI-k4-gje">
-                                            <rect key="frame" x="16" y="10" width="50.000000000000455" height="50.000000000000455"/>
+                                            <rect key="frame" x="16" y="10" width="50" height="50"/>
                                             <accessibility key="accessibilityConfiguration" identifier="SongPicture"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="50" id="qdr-6N-nh4"/>
@@ -377,7 +377,7 @@
                                 <rect key="frame" x="2" y="43" width="371" height="686"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LOGO_ISDISCO" translatesAutoresizingMaskIntoConstraints="NO" id="6uZ-Wk-BC5">
-                                        <rect key="frame" x="20" y="80" width="331.00000000000045" height="330.00000000000045"/>
+                                        <rect key="frame" x="20" y="80" width="331" height="330"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="330" id="d12-sB-4j4"/>
                                         </constraints>
@@ -873,11 +873,11 @@
             </objects>
             <point key="canvasLocation" x="2190" y="-321"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Søg-->
         <scene sceneID="eVF-ri-UI7">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="aOt-lh-CRQ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="search" id="ak4-ZS-kSd"/>
+                    <tabBarItem key="tabBarItem" title="Søg" image="outline_search_black_36pt" id="ak4-ZS-kSd"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="V1h-V7-QDo">
                         <rect key="frame" x="0.0" y="44" width="375" height="44"/>
@@ -901,10 +901,11 @@
         <image name="contact" width="23" height="23"/>
         <image name="feed" width="23" height="23"/>
         <image name="home" width="23" height="23"/>
+        <image name="outline_search_black_36pt" width="36" height="36"/>
         <image name="outline_thumb_down_black_48pt" width="48" height="48"/>
         <image name="outline_thumb_up_black_48pt" width="48" height="48"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="xkt-z5-RN5"/>
+        <segue reference="jg8-Yq-KSA"/>
     </inferredMetricsTieBreakers>
 </document>
