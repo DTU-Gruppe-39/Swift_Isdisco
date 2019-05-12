@@ -11,9 +11,23 @@ import UIKit
 class LiveTableViewController: UITableViewController, LiveTableViewCellDelegate {
 //class LiveTableViewController: UITableViewController {
 
+    let musicRequestAPI = MusicReqeustAPIRequest()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        var musicRequests: [MusicRequest]?
+        
+        /*
+        musicRequests = musicRequestAPI.FetchMusicRequests(completion: { error in
+            if error != nil {
+                print("Oops! Something went wrong...")
+            } else {
+                print("It has finished")
+            }
+        })
+        print("\(musicRequests![0].track.songName)")
+         */
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
