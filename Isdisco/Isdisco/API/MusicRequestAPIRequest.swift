@@ -52,7 +52,7 @@ class MusicReqeustAPIRequest {
                 
                 //Parsing the currently playing object from "json".
                 self.musicRequests = try decoder.decode([MusicRequest].self, from: json!)
-                print(self.musicRequests[3].track.songName)
+                //print(self.musicRequests[3].track.songName)
                 completion(self.musicRequests)
             } catch let err {
                 print(err)

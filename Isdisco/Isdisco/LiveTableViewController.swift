@@ -14,6 +14,8 @@ class LiveTableViewController: UITableViewController, LiveTableViewCellDelegate 
     let musicRequestAPI = MusicReqeustAPIRequest()
     var musicRequests = [MusicRequest]()
     
+    let fetchImageAPI = FetchImageAPI()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -50,7 +52,7 @@ class LiveTableViewController: UITableViewController, LiveTableViewCellDelegate 
         }
     }
     
-    //ObjC function to trigger refresh adapted from StackOberflow
+    //Pull to refresh function
     @objc func refreshOptions(sender: UIRefreshControl) {
         musicRequestAPI.FetchMusicRequests() { response in
             //            let musicRequests = response
@@ -77,7 +79,6 @@ class LiveTableViewController: UITableViewController, LiveTableViewCellDelegate 
         return musicRequests.count
     }
     
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "LiveCell", for: indexPath) as! LiveTableViewCell
         
@@ -89,39 +90,20 @@ class LiveTableViewController: UITableViewController, LiveTableViewCellDelegate 
         
         //        let request = Singleton.shared.songRequests[indexPath.row]
         let request = musicRequests[indexPath.row]
+        
+        //Setting the picture
+        self.fetchImageAPI.fetchImage(urlToImageToFetch: request.track.image_medium_url, completionHandler: {
+            image, _ in cell.songImage?.image = image
+        })
+        
         cell.songName.text = request.track.songName
         cell.artist.text = request.track.artistName
         cell.userName.text = request.upvoteUsers![0].fullname
         cell.timeAgo.text = String(request.timestamp) + " min ago"
         cell.voteCount.text = String(request.upvotes!.count - request.downvotes!.count)
-        //        if request.voted {
-        //            if request.upVoted {
-        ////                cell.upVoteButtone.isEnabled = false
-        ////                cell.downVoteButton.isEnabled = false
-        //                cell.upVoteButtone.tintColor = UIColor.lightGray
-        //                cell.downVoteButton.isHidden = true
-        //                cell.upVoteButtone.isHidden = false
-        //            } else {
-        ////                cell.downVoteButton.isEnabled = false
-        ////                cell.upVoteButtone.isEnabled = false
-        //                cell.downVoteButton.tintColor = UIColor.lightGray
-        //                cell.upVoteButtone.isHidden = true
-        //                cell.downVoteButton.isHidden = false
-        //            }
-        //        } else {
-        ////            cell.downVoteButton.isEnabled = true
-        ////            cell.upVoteButtone.isEnabled = true
-        //            cell.upVoteButtone.tintColor = UIColor.darkGray
-        //            cell.downVoteButton.tintColor = UIColor.darkGray
-        //            cell.upVoteButtone.isHidden = false
-        //            cell.downVoteButton.isHidden = false
-        //        }
         
         
-        
-        
-        
-        
+        ThumbsUpDown(request, cell)
         cell.delegate = self
         
         // Configure the cell...
@@ -141,32 +123,33 @@ class LiveTableViewController: UITableViewController, LiveTableViewCellDelegate 
         let request = musicRequests[tappedIndexPath.row]
         let cell = tableView.cellForRow(at: tappedIndexPath) as! LiveTableViewCell
         
-        //        if request.voted {
-        //            if request.upVoted {
-        //                request.voted = false
-        //                request.upVoted = false
-        //
-        ////                cell.upVoteButtone.isEnabled = true
-        ////                cell.downVoteButton.isEnabled = true
-        //                cell.upVoteButtone.tintColor = UIColor.darkGray
-        //                cell.downVoteButton.isHidden = false
-        //                request.votes -= 1
-        //                sender.voteCount.text = String(request.votes)
-        //            }
-        //        } else {
-        //            request.voted = true
-        //            request.upVoted = true
-        //
-        ////            cell.upVoteButtone.isEnabled = false
-        ////            cell.downVoteButton.isEnabled = false
-        //            cell.upVoteButtone.tintColor = UIColor.lightGray
-        //            cell.downVoteButton.isHidden = true
-        //            request.votes += 1
-        //            sender.voteCount.text = String(request.votes)
-        //
-        //        }
+        if (request.upvotes!.contains(Singleton.shared.currentUserId) || request.downvotes!.contains(Singleton.shared.currentUserId)) {
+            if (request.upvotes!.contains(Singleton.shared.currentUserId)) {
+                //request.voted = false
+                //request.upVoted = false
+                
+                cell.upVoteButtone.isEnabled = true
+                cell.downVoteButton.isEnabled = true
+                cell.upVoteButtone.tintColor = UIColor.darkGray
+                cell.downVoteButton.isHidden = false
+                //request.votes -= 1
+                //sender.voteCount.text = String(request.votes)
+                
+            } else {
+                
+                //request.voted = true
+                //request.upVoted = true
+                
+                cell.upVoteButtone.isEnabled = false
+                cell.downVoteButton.isEnabled = false
+                cell.upVoteButtone.tintColor = UIColor.lightGray
+                cell.downVoteButton.isHidden = true
+                //request.votes += 1
+                //sender.voteCount.text = String(request.votes)
+                
+            }
+        }
     }
-    
     func liveTableViewCellDidDownVote(_ sender: LiveTableViewCell) {
         guard let tappedIndexPath = tableView.indexPath(for: sender) else { return }
         print("You just DownVoted a song", sender, tappedIndexPath)
@@ -198,11 +181,33 @@ class LiveTableViewController: UITableViewController, LiveTableViewCellDelegate 
         //        }
     }
     
-    
-    
-    
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 70.0
+    }
+    
+    fileprivate func ThumbsUpDown(_ request: MusicRequest, _ cell: LiveTableViewCell) {
+        if (request.upvotes!.contains(Singleton.shared.currentUserId) || request.downvotes!.contains(Singleton.shared.currentUserId)) {
+            if (request.upvotes!.contains(Singleton.shared.currentUserId)) {
+                cell.upVoteButtone.isEnabled = false
+                cell.downVoteButton.isEnabled = false
+                cell.upVoteButtone.tintColor = UIColor.lightGray
+                cell.downVoteButton.isHidden = true
+                cell.upVoteButtone.isHidden = false
+            } else if (request.downvotes!.contains(Singleton.shared.currentUserId)) {
+                cell.downVoteButton.isEnabled = false
+                cell.upVoteButtone.isEnabled = false
+                cell.downVoteButton.tintColor = UIColor.lightGray
+                cell.upVoteButtone.isHidden = true
+                cell.downVoteButton.isHidden = false
+            }
+        } else {
+            cell.downVoteButton.isEnabled = true
+            cell.upVoteButtone.isEnabled = true
+            cell.upVoteButtone.tintColor = UIColor.darkGray
+            cell.downVoteButton.tintColor = UIColor.darkGray
+            cell.upVoteButtone.isHidden = false
+            cell.downVoteButton.isHidden = false
+        }
     }
     
     
