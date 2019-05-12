@@ -110,10 +110,10 @@ class LiveTableViewController: UITableViewController, LiveTableViewCellDelegate 
         cell.artist.text = request.track.artistName
         cell.userName.text = request.upvoteUsers![0].fullname
         print("Timestamp: \(request.timestamp)")
-        print("Timestamp_0: \(request.timestamp.components(separatedBy: " ")[0])")
-        print("Timestamp_1: \(request.timestamp.components(separatedBy: " ")[1])")
-        let timearr = request.timestamp.components(separatedBy: " ")[1].components(separatedBy: ":")
-        cell.timeAgo.text = "\(timearr[0]):\(timearr[1])"
+        print("Timestamp_0: \(request.timestamp.components(separatedBy: "T")[0])")
+        print("Timestamp_1: \(request.timestamp.components(separatedBy: "T")[1])")
+        let timearr = request.timestamp.components(separatedBy: "T")[1].components(separatedBy: ".")
+        cell.timeAgo.text = "\(timearr[0])"
         cell.voteCount.text = String(request.upvotes!.count - request.downvotes!.count)
         
         
