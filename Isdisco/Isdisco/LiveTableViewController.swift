@@ -101,7 +101,8 @@ class LiveTableViewController: UITableViewController, LiveTableViewCellDelegate 
         cell.songName.text = request.track.songName
         cell.artist.text = request.track.artistName
         cell.userName.text = request.upvoteUsers![0].fullname
-        cell.timeAgo.text = String(request.timestamp) + " min ago"
+        let timearr = request.timestamp.components(separatedBy: " ")[1].components(separatedBy: ":")
+        cell.timeAgo.text = "\(timearr[0]):\(timearr[1])"
         cell.voteCount.text = String(request.upvotes!.count - request.downvotes!.count)
         
         
@@ -118,11 +119,6 @@ class LiveTableViewController: UITableViewController, LiveTableViewCellDelegate 
         
         guard let tappedIndexPath = tableView.indexPath(for: sender) else { return }
         print("You just UpVoted a song", sender, tappedIndexPath)
-        //        let cell = tableView.cellForRow(at: tappedIndexPath) as! LiveTableViewCell
-        //        let count = cell.voteCount.text
-        //        cell.voteCount.text = cell.voteCount.text
-        
-        //        let request = Singleton.shared.songRequests[tappedIndexPath.row]
         var request = musicRequests[tappedIndexPath.row]
         let cell = tableView.cellForRow(at: tappedIndexPath) as! LiveTableViewCell
         cell.downVoteButton.isEnabled = false
@@ -171,38 +167,6 @@ class LiveTableViewController: UITableViewController, LiveTableViewCellDelegate 
                 }
             }
         }
-        
-        
-        
-        
-        
-        
-        //        if (request.upvotes!.contains(Singleton.shared.currentUserId) || request.downvotes!.contains(Singleton.shared.currentUserId)) {
-//            if (request.upvotes!.contains(Singleton.shared.currentUserId)) {
-//                //request.voted = false
-//                //request.upVoted = false
-//
-//                cell.upVoteButtone.isEnabled = true
-//                cell.downVoteButton.isEnabled = true
-//                cell.upVoteButtone.tintColor = UIColor.darkGray
-//                cell.downVoteButton.isHidden = false
-//                //request.votes -= 1
-//                //sender.voteCount.text = String(request.votes)
-//
-//            } else {
-//
-//                //request.voted = true
-//                //request.upVoted = true
-//
-//                cell.upVoteButtone.isEnabled = false
-//                cell.downVoteButton.isEnabled = false
-//                cell.upVoteButtone.tintColor = UIColor.lightGray
-//                cell.downVoteButton.isHidden = true
-//                //request.votes += 1
-//                //sender.voteCount.text = String(request.votes)
-//
-//            }
-//        }
     }
     func liveTableViewCellDidDownVote(_ sender: LiveTableViewCell) {
         guard let tappedIndexPath = tableView.indexPath(for: sender) else { return }
@@ -258,30 +222,6 @@ class LiveTableViewController: UITableViewController, LiveTableViewCellDelegate 
             }
         }
     }
-        
-        
-        
-        //        if request.voted {
-        //            request.voted = false
-        //            request.upVoted = false
-        //
-        ////            cell.downVoteButton.isEnabled = true
-        ////            cell.upVoteButtone.isEnabled = true
-        //            cell.downVoteButton.tintColor = UIColor.darkGray
-        //            cell.upVoteButtone.isHidden = false
-        //            request.votes += 1
-        //            cell.voteCount.text = String(request.votes)
-        //        } else {
-        //            request.voted = true
-        //            request.upVoted = false
-        //
-        ////            cell.downVoteButton.isEnabled = false
-        ////            cell.upVoteButtone.isEnabled = false
-        //            cell.downVoteButton.tintColor = UIColor.lightGray
-        //            cell.upVoteButtone.isHidden = true
-        //            request.votes -= 1
-        //            cell.voteCount.text = String(request.votes)
-        //        }
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
