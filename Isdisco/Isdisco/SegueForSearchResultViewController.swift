@@ -66,13 +66,17 @@ class SegueForSearchResultViewController: UIViewController {
             let musicrequest = Musicrequest.init(track: self.track!, userId: Singleton.shared.currentUserId)
             Alamofire.request("https://isdisco.azurewebsites.net/api/musicrequest", method: .post, parameters: Musicrequest.objectToJson(object: musicrequest), encoding: JSONEncoding.default).responseJSON { response in
                 //Fix failure and success
-                switch response.result {
-                case .success:
+                switch response.response?.statusCode {
+                case 200:
                     self.navigationController?.popViewController(animated: true)
                     self.showToast(controller: self.parent!, message: "Musik forespørgelse er sendt: \(Singleton.shared.currentUserId)", seconds: 1)
-                case .failure( _):
+                case 500:
                     self.navigationController?.popViewController(animated: true)
-                    self.showToast(controller: self.parent!, message: "FAILED: Musik forespørgelse er sendt", seconds: 3)
+                    self.showToast(controller: self.parent!, message: "Sangen var allerede ønsket. Vi har upvoted sangen", seconds: 3)
+                case .none:
+                    print("none statuscode retuned")
+                case .some(_):
+                    print("not expected statuscode")
                 }
             }
         }
@@ -81,15 +85,19 @@ class SegueForSearchResultViewController: UIViewController {
             let firstViewController = self.presentingViewController!
             Alamofire.request("https://isdisco.azurewebsites.net/api/musicrequest", method: .post, parameters: Musicrequest.objectToJson(object: musicrequest), encoding: JSONEncoding.default).responseJSON { response in
                 //Fix failure and success
-                switch response.result {
-                case .success:
+                switch response.response?.statusCode {
+                case 200:
                     self.dismiss(animated: true) {
                         self.showToast(controller: firstViewController, message: "Musik forespørgelse er sendt: \(Singleton.shared.currentUserId)", seconds: 1)
                     }
-                case .failure( _):
+                case 500:
                     self.dismiss(animated: true) {
-                        self.showToast(controller: firstViewController, message: "FAILED: Musik forespørgelse er sendt", seconds: 3)
+                        self.showToast(controller: firstViewController, message: "Sangen var allerede ønsket. Vi har upvoted sangen", seconds: 3)
                     }
+                case .none:
+                    print("none statuscode retuned")
+                case .some(_):
+                    print("not expected statuscode")
                 }
             }
         }
