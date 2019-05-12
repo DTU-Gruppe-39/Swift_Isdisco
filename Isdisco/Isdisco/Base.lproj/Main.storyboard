@@ -130,7 +130,13 @@
                                                                 <autoresizingMask key="autoresizingMask"/>
                                                                 <subviews>
                                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LOGO_ISDISCO" translatesAutoresizingMaskIntoConstraints="NO" id="x1N-1U-4vL">
-                                                                        <rect key="frame" x="0.0" y="1" width="156" height="85"/>
+                                                                        <rect key="frame" x="0.0" y="-1" width="128.00000000000045" height="90.000000000000455"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="width" constant="128" id="1es-FS-i42"/>
+                                                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="90" id="NP6-TP-tpN"/>
+                                                                            <constraint firstAttribute="height" constant="90" id="U5w-VK-eQm"/>
+                                                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="128" id="meQ-eZ-S51"/>
+                                                                        </constraints>
                                                                     </imageView>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Song name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GVI-Xl-3OD">
                                                                         <rect key="frame" x="0.0" y="88" width="156" height="20"/>
@@ -173,6 +179,9 @@
                                                 <constraint firstItem="x29-Iq-28c" firstAttribute="top" secondItem="hUS-gI-ECK" secondAttribute="top" id="iVM-0f-Gip"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="myCollectionView" destination="x29-Iq-28c" id="Kdt-Xb-VTP"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -204,6 +213,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Hjem" image="home" id="acW-dT-cKf"/>
                     <connections>
+                        <outlet property="myTableView" destination="AVw-W5-yuq" id="Im0-jS-rE2"/>
                         <segue destination="Qay-Pv-qza" kind="presentation" identifier="LogInSignUp" id="4DM-u1-4t6"/>
                     </connections>
                 </viewController>
@@ -228,7 +238,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LOGO_ISDISCO" translatesAutoresizingMaskIntoConstraints="NO" id="GzI-k4-gje">
-                                            <rect key="frame" x="16" y="10" width="50" height="50"/>
+                                            <rect key="frame" x="16" y="10" width="50.000000000000455" height="50.000000000000455"/>
                                             <accessibility key="accessibilityConfiguration" identifier="SongPicture"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="50" id="qdr-6N-nh4"/>
@@ -367,7 +377,7 @@
                                 <rect key="frame" x="2" y="43" width="371" height="686"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LOGO_ISDISCO" translatesAutoresizingMaskIntoConstraints="NO" id="6uZ-Wk-BC5">
-                                        <rect key="frame" x="20" y="80" width="331" height="330"/>
+                                        <rect key="frame" x="20" y="80" width="331.00000000000045" height="330.00000000000045"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="330" id="d12-sB-4j4"/>
                                         </constraints>

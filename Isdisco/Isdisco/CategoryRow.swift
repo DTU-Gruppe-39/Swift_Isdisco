@@ -11,38 +11,30 @@ import Alamofire
 import SwiftyJSON
 
 class CategoryRow : UITableViewCell {
-    let apiRequest = PlaylistAPIRequest()
-    let fetchImageAPI = FetchImageAPI()
-    //private var topListResults = [Track]()
-    private var playlist1Results = [Track]()
-    //private var playlist2Results = [Track]()
+    var currentPlaylist : [TrackImage]?
+    @IBOutlet weak var myCollectionView: UICollectionView!
+
+    func updateCellWith (playlist: [TrackImage]) {
+        self.currentPlaylist = playlist
+        print("playlist \(currentPlaylist)")
+        self.myCollectionView.reloadData()
+    }
 }
 
 extension CategoryRow : UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 20
+        return currentPlaylist!.count
     }
-    
+
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
+
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let trackCell = collectionView.dequeueReusableCell(withReuseIdentifier: "trackCell", for: indexPath) as! FrontPageRowCell
-
-        apiRequest.playlist(playlistId: 1, completionHandler: {
-            [weak self] results, error in if case .failure = error {
-                return
-            }
-            
-            guard let results = results, !results.isEmpty else {
-                return
-            }
-            for result in results {
-            self?.playlist1Results.append(Track.jsonToObject(json: result))
-                trackCell.song_name?.text =         self?.playlist1Results[indexPath.row].songName
-            
-            self!.fetchImageAPI.fetchImage(urlToImageToFetch: self!.playlist1Results[indexPath.row].image_medium_url, completionHandler: {
-                    image, _ in trackCell.albumImage?.image = image
-                })
-            }
-        })
+        if let track = self.currentPlaylist?[indexPath.item] {
+            trackCell.updateCell(track: track)
+        }
         return trackCell
     }
 }
