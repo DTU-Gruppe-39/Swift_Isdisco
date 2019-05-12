@@ -11,6 +11,14 @@ import Alamofire
 import MarqueeLabel
 import SwiftyJSON
 
+
+extension UIViewController {
+    func delay(_ delay:Double, closure:@escaping ()->()) {
+        DispatchQueue.main.asyncAfter(
+            deadline: DispatchTime.now() + Double(Int64(delay * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC), execute: closure)
+    }
+}
+
 //Struct for parsing JSON
 struct CurrentlyPlaying: Decodable {
     let track : Track
@@ -32,7 +40,7 @@ class NowPlayingViewController: UIViewController {
     }
     
     let fetchImageAPI = FetchImageAPI()
-    let apiUrl = "https://isdisco.azurewebsites.net/api/spotify-track/app-currently-playing"
+    let apiUrl = "https://isdisco.azurewebsites.net/api/spotify-track/currently-playing"
     var spotifyLink: String = ""
     
     override func viewDidLoad() {
@@ -48,19 +56,36 @@ class NowPlayingViewController: UIViewController {
             scrollView.refreshControl = refreshControl
         }
         
+        // set observer for UIApplication.willEnterForegroundNotification
+        NotificationCenter.default.addObserver(self, selector: #selector(willEnterForeground), name: UIApplication.willEnterForegroundNotification, object: nil)
+    }
+    
+    // my selector that was defined above
+    @objc func willEnterForeground() {
+        pullSongAsync() { error in
+            if error != nil {
+                print("Oops! Something went wrong...")
+            } else {
+                print("It has finished")
+            }
+        }
     }
     
     //ObjC function to trigger refresh adapted from StackOberflow
     @objc func refreshOptions(sender: UIRefreshControl) {
         pullSongAsync() { error in
             if error != nil {
-                sender.endRefreshing()
-                print("Oops! Something went wrong...")
+                self.delay(0.1, closure: {
+                    sender.endRefreshing()
+                    print("Oops! Something went wrong...")
+                })
             } else {
-                print("It has finished")
-                sender.endRefreshing()
-            }    }
-        
+                self.delay(0.1, closure: {
+                    print("It has finished")
+                    sender.endRefreshing()
+                })
+            }
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -69,13 +94,14 @@ class NowPlayingViewController: UIViewController {
                 print("Oops! Something went wrong...")
             } else {
                 print("It has finished")
-            }    }
+            }
+        }
     }
     
     func pullSongAsync(completion: @escaping (Error?) -> Void) {
         
         self.openInSpotifyButton.isHidden = true
-
+        
         //Performing an Alamofire request to get the data from the URL
         Alamofire.request(self.apiUrl).responseJSON { response in
             //now here we have the response data that we need to parse
