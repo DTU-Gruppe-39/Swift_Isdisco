@@ -44,6 +44,7 @@ class LiveTableViewController: UITableViewController, LiveTableViewCellDelegate 
         musicRequestAPI.FetchMusicRequests() { response in
             //            let musicRequests = response
             self.musicRequests = response
+            self.sortData()
             //            print("Sangen er: ", self.musicRequests[3].track.songName)
             self.tableView.reloadData()
         }
@@ -54,6 +55,7 @@ class LiveTableViewController: UITableViewController, LiveTableViewCellDelegate 
         musicRequestAPI.FetchMusicRequests() { response in
             //            let musicRequests = response
             self.musicRequests = response
+            self.sortData()
             //            print("Sangen er: ", self.musicRequests[3].track.songName)
             self.tableView.reloadData()
         }
@@ -64,6 +66,7 @@ class LiveTableViewController: UITableViewController, LiveTableViewCellDelegate 
         musicRequestAPI.FetchMusicRequests() { response in
             //            let musicRequests = response
             self.musicRequests = response
+            self.sortData()
             //            print("Sangen er: ", self.musicRequests[3].track.songName)
             
             self.tableView.reloadData()
@@ -106,6 +109,9 @@ class LiveTableViewController: UITableViewController, LiveTableViewCellDelegate 
         cell.songName.text = request.track.songName
         cell.artist.text = request.track.artistName
         cell.userName.text = request.upvoteUsers![0].fullname
+        print("Timestamp: \(request.timestamp)")
+        print("Timestamp_0: \(request.timestamp.components(separatedBy: " ")[0])")
+        print("Timestamp_1: \(request.timestamp.components(separatedBy: " ")[1])")
         let timearr = request.timestamp.components(separatedBy: " ")[1].components(separatedBy: ":")
         cell.timeAgo.text = "\(timearr[0]):\(timearr[1])"
         cell.voteCount.text = String(request.upvotes!.count - request.downvotes!.count)
@@ -139,6 +145,7 @@ class LiveTableViewController: UITableViewController, LiveTableViewCellDelegate 
                 case 200:
                     self.musicRequestAPI.FetchMusicRequests() { response in
                         self.musicRequests = response
+                        self.sortData()
                         self.tableView.reloadData()
                     }
                         
@@ -161,6 +168,7 @@ class LiveTableViewController: UITableViewController, LiveTableViewCellDelegate 
                     self.musicRequestAPI.FetchMusicRequests() { response in
                         //            let musicRequests = response
                         self.musicRequests = response
+                        self.sortData()
                         self.tableView.reloadData()
                     }
                 case 500:
@@ -194,6 +202,7 @@ class LiveTableViewController: UITableViewController, LiveTableViewCellDelegate 
                 case 200:
                     self.musicRequestAPI.FetchMusicRequests() { response in
                         self.musicRequests = response
+                        self.sortData()
                         self.tableView.reloadData()
                     }
                     
@@ -214,8 +223,8 @@ class LiveTableViewController: UITableViewController, LiveTableViewCellDelegate 
             switch response.response?.statusCode {
             case 200:
                 self.musicRequestAPI.FetchMusicRequests() { response in
-                //            let musicRequests = response
                 self.musicRequests = response
+                self.sortData()
                 self.tableView.reloadData()
             }
             case 500:
