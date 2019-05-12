@@ -143,6 +143,7 @@ class LiveTableViewController: UITableViewController, LiveTableViewCellDelegate 
                     cell.upVoteButtone.tintColor = UIColor.lightGray
                     cell.downVoteButton.isHidden = true
                     cell.upVoteButtone.isHidden = false
+                    cell.voteCount.text = String(Int(cell.voteCount.text!)! + 1)
                 case 500:
                     print("FAILED: Upvote gik galt")
                 case .none:
