@@ -17,19 +17,34 @@ class SegueForSearchResultViewController: UIViewController {
     @IBOutlet weak var artist: UILabel!
     @IBOutlet weak var OpenInSpotifyButton: UIButton!
     @IBOutlet weak var requestTrackButton: UIButton!
+    @IBOutlet weak var closeButton: UIButton!
     
-    var track:Track!
+    var track:Track?
+    var paramters :[String:Track]?
     
     let apiRequest = SearchAPIRequest()
     let fetchImage = FetchImageAPI()
+    var navigationControllerBool = true
     
     override func viewWillAppear(_ animated: Bool) {
-        song_name.text = track.songName
-        artist.text = track.artistName
+        if track == nil {
+            self.track = paramters!["track"]
+            navigationControllerBool = false
+            closeButton.isHidden = false
+            closeButton.isEnabled = false
+        }
+        else {
+            navigationControllerBool = true
+            closeButton.isHidden = true
+            closeButton.isEnabled = true
+        }
+        song_name.text = track?.songName
+        artist.text = track?.artistName
         
-        fetchImage.fetchImage(urlToImageToFetch: track.image_large_url, completionHandler: {
+        fetchImage.fetchImage(urlToImageToFetch: track!.image_large_url, completionHandler: {
             image, _ in self.albumImage?.image = image
         })
+
     }
     
     override func viewDidLoad() {
@@ -47,29 +62,32 @@ class SegueForSearchResultViewController: UIViewController {
 
     
     @IBAction func requestTrack(_ unwindSegue: UIStoryboardSegue) {
-        weak var secondViewController = self.presentingViewController
-        var musicrequest = Musicrequest.init(track: self.track, userId: Singleton.shared.currentUserId)
-        print("\n Musicrequest userId:\(musicrequest.userId), reqId:\(musicrequest.id) \n")
-        
-        Alamofire.request("https://isdisco.azurewebsites.net/api/musicrequest", method: .post, parameters: Musicrequest.objectToJson(object: musicrequest), encoding: JSONEncoding.default).responseJSON { response in
-            //Fix failure and success
-            switch response.result {
+        if (navigationControllerBool) {
+            let musicrequest = Musicrequest.init(track: self.track!, userId: Singleton.shared.currentUserId)
+            self.navigationController?.viewControllers
+            Alamofire.request("https://isdisco.azurewebsites.net/api/musicrequest", method: .post, parameters: Musicrequest.objectToJson(object: musicrequest), encoding: JSONEncoding.default).responseJSON { response in
+                //Fix failure and success
+                switch response.result {
                 case .success:
-                    self.dismiss(animated: true) {
-                        self.showToast(controller: secondViewController!, message: "Musik forespørgelse er sendt: \(Singleton.shared.currentUserId)", seconds: 1)
-
-                    }
+                    self.navigationController?.popViewController(animated: true)
+                    self.showToast(controller: self.parent!, message: "Musik forespørgelse er sendt: \(Singleton.shared.currentUserId)", seconds: 1)
                 case .failure( _):
-                    self.dismiss(animated: true) {
-                        self.showToast(controller: secondViewController!, message: "FAILED: Musik forespørgelse er sendt", seconds: 3)
+                    self.navigationController?.popViewController(animated: true)
+                    self.showToast(controller: self.parent!, message: "FAILED: Musik forespørgelse er sendt", seconds: 3)
                 }
             }
         }
+        else {
+            self.dismiss(animated: true)
+        }
+    }
+    
+    @IBAction func closeButton(_ unwindSegue: UIStoryboardSegue) {
+        self.dismiss(animated: true)
     }
     
     @IBAction func OpenInSpotify(_ sender: Any) {
-        print("Spotify: \(track.webplayerLink)")
-        let url = URL(string: track.webplayerLink)
+        let url = URL(string: track!.webplayerLink)
         if #available(iOS 10.0, *) {
             UIApplication.shared.open((url)!)
         } else {
@@ -90,7 +108,4 @@ class SegueForSearchResultViewController: UIViewController {
         }
     }
 
-    @IBAction func close(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
-    }
 }

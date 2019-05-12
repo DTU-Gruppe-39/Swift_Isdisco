@@ -15,17 +15,17 @@ class FirstViewController: UIViewController, UITableViewDataSource {
     var categories = ["Vores udvalg", "Top 50 Danmark", "Ja Dak"]
     let apiRequest = PlaylistAPIRequest()
     
-    var myTopResults = [TrackImage]() {
+    var myTopResults = [Track]() {
         didSet {
             myTableView.reloadData()
         }
     }
-    var playlist1Results = [TrackImage]() {
+    var playlist1Results = [Track]() {
         didSet {
             myTableView.reloadData()
         }
     }
-    var playlist2Results = [TrackImage]() {
+    var playlist2Results = [Track]() {
         didSet {
             myTableView.reloadData()
         }
@@ -39,7 +39,6 @@ class FirstViewController: UIViewController, UITableViewDataSource {
         let tableCell = tableView.dequeueReusableCell(withIdentifier: "cell") as! CategoryRow
         if indexPath.section == 0 {
             tableCell.updateCellWith(playlist: myTopResults)
-            
         }
         else if indexPath.section == 1 {
             tableCell.updateCellWith(playlist: playlist1Results)
@@ -47,6 +46,7 @@ class FirstViewController: UIViewController, UITableViewDataSource {
         else if indexPath.section == 2 {
             tableCell.updateCellWith(playlist: playlist2Results)
         }
+        tableCell.categoryRowDelegate = self as? CollectionCellDelegate
         return tableCell
     }
     
@@ -85,7 +85,7 @@ class FirstViewController: UIViewController, UITableViewDataSource {
                 return
             }
             for result in results {
-                self?.myTopResults.append(TrackImage.jsonToObject(json: result))
+                self?.myTopResults.append(Track.jsonToObject(json: result))
             }
         })
         
@@ -98,7 +98,7 @@ class FirstViewController: UIViewController, UITableViewDataSource {
                 return
             }
             for result in results {
-                self?.playlist1Results.append(TrackImage.jsonToObject(json: result))
+                self?.playlist1Results.append(Track.jsonToObject(json: result))
             }
         })
         
@@ -111,7 +111,7 @@ class FirstViewController: UIViewController, UITableViewDataSource {
                 return
             }
             for result in results {
-                self?.playlist2Results.append(TrackImage.jsonToObject(json: result))
+                self?.playlist2Results.append(Track.jsonToObject(json: result))
             }
         })
     }
@@ -124,10 +124,20 @@ class FirstViewController: UIViewController, UITableViewDataSource {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "trackSegue") {
-            
+            let segueController = segue.destination as! SegueForSearchResultViewController
+            segueController.paramters = sender as! [String : Track]
         }
     }
+}
 
-
+extension FirstViewController:CollectionCellDelegate {
+    func collectionView(trackCell: FrontPageRowCell?, didTappedInTableview TableCell: CategoryRow) {
+        if let selectedTrack = trackCell?.currentTrack {
+            let parameters = ["track":selectedTrack]
+            var fef = parameters["track"]
+            print("rasmus: \(fef) , \(fef?.artistName)")
+            performSegue(withIdentifier: "trackSegue", sender: parameters)
+        }
+    }
 }
 

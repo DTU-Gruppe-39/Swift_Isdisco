@@ -11,19 +11,30 @@ import Alamofire
 import SwiftyJSON
 
 class CategoryRow : UITableViewCell {
-    var currentPlaylist : [TrackImage]?
+    var currentPlaylist : [Track]?
+    weak var categoryRowDelegate:CollectionCellDelegate?
     @IBOutlet weak var myCollectionView: UICollectionView!
 
-    func updateCellWith (playlist: [TrackImage]) {
+    func updateCellWith (playlist: [Track]) {
         self.currentPlaylist = playlist
         print("playlist \(currentPlaylist)")
         self.myCollectionView.reloadData()
     }
+    
+}
+
+protocol CollectionCellDelegate:class {
+    func collectionView(trackCell:FrontPageRowCell?, didTappedInTableview TableCell:CategoryRow)
 }
 
 extension CategoryRow : UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return currentPlaylist!.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let trackCell = collectionView.cellForItem(at: indexPath) as? FrontPageRowCell
+        self.categoryRowDelegate?.collectionView(trackCell: trackCell, didTappedInTableview: self)
     }
 
     func numberOfSections(in collectionView: UICollectionView) -> Int {

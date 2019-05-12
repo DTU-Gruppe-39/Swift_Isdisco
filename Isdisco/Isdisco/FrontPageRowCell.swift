@@ -13,15 +13,16 @@ class FrontPageRowCell: UICollectionViewCell {
     @IBOutlet weak var song_name: UILabel!
     
     let fetchImageAPI = FetchImageAPI()
+    var currentTrack:Track!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
     
-    func updateCell(track :TrackImage) {
-        albumImage.image = track.fetchedImage
+    func updateCell(track :Track) {
         song_name.text = track.songName
+        currentTrack = track
         
         fetchImageAPI.fetchImage(urlToImageToFetch: track.image_large_url, completionHandler: {
             image, _ in self.albumImage?.image = image
