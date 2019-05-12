@@ -18,6 +18,11 @@ class LiveTableViewController: UITableViewController, LiveTableViewCellDelegate 
     
     let fetchImageAPI = FetchImageAPI()
     
+    func sortData() {
+        let sortedData = self.musicRequests.sorted(by: { $0.upvotes!.count - $0.downvotes!.count > $1.upvotes!.count - $1.downvotes!.count })
+        self.musicRequests = sortedData
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
