@@ -157,7 +157,7 @@ class LiveTableViewController: UITableViewController, LiveTableViewCellDelegate 
                 //Fix failure and success
                 switch response.response?.statusCode {
                 case 200:
-                    cell.upVoteButtone.isEnabled = false
+                    cell.upVoteButtone.isEnabled = true
                     cell.downVoteButton.isEnabled = false
                     cell.upVoteButtone.tintColor = UIColor.lightGray
                     cell.downVoteButton.isHidden = true
@@ -243,13 +243,13 @@ class LiveTableViewController: UITableViewController, LiveTableViewCellDelegate 
     fileprivate func ThumbsUpDown(_ request: MusicRequest, _ cell: LiveTableViewCell) {
         if (request.upvotes!.contains(Singleton.shared.currentUserId) || request.downvotes!.contains(Singleton.shared.currentUserId)) {
             if (request.upvotes!.contains(Singleton.shared.currentUserId)) {
-                cell.upVoteButtone.isEnabled = false
+                cell.upVoteButtone.isEnabled = true
                 cell.downVoteButton.isEnabled = false
                 cell.upVoteButtone.tintColor = UIColor.lightGray
                 cell.downVoteButton.isHidden = true
                 cell.upVoteButtone.isHidden = false
             } else if (request.downvotes!.contains(Singleton.shared.currentUserId)) {
-                cell.downVoteButton.isEnabled = false
+                cell.downVoteButton.isEnabled = true
                 cell.upVoteButtone.isEnabled = false
                 cell.downVoteButton.tintColor = UIColor.lightGray
                 cell.upVoteButtone.isHidden = true
