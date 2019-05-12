@@ -134,11 +134,7 @@ class LiveTableViewController: UITableViewController, LiveTableViewCellDelegate 
             //Add upvote
             //PUT
             //https://isdisco.azurewebsites.net/api/musicrequest/{id}/upvote/{userid}
-            let parameters = [
-                "id": request.id,
-                "userid": Singleton.shared.currentUserId
-            ]
-            Alamofire.request("https://isdisco.azurewebsites.net/api/musicrequest", method: .put, parameters: parameters, encoding: JSONEncoding.default).responseJSON { response in
+            Alamofire.request("https://isdisco.azurewebsites.net/api/musicrequest/\(request.id)/upvote/\(Singleton.shared.currentUserId)", method: .put, encoding: JSONEncoding.default).responseJSON { response in
                 //Fix failure and success
                 switch response.response?.statusCode {
                 case 200:
