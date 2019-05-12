@@ -13,7 +13,7 @@ class LiveNavBarController: UINavigationController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigationBar.topItem?.title = "Musik Ønsker"
+        self.navigationBar.topItem?.title = "Musik Ønsker"        
         // Do any additional setup after loading the view.
     }
     
