@@ -115,6 +115,7 @@ class LiveTableViewController: UITableViewController, LiveTableViewCellDelegate 
     
     
     func liveTableViewCellDidUpVote(_ sender: LiveTableViewCell) {
+        
         guard let tappedIndexPath = tableView.indexPath(for: sender) else { return }
         print("You just UpVoted a song", sender, tappedIndexPath)
         //        let cell = tableView.cellForRow(at: tappedIndexPath) as! LiveTableViewCell
@@ -122,9 +123,10 @@ class LiveTableViewController: UITableViewController, LiveTableViewCellDelegate 
         //        cell.voteCount.text = cell.voteCount.text
         
         //        let request = Singleton.shared.songRequests[tappedIndexPath.row]
-        let request = musicRequests[tappedIndexPath.row]
+        var request = musicRequests[tappedIndexPath.row]
         let cell = tableView.cellForRow(at: tappedIndexPath) as! LiveTableViewCell
-        
+        cell.downVoteButton.isEnabled = false
+        cell.upVoteButtone.isEnabled = false
         
         if (request.upvotes!.contains(Singleton.shared.currentUserId)) {
             //remove upVote
@@ -146,8 +148,8 @@ class LiveTableViewController: UITableViewController, LiveTableViewCellDelegate 
                         //            let musicRequests = response
                         self.musicRequests = response
                         //            print("Sangen er: ", self.musicRequests[3].track.songName)
-                        
                         self.tableView.reloadData()
+//                        cell.upVoteButtone.isEnabled = true
                     }
                         
                 case 500:
@@ -166,12 +168,20 @@ class LiveTableViewController: UITableViewController, LiveTableViewCellDelegate 
                 //Fix failure and success
                 switch response.response?.statusCode {
                 case 200:
-                    cell.upVoteButtone.isEnabled = true
-                    cell.downVoteButton.isEnabled = false
-                    cell.upVoteButtone.tintColor = UIColor.lightGray
-                    cell.downVoteButton.isHidden = true
-                    cell.upVoteButtone.isHidden = false
-                    cell.voteCount.text = String(Int(cell.voteCount.text!)! + 1)
+//                    cell.upVoteButtone.isEnabled = true
+//                    cell.downVoteButton.isEnabled = false
+//                    cell.upVoteButtone.tintColor = UIColor.lightGray
+//                    cell.downVoteButton.isHidden = true
+//                    cell.upVoteButtone.isHidden = false
+//                    cell.voteCount.text = String(Int(cell.voteCount.text!)! + 1)
+
+                    self.musicRequestAPI.FetchMusicRequests() { response in
+                        //            let musicRequests = response
+                        self.musicRequests = response
+                        //print("Sangen er: ", self.musicRequests[3].track.songName)
+                        self.tableView.reloadData()
+                        //cell.upVoteButtone.isEnabled = true
+                    }
                 case 500:
                     print("FAILED: Upvote gik galt")
                 case .none:
