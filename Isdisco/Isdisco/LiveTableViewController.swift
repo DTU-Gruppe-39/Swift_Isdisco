@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Alamofire
+import SwiftyJSON
 
 class LiveTableViewController: UITableViewController, LiveTableViewCellDelegate {
     //class LiveTableViewController: UITableViewController {
@@ -123,32 +125,69 @@ class LiveTableViewController: UITableViewController, LiveTableViewCellDelegate 
         let request = musicRequests[tappedIndexPath.row]
         let cell = tableView.cellForRow(at: tappedIndexPath) as! LiveTableViewCell
         
-        if (request.upvotes!.contains(Singleton.shared.currentUserId) || request.downvotes!.contains(Singleton.shared.currentUserId)) {
-            if (request.upvotes!.contains(Singleton.shared.currentUserId)) {
-                //request.voted = false
-                //request.upVoted = false
-                
-                cell.upVoteButtone.isEnabled = true
-                cell.downVoteButton.isEnabled = true
-                cell.upVoteButtone.tintColor = UIColor.darkGray
-                cell.downVoteButton.isHidden = false
-                //request.votes -= 1
-                //sender.voteCount.text = String(request.votes)
-                
-            } else {
-                
-                //request.voted = true
-                //request.upVoted = true
-                
-                cell.upVoteButtone.isEnabled = false
-                cell.downVoteButton.isEnabled = false
-                cell.upVoteButtone.tintColor = UIColor.lightGray
-                cell.downVoteButton.isHidden = true
-                //request.votes += 1
-                //sender.voteCount.text = String(request.votes)
-                
+        
+        if (request.upvotes!.contains(Singleton.shared.currentUserId)) {
+            //remove upVote
+            //Delete
+            //https://isdisco.azurewebsites.net/api/musicrequest/{id}/upvote/{userid}
+        } else {
+            //Add upvote
+            //PUT
+            //https://isdisco.azurewebsites.net/api/musicrequest/{id}/upvote/{userid}
+            let parameters = [
+                "id": request.id,
+                "userid": Singleton.shared.currentUserId
+            ]
+            Alamofire.request("https://isdisco.azurewebsites.net/api/musicrequest", method: .put, parameters: parameters, encoding: JSONEncoding.default).responseJSON { response in
+                //Fix failure and success
+                switch response.response?.statusCode {
+                case 200:
+                    cell.upVoteButtone.isEnabled = false
+                    cell.downVoteButton.isEnabled = false
+                    cell.upVoteButtone.tintColor = UIColor.lightGray
+                    cell.downVoteButton.isHidden = true
+                    cell.upVoteButtone.isHidden = false
+                case 500:
+                    print("FAILED: Upvote gik galt")
+                case .none:
+                    print("FAILED: Upvote gik galt_1")
+                case .some(_):
+                    print("FAILED: Upvote gik galt_2")
+                }
             }
         }
+        
+        
+        
+        
+        
+        
+        //        if (request.upvotes!.contains(Singleton.shared.currentUserId) || request.downvotes!.contains(Singleton.shared.currentUserId)) {
+//            if (request.upvotes!.contains(Singleton.shared.currentUserId)) {
+//                //request.voted = false
+//                //request.upVoted = false
+//
+//                cell.upVoteButtone.isEnabled = true
+//                cell.downVoteButton.isEnabled = true
+//                cell.upVoteButtone.tintColor = UIColor.darkGray
+//                cell.downVoteButton.isHidden = false
+//                //request.votes -= 1
+//                //sender.voteCount.text = String(request.votes)
+//
+//            } else {
+//
+//                //request.voted = true
+//                //request.upVoted = true
+//
+//                cell.upVoteButtone.isEnabled = false
+//                cell.downVoteButton.isEnabled = false
+//                cell.upVoteButtone.tintColor = UIColor.lightGray
+//                cell.downVoteButton.isHidden = true
+//                //request.votes += 1
+//                //sender.voteCount.text = String(request.votes)
+//
+//            }
+//        }
     }
     func liveTableViewCellDidDownVote(_ sender: LiveTableViewCell) {
         guard let tappedIndexPath = tableView.indexPath(for: sender) else { return }
