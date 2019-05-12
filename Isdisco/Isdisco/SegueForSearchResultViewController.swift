@@ -69,7 +69,7 @@ class SegueForSearchResultViewController: UIViewController {
                 switch response.response?.statusCode {
                 case 200:
                     self.navigationController?.popViewController(animated: true)
-                    self.showToast(controller: self.parent!, message: "Musik forespørgelse er sendt: \(Singleton.shared.currentUserId)", seconds: 1)
+                    self.showToast(controller: self.parent!, message: "Musik forespørgelse er sendt!", seconds: 1)
                 case 500:
                     self.navigationController?.popViewController(animated: true)
                     self.showToast(controller: self.parent!, message: "Sangen var allerede ønsket. Vi har upvoted sangen", seconds: 3)
@@ -88,7 +88,7 @@ class SegueForSearchResultViewController: UIViewController {
                 switch response.response?.statusCode {
                 case 200:
                     self.dismiss(animated: true) {
-                        self.showToast(controller: firstViewController, message: "Musik forespørgelse er sendt: \(Singleton.shared.currentUserId)", seconds: 1)
+                        self.showToast(controller: firstViewController, message: "Musik forespørgelse er sendt", seconds: 1)
                     }
                 case 500:
                     self.dismiss(animated: true) {
