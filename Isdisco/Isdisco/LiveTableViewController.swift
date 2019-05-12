@@ -134,13 +134,22 @@ class LiveTableViewController: UITableViewController, LiveTableViewCellDelegate 
                 //Fix failure and success
                 switch response.response?.statusCode {
                 case 200:
-                    cell.downVoteButton.isEnabled = true
-                    cell.upVoteButtone.isEnabled = true
-                    cell.upVoteButtone.tintColor = UIColor.darkGray
-                    cell.downVoteButton.tintColor = UIColor.darkGray
-                    cell.upVoteButtone.isHidden = false
-                    cell.downVoteButton.isHidden = false
-                    cell.voteCount.text = String(Int(cell.voteCount.text!)! - 1)
+//                    cell.downVoteButton.isEnabled = true
+//                    cell.upVoteButtone.isEnabled = true
+//                    cell.upVoteButtone.tintColor = UIColor.darkGray
+//                    cell.downVoteButton.tintColor = UIColor.darkGray
+//                    cell.upVoteButtone.isHidden = false
+//                    cell.downVoteButton.isHidden = false
+//                    cell.voteCount.text = String(Int(cell.voteCount.text!)! - 1)
+                    
+                    self.musicRequestAPI.FetchMusicRequests() { response in
+                        //            let musicRequests = response
+                        self.musicRequests = response
+                        //            print("Sangen er: ", self.musicRequests[3].track.songName)
+                        
+                        self.tableView.reloadData()
+                    }
+                        
                 case 500:
                     print("FAILED: Upvote gik galt")
                 case .none:
