@@ -136,20 +136,9 @@ class LiveTableViewController: UITableViewController, LiveTableViewCellDelegate 
                 //Fix failure and success
                 switch response.response?.statusCode {
                 case 200:
-//                    cell.downVoteButton.isEnabled = true
-//                    cell.upVoteButtone.isEnabled = true
-//                    cell.upVoteButtone.tintColor = UIColor.darkGray
-//                    cell.downVoteButton.tintColor = UIColor.darkGray
-//                    cell.upVoteButtone.isHidden = false
-//                    cell.downVoteButton.isHidden = false
-//                    cell.voteCount.text = String(Int(cell.voteCount.text!)! - 1)
-                    
                     self.musicRequestAPI.FetchMusicRequests() { response in
-                        //            let musicRequests = response
                         self.musicRequests = response
-                        //            print("Sangen er: ", self.musicRequests[3].track.songName)
                         self.tableView.reloadData()
-//                        cell.upVoteButtone.isEnabled = true
                     }
                         
                 case 500:
@@ -168,19 +157,10 @@ class LiveTableViewController: UITableViewController, LiveTableViewCellDelegate 
                 //Fix failure and success
                 switch response.response?.statusCode {
                 case 200:
-//                    cell.upVoteButtone.isEnabled = true
-//                    cell.downVoteButton.isEnabled = false
-//                    cell.upVoteButtone.tintColor = UIColor.lightGray
-//                    cell.downVoteButton.isHidden = true
-//                    cell.upVoteButtone.isHidden = false
-//                    cell.voteCount.text = String(Int(cell.voteCount.text!)! + 1)
-
                     self.musicRequestAPI.FetchMusicRequests() { response in
                         //            let musicRequests = response
                         self.musicRequests = response
-                        //print("Sangen er: ", self.musicRequests[3].track.songName)
                         self.tableView.reloadData()
-                        //cell.upVoteButtone.isEnabled = true
                     }
                 case 500:
                     print("FAILED: Upvote gik galt")
@@ -231,6 +211,55 @@ class LiveTableViewController: UITableViewController, LiveTableViewCellDelegate 
         //        let request = Singleton.shared.songRequests[tappedIndexPath.row]
         let request = musicRequests[tappedIndexPath.row]
         let cell = tableView.cellForRow(at: tappedIndexPath) as! LiveTableViewCell
+        
+        cell.downVoteButton.isEnabled = false
+        cell.upVoteButtone.isEnabled = false
+        
+        if (request.upvotes!.contains(Singleton.shared.currentUserId)) {
+            //remove upVote
+            //Delete
+            //https://isdisco.azurewebsites.net/api/musicrequest/{id}/downvote/{userid}
+            Alamofire.request("https://isdisco.azurewebsites.net/api/musicrequest/\(request.id)/downvote/\(Singleton.shared.currentUserId)", method: .delete, encoding: JSONEncoding.default).responseJSON { response in
+                //Fix failure and success
+                switch response.response?.statusCode {
+                case 200:
+                    self.musicRequestAPI.FetchMusicRequests() { response in
+                        self.musicRequests = response
+                        self.tableView.reloadData()
+                    }
+                    
+                case 500:
+                    print("FAILED: Upvote gik galt")
+                case .none:
+                    print("FAILED: Upvote gik galt_1")
+                case .some(_):
+                    print("FAILED: Upvote gik galt_2")
+                }
+            }
+        } else {
+            //Add upvote
+            //PUT
+            //https://isdisco.azurewebsites.net/api/musicrequest/{id}/downvote/{userid}
+        Alamofire.request("https://isdisco.azurewebsites.net/api/musicrequest/\(request.id)/downvote/\(Singleton.shared.currentUserId)", method: .put, encoding: JSONEncoding.default).responseJSON { response in
+            //Fix failure and success
+            switch response.response?.statusCode {
+            case 200:
+                self.musicRequestAPI.FetchMusicRequests() { response in
+                //            let musicRequests = response
+                self.musicRequests = response
+                self.tableView.reloadData()
+            }
+            case 500:
+                print("FAILED: Upvote gik galt")
+            case .none:
+                print("FAILED: Upvote gik galt_1")
+            case .some(_):
+                print("FAILED: Upvote gik galt_2")
+            }
+        }
+    }
+        
+        
         
         //        if request.voted {
         //            request.voted = false
