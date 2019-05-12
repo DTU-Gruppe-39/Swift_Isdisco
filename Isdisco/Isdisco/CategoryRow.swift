@@ -16,13 +16,14 @@ class CategoryRow : UITableViewCell {
     
     func updateCellWith (playlist: [TrackImage]) {
         self.currentPlaylist = playlist
+        print("playlist \(currentPlaylist)")
         self.myCollectionView.reloadData()
     }
 }
 
 extension CategoryRow : UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return currentPlaylist!.count
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {

@@ -14,8 +14,22 @@ class FirstViewController: UIViewController, UITableViewDataSource {
     @IBOutlet weak var myTableView: UITableView!
     var categories = ["Vores udvalg", "Top 50 Danmark", "Ja Dak"]
     let apiRequest = PlaylistAPIRequest()
-    let fetchImageAPI = FetchImageAPI()
-    var playlist1Results = [TrackImage]()
+    
+    var myTopResults = [TrackImage]() {
+        didSet {
+            myTableView.reloadData()
+        }
+    }
+    var playlist1Results = [TrackImage]() {
+        didSet {
+            myTableView.reloadData()
+        }
+    }
+    var playlist2Results = [TrackImage]() {
+        didSet {
+            myTableView.reloadData()
+        }
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
@@ -23,7 +37,16 @@ class FirstViewController: UIViewController, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let tableCell = tableView.dequeueReusableCell(withIdentifier: "cell") as! CategoryRow
-        tableCell.updateCellWith(playlist: playlist1Results)
+        if indexPath.section == 0 {
+            tableCell.updateCellWith(playlist: myTopResults)
+            
+        }
+        else if indexPath.section == 1 {
+            tableCell.updateCellWith(playlist: playlist1Results)
+        }
+        else if indexPath.section == 2 {
+            tableCell.updateCellWith(playlist: playlist2Results)
+        }
         return tableCell
     }
     
@@ -53,6 +76,19 @@ class FirstViewController: UIViewController, UITableViewDataSource {
     }
     
     func data () {
+        apiRequest.topList(completionHandler: {
+            [weak self] results, error in if case .failure = error {
+                return
+            }
+            
+            guard let results = results, !results.isEmpty else {
+                return
+            }
+            for result in results {
+                self?.myTopResults.append(TrackImage.jsonToObject(json: result))
+            }
+        })
+        
         apiRequest.playlist(playlistId: 1, completionHandler: {
             [weak self] results, error in if case .failure = error {
                 return
@@ -62,13 +98,20 @@ class FirstViewController: UIViewController, UITableViewDataSource {
                 return
             }
             for result in results {
-                print("kqly \(result)")
                 self?.playlist1Results.append(TrackImage.jsonToObject(json: result))
-                    for track in self!.playlist1Results {
-                        self!.fetchImageAPI.fetchImage(urlToImageToFetch: track.image_medium_url, completionHandler: {
-                            image, _ in track.fetchedImage
-                        })
-                    }
+            }
+        })
+        
+        apiRequest.playlist(playlistId: 2, completionHandler: {
+            [weak self] results, error in if case .failure = error {
+                return
+            }
+            
+            guard let results = results, !results.isEmpty else {
+                return
+            }
+            for result in results {
+                self?.playlist2Results.append(TrackImage.jsonToObject(json: result))
             }
         })
     }
