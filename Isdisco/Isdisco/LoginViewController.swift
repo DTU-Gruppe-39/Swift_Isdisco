@@ -11,7 +11,7 @@ import UIKit
 class LoginViewController: UIViewController {
     @IBOutlet weak var idLabel: UILabel!
     @IBOutlet weak var idStepper: UIStepper!
-    var id = 0
+    var id = 1
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +24,7 @@ class LoginViewController: UIViewController {
         idStepper.wraps = true
         idStepper.autorepeat = true
         idStepper.maximumValue = 9
+        idStepper.minimumValue = 1
     }
     
     @IBAction func stepperValueChanged(_ sender: UIStepper) {
