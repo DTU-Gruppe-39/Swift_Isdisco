@@ -130,6 +130,25 @@ class LiveTableViewController: UITableViewController, LiveTableViewCellDelegate 
             //remove upVote
             //Delete
             //https://isdisco.azurewebsites.net/api/musicrequest/{id}/upvote/{userid}
+            Alamofire.request("https://isdisco.azurewebsites.net/api/musicrequest/\(request.id)/upvote/\(Singleton.shared.currentUserId)", method: .delete, encoding: JSONEncoding.default).responseJSON { response in
+                //Fix failure and success
+                switch response.response?.statusCode {
+                case 200:
+                    cell.downVoteButton.isEnabled = true
+                    cell.upVoteButtone.isEnabled = true
+                    cell.upVoteButtone.tintColor = UIColor.darkGray
+                    cell.downVoteButton.tintColor = UIColor.darkGray
+                    cell.upVoteButtone.isHidden = false
+                    cell.downVoteButton.isHidden = false
+                    cell.voteCount.text = String(Int(cell.voteCount.text!)! - 1)
+                case 500:
+                    print("FAILED: Upvote gik galt")
+                case .none:
+                    print("FAILED: Upvote gik galt_1")
+                case .some(_):
+                    print("FAILED: Upvote gik galt_2")
+                }
+            }
         } else {
             //Add upvote
             //PUT
