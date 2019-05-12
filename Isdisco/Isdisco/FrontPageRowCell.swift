@@ -16,4 +16,9 @@ class FrontPageRowCell: UICollectionViewCell {
         super.awakeFromNib()
         // Initialization code
     }
+    
+    func updateCell(track :TrackImage) {
+        albumImage.image = track.fetchedImage
+        song_name.text = track.songName
+    }
 }
