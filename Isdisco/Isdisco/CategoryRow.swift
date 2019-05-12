@@ -38,7 +38,7 @@ extension CategoryRow : UICollectionViewDataSource {
             self?.playlist1Results.append(Track.jsonToObject(json: result))
                 trackCell.song_name?.text =         self?.playlist1Results[indexPath.row].songName
             
-            self!.fetchImageAPI.fetchImage(urlToImageToFetch: self!.playlist1Results[indexPath.row].image_small_url, completionHandler: {
+            self!.fetchImageAPI.fetchImage(urlToImageToFetch: self!.playlist1Results[indexPath.row].image_medium_url, completionHandler: {
                     image, _ in trackCell.albumImage?.image = image
                 })
             }
@@ -49,7 +49,7 @@ extension CategoryRow : UICollectionViewDataSource {
 
 extension CategoryRow : UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let itemsPerRow:CGFloat = 4
+        let itemsPerRow:CGFloat = 2.5
         let hardCodedPadding:CGFloat = 5
         let itemWidth = (collectionView.bounds.width / itemsPerRow) - hardCodedPadding
         let itemHeight = collectionView.bounds.height - (2 * hardCodedPadding)
