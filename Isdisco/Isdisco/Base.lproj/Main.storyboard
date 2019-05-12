@@ -130,7 +130,7 @@
                                                                 <autoresizingMask key="autoresizingMask"/>
                                                                 <subviews>
                                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LOGO_ISDISCO" translatesAutoresizingMaskIntoConstraints="NO" id="x1N-1U-4vL">
-                                                                        <rect key="frame" x="0.0" y="1" width="128" height="90"/>
+                                                                        <rect key="frame" x="0.0" y="1" width="128.00000000000045" height="90.000000000000455"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="width" constant="128" id="1es-FS-i42"/>
                                                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="90" id="NP6-TP-tpN"/>
@@ -238,7 +238,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LOGO_ISDISCO" translatesAutoresizingMaskIntoConstraints="NO" id="GzI-k4-gje">
-                                            <rect key="frame" x="16" y="10" width="50" height="50"/>
+                                            <rect key="frame" x="16" y="10" width="50.000000000000455" height="50.000000000000455"/>
                                             <accessibility key="accessibilityConfiguration" identifier="SongPicture"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="50" id="qdr-6N-nh4"/>
@@ -377,7 +377,7 @@
                                 <rect key="frame" x="2" y="43" width="371" height="686"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LOGO_ISDISCO" translatesAutoresizingMaskIntoConstraints="NO" id="6uZ-Wk-BC5">
-                                        <rect key="frame" x="20" y="80" width="331" height="330"/>
+                                        <rect key="frame" x="20" y="80" width="331.00000000000045" height="330.00000000000045"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="330" id="d12-sB-4j4"/>
                                         </constraints>
@@ -684,8 +684,8 @@
                                 <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <state key="normal" image="baseline_close_black_36pt"/>
                                 <connections>
-                                    <action selector="closeButton:" destination="WXT-D0-U0M" eventType="touchUpInside" id="lRb-rm-ZJx"/>
-                                    <segue destination="kWk-zS-CFh" kind="unwind" unwindAction="closeButton:" id="8WJ-gW-1pJ"/>
+                                    <action selector="closeButton:" destination="WXT-D0-U0M" eventType="touchUpInside" id="A6v-Vp-elS"/>
+                                    <segue destination="kWk-zS-CFh" kind="unwind" unwindAction="closeButton:" id="yH2-lx-fiZ"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -717,7 +717,7 @@
                         <outlet property="OpenInSpotifyButton" destination="z5D-D4-CRX" id="bjL-in-r9x"/>
                         <outlet property="albumImage" destination="4yk-af-JtM" id="R4T-QW-yON"/>
                         <outlet property="artist" destination="IWg-u4-gRf" id="kxV-Hu-uiy"/>
-                        <outlet property="closeButton" destination="f07-ls-VnO" id="0XL-Fv-1XS"/>
+                        <outlet property="closeButton" destination="f07-ls-VnO" id="8Wy-oI-HDB"/>
                         <outlet property="requestTrackButton" destination="b5n-Km-FuN" id="IZp-UB-wMX"/>
                         <outlet property="song_name" destination="8Ab-Ul-XQU" id="CQO-ez-jO9"/>
                     </connections>

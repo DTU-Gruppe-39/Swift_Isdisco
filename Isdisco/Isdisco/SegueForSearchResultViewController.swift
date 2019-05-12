@@ -31,12 +31,12 @@ class SegueForSearchResultViewController: UIViewController {
             self.track = paramters!["track"]
             navigationControllerBool = false
             closeButton.isHidden = false
-            closeButton.isEnabled = false
+            closeButton.isEnabled = true
         }
         else {
             navigationControllerBool = true
             closeButton.isHidden = true
-            closeButton.isEnabled = true
+            closeButton.isEnabled = false
         }
         song_name.text = track?.songName
         artist.text = track?.artistName
