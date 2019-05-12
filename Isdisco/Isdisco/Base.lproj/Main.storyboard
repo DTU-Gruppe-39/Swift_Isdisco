@@ -618,7 +618,7 @@
         <scene sceneID="GFd-Xk-8Gl">
             <objects>
                 <viewController id="WXT-D0-U0M" customClass="SegueForSearchResultViewController" customModule="Isdisco" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" ambiguous="YES" id="Vr5-v7-Epq">
+                    <view key="view" contentMode="scaleToFill" id="Vr5-v7-Epq">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -642,8 +642,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b5n-Km-FuN">
-                                <rect key="frame" x="203" y="706" width="156" height="55"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b5n-Km-FuN">
+                                <rect key="frame" x="203" y="657" width="156" height="55"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="156" id="MJw-zQ-yY3"/>
                                     <constraint firstAttribute="height" constant="55" id="kkc-Tb-bbQ"/>
@@ -655,8 +655,8 @@
                                     <segue destination="kWk-zS-CFh" kind="unwind" unwindAction="requestTrack:" id="iJJ-6s-ZJI"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z5D-D4-CRX">
-                                <rect key="frame" x="16" y="706" width="156" height="55"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z5D-D4-CRX">
+                                <rect key="frame" x="16" y="657" width="156" height="55"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="156" id="I4D-CX-1l5"/>
                                     <constraint firstAttribute="height" constant="55" id="W2z-7g-cnu"/>

@@ -35,6 +35,8 @@ class SecondViewController: UITableViewController {
         tableViewBackgroundViewSetup()
         
         let viewController = self.tabBarController?.viewControllers?[1] as? SecondViewController
+        self.tableView.keyboardDismissMode = .interactive
+
     }
     
     private func tableViewBackgroundViewSetup ()

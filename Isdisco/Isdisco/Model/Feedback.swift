@@ -8,7 +8,7 @@
 import Foundation
 
 class Feedback {
-    let user : User
+    let user: User
     let tag : String
     let message : String
     
