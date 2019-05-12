@@ -23,7 +23,7 @@ class LoginViewController: UIViewController {
         
         idStepper.wraps = true
         idStepper.autorepeat = true
-        idStepper.maximumValue = 9
+        idStepper.maximumValue = 3
         idStepper.minimumValue = 1
     }
     
