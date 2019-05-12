@@ -215,7 +215,7 @@ class LiveTableViewController: UITableViewController, LiveTableViewCellDelegate 
         cell.downVoteButton.isEnabled = false
         cell.upVoteButtone.isEnabled = false
         
-        if (request.upvotes!.contains(Singleton.shared.currentUserId)) {
+        if (request.downvotes!.contains(Singleton.shared.currentUserId)) {
             //remove upVote
             //Delete
             //https://isdisco.azurewebsites.net/api/musicrequest/{id}/downvote/{userid}
