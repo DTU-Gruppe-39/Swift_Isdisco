@@ -64,7 +64,6 @@ class SegueForSearchResultViewController: UIViewController {
     @IBAction func requestTrack(_ unwindSegue: UIStoryboardSegue) {
         if (navigationControllerBool) {
             let musicrequest = Musicrequest.init(track: self.track!, userId: Singleton.shared.currentUserId)
-            self.navigationController?.viewControllers
             Alamofire.request("https://isdisco.azurewebsites.net/api/musicrequest", method: .post, parameters: Musicrequest.objectToJson(object: musicrequest), encoding: JSONEncoding.default).responseJSON { response in
                 //Fix failure and success
                 switch response.result {
@@ -78,7 +77,21 @@ class SegueForSearchResultViewController: UIViewController {
             }
         }
         else {
-            self.dismiss(animated: true)
+            let musicrequest = Musicrequest.init(track: self.track!, userId: Singleton.shared.currentUserId)
+            let firstViewController = self.presentingViewController!
+            Alamofire.request("https://isdisco.azurewebsites.net/api/musicrequest", method: .post, parameters: Musicrequest.objectToJson(object: musicrequest), encoding: JSONEncoding.default).responseJSON { response in
+                //Fix failure and success
+                switch response.result {
+                case .success:
+                    self.dismiss(animated: true) {
+                        self.showToast(controller: firstViewController, message: "Musik forespørgelse er sendt: \(Singleton.shared.currentUserId)", seconds: 1)
+                    }
+                case .failure( _):
+                    self.dismiss(animated: true) {
+                        self.showToast(controller: firstViewController, message: "FAILED: Musik forespørgelse er sendt", seconds: 3)
+                    }
+                }
+            }
         }
     }
     
