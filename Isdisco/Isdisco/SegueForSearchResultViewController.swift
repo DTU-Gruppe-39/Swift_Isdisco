@@ -44,6 +44,7 @@ class SegueForSearchResultViewController: UIViewController {
         fetchImage.fetchImage(urlToImageToFetch: track!.image_large_url, completionHandler: {
             image, _ in self.albumImage?.image = image
         })
+        requestTrackButton.isEnabled = true
 
     }
     
@@ -62,6 +63,7 @@ class SegueForSearchResultViewController: UIViewController {
 
     
     @IBAction func requestTrack(_ unwindSegue: UIStoryboardSegue) {
+        requestTrackButton.isEnabled = false
         if (navigationControllerBool) {
             let musicrequest = Musicrequest.init(track: self.track!, userId: Singleton.shared.currentUserId)
             Alamofire.request("https://isdisco.azurewebsites.net/api/musicrequest", method: .post, parameters: Musicrequest.objectToJson(object: musicrequest), encoding: JSONEncoding.default).responseJSON { response in
