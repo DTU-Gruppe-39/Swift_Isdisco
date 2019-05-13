@@ -13,7 +13,6 @@ import SwiftyJSON
 class FeedbackViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
 
     @IBOutlet weak var tagsPickerView: UIPickerView!
-
     @IBOutlet weak var editText: UITextView!
 
     //Array of what appears in the pickerView.
@@ -40,7 +39,6 @@ class FeedbackViewController: UIViewController, UIPickerViewDataSource, UIPicker
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         
         //Make the "Færdig" appear atop the keyboard
         let toolbar = UIToolbar()
@@ -77,9 +75,9 @@ class FeedbackViewController: UIViewController, UIPickerViewDataSource, UIPicker
         } else {
             showToast(controller: self, message: "Fejl!: Indtast venligst noget feedback", seconds: 1)
         }
-        //TODO: Loading while feedback is being sent. Then show toast.
     }
-
+    
+    //Toast function taken from Stack Overflow
     func showToast(controller: UIViewController, message : String, seconds: Double){
         let alert = UIAlertController(title: nil, message: message, preferredStyle: .alert)
         alert.view.backgroundColor = .black
@@ -94,8 +92,6 @@ class FeedbackViewController: UIViewController, UIPickerViewDataSource, UIPicker
     }
 
     func sendFeedbackHTTP(tag : String, message : String){
-        //TODO: Add method to post JSON version of feedback.
-        //TODO change to "current user"
         
         let feedbackUser = User.init(id: Singleton.shared.currentUserId, fullname:"", vip: false, loginDetails: LoginDetails.init(username: "", password: ""), appToken: "", facebookToken: "")
         
