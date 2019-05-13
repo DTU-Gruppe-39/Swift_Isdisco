@@ -247,14 +247,18 @@ class LiveTableViewController: UITableViewController, LiveTableViewCellDelegate 
             if (request.upvotes!.contains(Singleton.shared.currentUserId)) {
                 cell.upVoteButtone.isEnabled = true
                 cell.downVoteButton.isEnabled = false
-                cell.upVoteButtone.tintColor = UIColor.lightGray
-                cell.downVoteButton.isHidden = true
+//                cell.upVoteButtone.tintColor = UIColor.lightGray
+                cell.downVoteButton.tintColor = UIColor.lightGray
+//                cell.downVoteButton.isHidden = true
+                cell.downVoteButton.isHidden = false
                 cell.upVoteButtone.isHidden = false
             } else if (request.downvotes!.contains(Singleton.shared.currentUserId)) {
                 cell.downVoteButton.isEnabled = true
                 cell.upVoteButtone.isEnabled = false
-                cell.downVoteButton.tintColor = UIColor.lightGray
-                cell.upVoteButtone.isHidden = true
+//                cell.downVoteButton.tintColor = UIColor.lightGray
+                cell.upVoteButtone.tintColor = UIColor.lightGray
+//                cell.upVoteButtone.isHidden = true
+                cell.upVoteButtone.isHidden = false
                 cell.downVoteButton.isHidden = false
             }
         } else {
