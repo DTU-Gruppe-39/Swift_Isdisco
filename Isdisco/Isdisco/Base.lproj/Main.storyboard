@@ -43,6 +43,7 @@
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GHV-Wg-l55">
                                 <rect key="frame" x="166.66666666666666" y="662.66666666666663" width="42" height="20"/>
+                                <accessibility key="accessibilityConfiguration" identifier="userIDLabel"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="tJn-LL-8UU"/>
                                 </constraints>
