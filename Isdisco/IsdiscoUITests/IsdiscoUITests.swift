@@ -46,6 +46,17 @@ class IsdiscoUITests: XCTestCase {
         XCTAssertEqual("ID: 2", userIdLabel)
     }
     
-    func testUpvoteButton
-    
+    //UI test to verify that app leaves foreground when "Åben i Spotify" is tapped in currently playing screen.
+    //This test will fail if no song is playing.
+    func testOpenInSpotify(){
+        
+        let app = XCUIApplication()
+        app.buttons[" Log in with Facebook "].tap()
+        app.tabBars.buttons["Spiller nu"].tap()
+        let state = XCUIApplication().state
+        app/*@START_MENU_TOKEN@*/.buttons["Åben i Spotify"]/*[[".scrollViews.buttons[\"Åben i Spotify\"]",".buttons[\"Åben i Spotify\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        app.wait(for: .runningBackground, timeout: 10)
+        
+        XCTAssertNotEqual(XCUIApplication().state, state)
+    }
 }
