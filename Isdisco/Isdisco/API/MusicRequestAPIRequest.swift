@@ -40,7 +40,7 @@ class MusicReqeustAPIRequest {
     
     var musicRequests = [MusicRequest]()
 
-    func FetchMusicRequests(completion: @escaping ([MusicRequest]) -> Void) {
+    func fetchMusicRequests(completion: @escaping ([MusicRequest]) -> Void) {
         //Performing an Alamofire request to get the data from the URL
         Alamofire.request(self.apiUrl).responseJSON { response in
             //now here we have the response data that we need to parse

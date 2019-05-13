@@ -41,7 +41,7 @@ class LiveTableViewController: UITableViewController, LiveTableViewCellDelegate 
     
     // my selector that was defined above
     @objc func willEnterForeground() {
-        musicRequestAPI.FetchMusicRequests() { response in
+        musicRequestAPI.fetchMusicRequests() { response in
             //            let musicRequests = response
             self.musicRequests = response
             self.sortData()
@@ -52,7 +52,7 @@ class LiveTableViewController: UITableViewController, LiveTableViewCellDelegate 
     
     override func viewWillAppear(_ animated: Bool){
         
-        musicRequestAPI.FetchMusicRequests() { response in
+        musicRequestAPI.fetchMusicRequests() { response in
             //            let musicRequests = response
             self.musicRequests = response
             self.sortData()
@@ -63,7 +63,7 @@ class LiveTableViewController: UITableViewController, LiveTableViewCellDelegate 
     
     //Pull to refresh function
     @objc func refreshOptions(sender: UIRefreshControl) {
-        musicRequestAPI.FetchMusicRequests() { response in
+        musicRequestAPI.fetchMusicRequests() { response in
             //            let musicRequests = response
             self.musicRequests = response
             self.sortData()
@@ -143,7 +143,7 @@ class LiveTableViewController: UITableViewController, LiveTableViewCellDelegate 
                 //Fix failure and success
                 switch response.response?.statusCode {
                 case 200:
-                    self.musicRequestAPI.FetchMusicRequests() { response in
+                    self.musicRequestAPI.fetchMusicRequests() { response in
                         self.musicRequests = response
                         self.sortData()
                         self.tableView.reloadData()
@@ -165,7 +165,7 @@ class LiveTableViewController: UITableViewController, LiveTableViewCellDelegate 
                 //Fix failure and success
                 switch response.response?.statusCode {
                 case 200:
-                    self.musicRequestAPI.FetchMusicRequests() { response in
+                    self.musicRequestAPI.fetchMusicRequests() { response in
                         //            let musicRequests = response
                         self.musicRequests = response
                         self.sortData()
@@ -200,7 +200,7 @@ class LiveTableViewController: UITableViewController, LiveTableViewCellDelegate 
                 //Fix failure and success
                 switch response.response?.statusCode {
                 case 200:
-                    self.musicRequestAPI.FetchMusicRequests() { response in
+                    self.musicRequestAPI.fetchMusicRequests() { response in
                         self.musicRequests = response
                         self.sortData()
                         self.tableView.reloadData()
@@ -222,7 +222,7 @@ class LiveTableViewController: UITableViewController, LiveTableViewCellDelegate 
             //Fix failure and success
             switch response.response?.statusCode {
             case 200:
-                self.musicRequestAPI.FetchMusicRequests() { response in
+                self.musicRequestAPI.fetchMusicRequests() { response in
                 self.musicRequests = response
                 self.sortData()
                 self.tableView.reloadData()
