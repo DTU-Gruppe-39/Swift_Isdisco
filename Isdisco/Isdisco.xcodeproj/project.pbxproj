@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		200F5E4E2282F09D00475863 /* Feedback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200F5E4D2282F09D00475863 /* Feedback.swift */; };
 		201729A922491CA1000BAC35 /* PopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201729A822491CA1000BAC35 /* PopUpViewController.swift */; };
+		2072F77C2289E21E00960A90 /* IsdiscoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2072F77B2289E21E00960A90 /* IsdiscoUITests.swift */; };
 		20791D8F2288206C00EBEF43 /* MusicRequestAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20791D8E2288206C00EBEF43 /* MusicRequestAPIRequest.swift */; };
 		209865B02254DAC70016A3E7 /* FeedbackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209865AF2254DAC70016A3E7 /* FeedbackViewController.swift */; };
 		209865B22254F4C10016A3E7 /* UITextViewPlaceholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209865B12254F4C10016A3E7 /* UITextViewPlaceholder.swift */; };
@@ -42,6 +43,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		2072F77E2289E21E00960A90 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BB4068DD222D4F85005F6562 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BB4068E4222D4F85005F6562;
+			remoteInfo = Isdisco;
+		};
 		BB2CCB1F2289973F00FCC44F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BB4068DD222D4F85005F6562 /* Project object */;
@@ -55,6 +63,9 @@
 		200F5E4D2282F09D00475863 /* Feedback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feedback.swift; sourceTree = "<group>"; };
 		201729A822491CA1000BAC35 /* PopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpViewController.swift; sourceTree = "<group>"; };
 		201B16292280B7A0003A9D80 /* Feedback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feedback.swift; sourceTree = "<group>"; };
+		2072F7792289E21E00960A90 /* IsdiscoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IsdiscoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2072F77B2289E21E00960A90 /* IsdiscoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IsdiscoUITests.swift; sourceTree = "<group>"; };
+		2072F77D2289E21E00960A90 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		20791D8E2288206C00EBEF43 /* MusicRequestAPIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicRequestAPIRequest.swift; sourceTree = "<group>"; };
 		209865AF2254DAC70016A3E7 /* FeedbackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackViewController.swift; sourceTree = "<group>"; };
 		209865B12254F4C10016A3E7 /* UITextViewPlaceholder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextViewPlaceholder.swift; sourceTree = "<group>"; };
@@ -96,6 +107,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		2072F7762289E21E00960A90 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		BB2CCB172289973F00FCC44F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -114,6 +132,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2072F77A2289E21E00960A90 /* IsdiscoUITests */ = {
+			isa = PBXGroup;
+			children = (
+				2072F77B2289E21E00960A90 /* IsdiscoUITests.swift */,
+				2072F77D2289E21E00960A90 /* Info.plist */,
+			);
+			path = IsdiscoUITests;
+			sourceTree = "<group>";
+		};
 		29EBDC32BA3D529F22A74AEB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -145,6 +172,7 @@
 			children = (
 				BB4068E7222D4F85005F6562 /* Isdisco */,
 				BB2CCB1B2289973F00FCC44F /* IsdiscoTests */,
+				2072F77A2289E21E00960A90 /* IsdiscoUITests */,
 				BB4068E6222D4F85005F6562 /* Products */,
 				9960536AB757997D69320B37 /* Pods */,
 				29EBDC32BA3D529F22A74AEB /* Frameworks */,
@@ -156,6 +184,7 @@
 			children = (
 				BB4068E5222D4F85005F6562 /* Isdisco.app */,
 				BB2CCB1A2289973F00FCC44F /* IsdiscoTests.xctest */,
+				2072F7792289E21E00960A90 /* IsdiscoUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -220,6 +249,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		2072F7782289E21E00960A90 /* IsdiscoUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2072F7822289E21E00960A90 /* Build configuration list for PBXNativeTarget "IsdiscoUITests" */;
+			buildPhases = (
+				2072F7752289E21E00960A90 /* Sources */,
+				2072F7762289E21E00960A90 /* Frameworks */,
+				2072F7772289E21E00960A90 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2072F77F2289E21E00960A90 /* PBXTargetDependency */,
+			);
+			name = IsdiscoUITests;
+			productName = IsdiscoUITests;
+			productReference = 2072F7792289E21E00960A90 /* IsdiscoUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		BB2CCB192289973F00FCC44F /* IsdiscoTests */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = BB2CCB232289973F00FCC44F /* Build configuration list for PBXNativeTarget "IsdiscoTests" */;
@@ -267,6 +314,10 @@
 				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = "Rasmus Gregersen";
 				TargetAttributes = {
+					2072F7782289E21E00960A90 = {
+						CreatedOnToolsVersion = 10.2.1;
+						TestTargetID = BB4068E4222D4F85005F6562;
+					};
 					BB2CCB192289973F00FCC44F = {
 						CreatedOnToolsVersion = 10.2.1;
 						TestTargetID = BB4068E4222D4F85005F6562;
@@ -296,11 +347,19 @@
 			targets = (
 				BB4068E4222D4F85005F6562 /* Isdisco */,
 				BB2CCB192289973F00FCC44F /* IsdiscoTests */,
+				2072F7782289E21E00960A90 /* IsdiscoUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		2072F7772289E21E00960A90 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		BB2CCB182289973F00FCC44F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -371,6 +430,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		2072F7752289E21E00960A90 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2072F77C2289E21E00960A90 /* IsdiscoUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		BB2CCB162289973F00FCC44F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -417,6 +484,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		2072F77F2289E21E00960A90 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BB4068E4222D4F85005F6562 /* Isdisco */;
+			targetProxy = 2072F77E2289E21E00960A90 /* PBXContainerItemProxy */;
+		};
 		BB2CCB202289973F00FCC44F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = BB4068E4222D4F85005F6562 /* Isdisco */;
@@ -436,6 +508,46 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		2072F7802289E21E00960A90 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = G6TSQJ6DQ5;
+				INFOPLIST_FILE = IsdiscoUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = IsDisco.IsdiscoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Isdisco;
+			};
+			name = Debug;
+		};
+		2072F7812289E21E00960A90 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = G6TSQJ6DQ5;
+				INFOPLIST_FILE = IsdiscoUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = IsDisco.IsdiscoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Isdisco;
+			};
+			name = Release;
+		};
 		BB2CCB212289973F00FCC44F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -639,6 +751,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		2072F7822289E21E00960A90 /* Build configuration list for PBXNativeTarget "IsdiscoUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2072F7802289E21E00960A90 /* Debug */,
+				2072F7812289E21E00960A90 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		BB2CCB232289973F00FCC44F /* Build configuration list for PBXNativeTarget "IsdiscoTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

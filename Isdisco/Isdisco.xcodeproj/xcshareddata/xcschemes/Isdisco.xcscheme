@@ -38,6 +38,16 @@
                ReferencedContainer = "container:Isdisco.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "2072F7782289E21E00960A90"
+               BuildableName = "IsdiscoUITests.xctest"
+               BlueprintName = "IsdiscoUITests"
+               ReferencedContainer = "container:Isdisco.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
