@@ -72,6 +72,22 @@ class DetailSongViewController: UIViewController {
                 case 200:
                     self.navigationController?.popViewController(animated: true)
                     self.showToast(controller: self.parent!, message: "Musik forespørgelse er sendt!", seconds: 1)
+                case 403:
+                    self.dismiss(animated: true) {
+                        self.showToast(controller: self.parent!, message: "Den sang kan ikke ønskes til dette event", seconds: 2)
+                    }
+                case 302:
+                    self.dismiss(animated: true) {
+                        self.showToast(controller: self.parent!, message: "Du har allerede upvoted sangen", seconds: 1)
+                    }
+                case 202:
+                    self.dismiss(animated: true) {
+                        self.showToast(controller: self.parent!, message: "Vi har ændret din downvote til upvote på sangen", seconds: 2)
+                    }
+                case 201:
+                    self.dismiss(animated: true) {
+                        self.showToast(controller: self.parent!, message: "Sangen var allerede ønsket. Vi har upvoted sangen", seconds: 3)
+                    }
                 case 500:
                     self.navigationController?.popViewController(animated: true)
                     self.showToast(controller: self.parent!, message: "Sangen var allerede ønsket. Vi har upvoted sangen", seconds: 3)
@@ -91,6 +107,22 @@ class DetailSongViewController: UIViewController {
                 case 200:
                     self.dismiss(animated: true) {
                         self.showToast(controller: firstViewController, message: "Musik forespørgelse er sendt", seconds: 1)
+                    }
+                case 403:
+                    self.dismiss(animated: true) {
+                        self.showToast(controller: firstViewController, message: "Den sang kan ikke ønskes til dette event", seconds: 2)
+                    }
+                case 302:
+                    self.dismiss(animated: true) {
+                        self.showToast(controller: firstViewController, message: "Du har allerede upvoted sangen", seconds: 1)
+                    }
+                case 202:
+                    self.dismiss(animated: true) {
+                        self.showToast(controller: firstViewController, message: "Vi har ændret din downvote til upvote på sangen", seconds: 2)
+                    }
+                case 201:
+                    self.dismiss(animated: true) {
+                        self.showToast(controller: firstViewController, message: "Sangen var allerede ønsket. Vi har upvoted sangen", seconds: 3)
                     }
                 case 500:
                     self.dismiss(animated: true) {
