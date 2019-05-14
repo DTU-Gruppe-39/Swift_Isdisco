@@ -10,7 +10,7 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 
-class SegueForSearchResultViewController: UIViewController {
+class DetailSongViewController: UIViewController {
     
     @IBOutlet weak var albumImage: UIImageView!
     @IBOutlet weak var song_name: UILabel!

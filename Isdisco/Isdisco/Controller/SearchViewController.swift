@@ -51,7 +51,7 @@ class SecondViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let trackCell = tableView.dequeueReusableCell(withIdentifier: "trackCell") as! TrackSearchTableCell
+        let trackCell = tableView.dequeueReusableCell(withIdentifier: "trackCell") as! SearchTableCell
         trackCell.song_name?.text = searchResults[indexPath.row].songName
         trackCell.artist?.text = searchResults[indexPath.row].artistName
         fetchImage.fetchImage(urlToImageToFetch: searchResults[indexPath.row].image_medium_url, completionHandler: {
@@ -71,7 +71,7 @@ class SecondViewController: UITableViewController {
             guard let row = tableView.indexPathForSelectedRow?.row else {
                 return
             }
-            let segueViewController = segue.destination as? SegueForSearchResultViewController
+            let segueViewController = segue.destination as? DetailSongViewController
             
             segueViewController?.track = searchResults[row]
         }

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FrontPageRowCell: UICollectionViewCell {
+class FrontSongCell: UICollectionViewCell {
     @IBOutlet weak var albumImage: UIImageView!
     @IBOutlet weak var song_name: UILabel!
     

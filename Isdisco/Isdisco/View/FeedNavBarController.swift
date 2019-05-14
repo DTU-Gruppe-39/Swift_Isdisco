@@ -1,26 +1,23 @@
 //
-//  PopUpViewController.swift
+//  LiveNavBarController.swift
 //  Isdisco
 //
-//  Created by Thomas Mattsson on 25/03/2019.
+//  Created by Rasmus Gregersen on 11/05/2019.
 //  Copyright © 2019 Rasmus Gregersen. All rights reserved.
 //
 
 import UIKit
 
-class PopUpViewController: UIViewController {
+class FeedNavBarController: UINavigationController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        self.navigationBar.topItem?.title = "Musik Ønsker"        
         // Do any additional setup after loading the view.
     }
     
-    
-    @IBAction func cancelPopUp(_ sender: Any) {
-        dismiss(animated: true)
-    }
-    
+
     /*
     // MARK: - Navigation
 

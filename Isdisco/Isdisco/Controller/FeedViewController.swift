@@ -10,7 +10,7 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 
-class LiveTableViewController: UITableViewController, LiveTableViewCellDelegate {
+class FeedViewController: UITableViewController, LiveTableViewCellDelegate {
     //class LiveTableViewController: UITableViewController {
     
     let musicRequestAPI = MusicReqeustAPIRequest()

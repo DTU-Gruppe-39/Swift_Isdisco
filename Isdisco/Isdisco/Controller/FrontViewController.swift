@@ -9,7 +9,7 @@
 import UIKit
 import UserNotifications
 
-class FirstViewController: UIViewController, UITableViewDataSource {
+class FrontViewController: UIViewController, UITableViewDataSource {
     
     @IBOutlet weak var myTableView: UITableView!
     var categories = ["Vores udvalg", "Top 50 Danmark", "Ja Dak"]
@@ -36,7 +36,7 @@ class FirstViewController: UIViewController, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let tableCell = tableView.dequeueReusableCell(withIdentifier: "cell") as! CategoryRow
+        let tableCell = tableView.dequeueReusableCell(withIdentifier: "cell") as! FrontCategoryRowTableViewCell
         if indexPath.section == 0 {
             tableCell.updateCellWith(playlist: myTopResults)
         }
@@ -124,14 +124,14 @@ class FirstViewController: UIViewController, UITableViewDataSource {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "trackSegue") {
-            let segueController = segue.destination as! SegueForSearchResultViewController
+            let segueController = segue.destination as! DetailSongViewController
             segueController.paramters = sender as! [String : Track]
         }
     }
 }
 
-extension FirstViewController:CollectionCellDelegate {
-    func collectionView(trackCell: FrontPageRowCell?, didTappedInTableview TableCell: CategoryRow) {
+extension FrontViewController:CollectionCellDelegate {
+    func collectionView(trackCell: FrontSongCell?, didTappedInTableview TableCell: FrontCategoryRowTableViewCell) {
         if let selectedTrack = trackCell?.currentTrack {
             let parameters = ["track":selectedTrack]
             var fef = parameters["track"]

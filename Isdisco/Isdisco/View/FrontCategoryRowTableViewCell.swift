@@ -10,30 +10,29 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 
-class CategoryRow : UITableViewCell {
+class FrontCategoryRowTableViewCell : UITableViewCell {
     var currentPlaylist : [Track]?
     weak var categoryRowDelegate:CollectionCellDelegate?
     @IBOutlet weak var myCollectionView: UICollectionView!
 
     func updateCellWith (playlist: [Track]) {
         self.currentPlaylist = playlist
-        print("playlist \(currentPlaylist)")
         self.myCollectionView.reloadData()
     }
     
 }
 
 protocol CollectionCellDelegate:class {
-    func collectionView(trackCell:FrontPageRowCell?, didTappedInTableview TableCell:CategoryRow)
+    func collectionView(trackCell:FrontSongCell?, didTappedInTableview TableCell:FrontCategoryRowTableViewCell)
 }
 
-extension CategoryRow : UICollectionViewDataSource {
+extension FrontCategoryRowTableViewCell : UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return currentPlaylist!.count
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let trackCell = collectionView.cellForItem(at: indexPath) as? FrontPageRowCell
+        let trackCell = collectionView.cellForItem(at: indexPath) as? FrontSongCell
         self.categoryRowDelegate?.collectionView(trackCell: trackCell, didTappedInTableview: self)
     }
 
@@ -42,7 +41,7 @@ extension CategoryRow : UICollectionViewDataSource {
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let trackCell = collectionView.dequeueReusableCell(withReuseIdentifier: "trackCell", for: indexPath) as! FrontPageRowCell
+        let trackCell = collectionView.dequeueReusableCell(withReuseIdentifier: "trackCell", for: indexPath) as! FrontSongCell
         if let track = self.currentPlaylist?[indexPath.item] {
             trackCell.updateCell(track: track)
         }
@@ -50,7 +49,7 @@ extension CategoryRow : UICollectionViewDataSource {
     }
 }
 
-extension CategoryRow : UICollectionViewDelegateFlowLayout {
+extension FrontCategoryRowTableViewCell : UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let itemsPerRow:CGFloat = 2.5
         let hardCodedPadding:CGFloat = 5
