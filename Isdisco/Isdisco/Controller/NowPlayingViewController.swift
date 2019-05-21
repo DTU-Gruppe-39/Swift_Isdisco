@@ -66,6 +66,7 @@ class NowPlayingViewController: UIViewController {
             if error != nil {
                 print("Oops! Something went wrong...")
             } else {
+                
                 print("It has finished")
             }
         }

@@ -48,6 +48,7 @@ class FrontViewController: UIViewController, UITableViewDataSource {
         }
         tableCell.categoryRowDelegate = self as? CollectionCellDelegate
         return tableCell
+        
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
